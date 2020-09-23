@@ -1,0 +1,65 @@
+#!/bin/bash
+
+CWD=$PWD
+source $CWD/config
+TCDIR=$CWD/toolchain
+PATCHDIR=$CWD/patches
+FILEDIR=$CWD/files
+
+
+01-setup() {
+cat > ~/.bash_profile << "EOF"
+exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
+EOF
+}
+
+02-more_setup() {
+cat > ~/.bashrc << "EOF"
+set +h
+umask 022
+KFS=/mnt/kfs
+LC_ALL=POSIX
+KFS_TGT=$(uname -m)-kfs-linux-gnu
+PATH=/usr/bin
+if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
+PATH=$KFS/tools/bin:$PATH
+export KFS LC_ALL KFS_TGT PATH
+EOF
+}
+
+03-activate_pf() {
+    source ~/.bash_profile
+}
+
+build() {
+    bash $CWD/toolchain/01-binutils_pass_1 &&
+    bash $CWD/toolchain/02-gcc_pass_1 &&
+    bash $CWD/toolchain/03-linux-api-headers &&
+    bash $CWD/toolchain/04-glibc &&
+    bash $CWD/toolchain/05-libstdc++ &&
+    bash $CWD/toolchain/06-m4 &&
+    bash $CWD/toolchain/07-ncurses &&
+    bash $CWD/toolchain/08-bash &&
+    bash $CWD/toolchain/09-coreutils &&
+    bash $CWD/toolchain/10-diffutils &&
+    bash $CWD/toolchain/11-file &&
+    bash $CWD/toolchain/12-findutils &&
+    bash $CWD/toolchain/13-gawk &&
+    bash $CWD/toolchain/14-grep &&
+    bash $CWD/toolchain/15-gzip &&
+    bash $CWD/toolchain/16-make &&
+    bash $CWD/toolchain/17-patch &&
+    bash $CWD/toolchain/18-tar &&
+    bash $CWD/toolchain/19-xz &&
+    bash $CWD/toolchain/20-binutils_pass_2 &&
+    bash $CWD/toolchain/21-gcc_pass_2
+}
+
+main() {
+    01-setup &&
+    02-more_setup &&
+    03-activate_pf &&
+    build
+}
+
+main
