@@ -1,2 +1,1 @@
-# os-kfs
-Koompi From Scratch
+# Koompi From Scratch
