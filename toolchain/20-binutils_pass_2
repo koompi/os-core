@@ -1,9 +1,6 @@
 #!/bin/bash
 # Author < HangsiaHONG hangsia@koompi.org >
 
-CWD=$PWD
-source $CWD/config
-TCDIR=$CWD/toolchain
 
 cd $KFS/sources
 tar -xf binutils-2.35.tar.xz 
