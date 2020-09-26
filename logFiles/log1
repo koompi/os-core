@@ -1,0 +1,26 @@
+bash, version 5.0.18(1)-release
+/bin/sh -> /usr/bin/bash
+Binutils: (GNU Binutils) 2.35
+bison (GNU Bison) 3.6.4
+yacc is bison (GNU Bison) 3.6.4
+bzip2,  Version 1.0.8, 13-Jul-2019.
+Coreutils:  8.32
+diff (GNU diffutils) 3.7
+find (GNU findutils) 4.7.0
+GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.0)
+/usr/bin/awk -> /usr/bin/gawk
+gcc (GCC) 10.2.0
+g++ (GCC) 10.2.0
+(GNU libc) 2.32
+grep (GNU grep) 3.4
+gzip 1.10
+Linux version 5.4.65-1-lts (linux-lts@archlinux) (gcc version 10.2.0 (GCC)) #1 SMP Sun, 13 Sep 2020 21:56:58 +0000
+m4 (GNU M4) 1.4.18
+GNU Make 4.3
+GNU patch 2.7.6
+Perl version='5.32.0';
+sed (GNU sed) 4.8
+tar (GNU tar) 1.32
+texi2any (GNU texinfo) 6.7
+xz (XZ Utils) 5.2.5
+g++ compilation OK

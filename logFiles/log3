@@ -1,0 +1,14 @@
+Creating partition on sda1
+sda1 is correct
+En train de créer un système de fichiers avec 5242624 4k blocs et 1310720 i-noeuds.
+UUID de système de fichiers=540fb276-c3f7-4a81-a19b-faa0fa68b3ce
+Superblocs de secours stockés sur les blocs : 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000
+
+Allocation des tables de groupe :   0/160       complété                        
+Écriture des tables d'i-noeuds :   0/160       complété                        
+Création du journal (32768 blocs) : complété
+Écriture des superblocs et de l'information de comptabilité du système de
+fichiers :   0/160       complété
+
