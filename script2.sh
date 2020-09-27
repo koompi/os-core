@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Author HangsiaHONG <hangsia@koompi.org>
+
+
 read -p "enter the device where you want your partition (like sdb1)"  answer
 bash res/createPartition.sh $answer | tee logFiles/log3
 

@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# Author HangsiaHONG <hangsia@koompi.org>
 export KFS=/mnt/kfs
 
 if [ "$(id -u)" != "0" ]; then

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Author HangsiaHONG <hangsia@koompi.org>
 
 echo "Welcome to AKFS script..."
 
