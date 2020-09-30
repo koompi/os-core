@@ -4,7 +4,7 @@
 # Run as root
 CWD=$PWD
 
-source $CWD/config
+source $CWD/enter_chroot/config
 
 mkdir -pv $KFS/{dev,proc,sys,run}
 

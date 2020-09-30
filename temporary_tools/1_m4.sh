@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/temporary/config
 
 cd $KFS/sources
 tar -xf m4-1.4.18.tar.xz

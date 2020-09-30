@@ -4,7 +4,7 @@
 # Run as root
 CWD=$PWD
 
-source $CWD/config
+source $CWD/enter_chroot/config
 
 chroot "$KFS" /usr/bin/env -i   \
     HOME=/root                  \

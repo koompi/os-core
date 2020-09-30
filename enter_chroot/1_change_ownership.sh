@@ -4,7 +4,7 @@
 # Run as root
 CWD=$PWD
 
-source $CWD/config
+source $CWD/enter_chroot/config
 
 chown -R root:root $KFS/{usr,lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
