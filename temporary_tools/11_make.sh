@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/temporary_tools/config
 
 cd $KFS/sources
 tar -xf make-4.3.tar.gz

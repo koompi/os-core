@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/temporary_tools/config
 
 cd $KFS/sources
 tar -xf xz-5.2.5.tar.xz

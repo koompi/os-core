@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/temporary_tools/config
 
 cd $KFS/sources
 tar -xf grep-3.4.tar.xz

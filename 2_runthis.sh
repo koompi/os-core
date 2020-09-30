@@ -20,7 +20,7 @@ function build_temporary_tools() {
 }
 
 function main() {
-    setup_env &&
+    #setup_env &&
     build_cross_toolchain &&
     build_temporary_tools  
 }
