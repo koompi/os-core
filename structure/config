@@ -1,0 +1,5 @@
+KFS=/mnt/kfs
+
+
+
+export KFS

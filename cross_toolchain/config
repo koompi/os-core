@@ -1,0 +1,3 @@
+MAKEFLAGS='-j4'
+
+export MAKEFLAGS

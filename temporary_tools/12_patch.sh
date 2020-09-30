@@ -1,0 +1,20 @@
+#!/bin/bash
+# Author < HangsiaHONG hangsia@koompi.org >
+
+CWD=$PWD
+source $CWD/config
+
+cd $KFS/sources
+tar -xf patch-2.7.6.tar.xz
+cd patch-2.7.6
+
+./configure --prefix=/usr   \
+            --host=$KFS_TGT \
+            --build=$(build-aux/config.guess)
+
+
+make
+make DESTDIR=$KFS install
+
+cd $KFS/sources
+rm -rf patch-2.7.6
