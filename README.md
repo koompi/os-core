@@ -1,1 +1,0 @@
-# KOOMPI From Scratch

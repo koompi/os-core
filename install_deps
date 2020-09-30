@@ -1,7 +1,0 @@
-#!/bin/bash
-# Author HangsiaHONG <hangsia@koompi.org>
-
-sudo pacman -S gcc grep gzip m4 make patch perl sed tar texinfo xz
-
-
-
