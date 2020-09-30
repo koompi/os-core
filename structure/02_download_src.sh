@@ -5,7 +5,7 @@ CWD=$PWD
 source $CWD/structure/config
 
 function fetch_src() {
-    	mkdir -v $KFS/sources
+    mkdir -v $KFS/sources
 	chmod -v a+wt $KFS/sources
 	cp $CWD/structure/wget-list $KFS/sources
 	cd $KFS/sources

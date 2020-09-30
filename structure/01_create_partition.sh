@@ -35,3 +35,12 @@ function mount() {
     /sbin/swapon -v $Disk\2 
 }
 
+
+
+function main() {
+	create_part &&
+	format_part &&
+	mount
+}
+
+main
