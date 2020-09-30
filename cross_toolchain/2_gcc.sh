@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/cross_toolchain/config
 
 cd $KFS/sources
 tar -xf gcc-10.2.0.tar.xz

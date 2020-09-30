@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/structure/config
 
 
 groupadd kfs

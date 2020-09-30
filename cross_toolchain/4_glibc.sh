@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/cross_toolchain/config
 
 cd $KFS/sources
 tar -xf glibc-2.32.tar.xz

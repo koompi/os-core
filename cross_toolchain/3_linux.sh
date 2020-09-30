@@ -2,7 +2,7 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 CWD=$PWD
-source $CWD/config
+source $CWD/cross_toolchain/config
 
 cd $KFS/sources
 tar -xf linux-5.8.3.tar.xz

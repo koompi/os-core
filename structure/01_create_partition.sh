@@ -3,6 +3,7 @@
 
 
 CWD=$PWD
+source $CWD/structure/config
 
 Green='\033[0;32m'  # Green
 
