@@ -29,7 +29,7 @@ mkswap $Disk\2
 mkfs -v -t ext4 $Disk\3
 }
 
-function mount() {
+function mount_part() {
 mkdir -pv $KFS
 mount /dev/$Disk\3 $KFS
 /sbin/swapon -v $Disk\2 
@@ -40,7 +40,7 @@ mount /dev/$Disk\3 $KFS
 function main() {
 	create_part &&
 	format_part &&
-	mount
+	mount_part
 }
 
 main
