@@ -9,7 +9,7 @@ function build_cross_toolchain() {
     bash $CWD/cross_toolchain/2_gcc.sh &&
     bash $CWD/cross_toolchain/3_linux.sh && 
     bash $CWD/cross_toolchain/4_glibc.sh &&
-    bash $CWD/cross_toolchain/5_libstdc++.sh
+    bash $CWD/cross_toolchain/5_libstdcpp.sh
 }
 
 build_cross_toolchain
