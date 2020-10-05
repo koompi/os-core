@@ -6,7 +6,7 @@ source $CWD/structure/config
 
 
 function create_part() {
-    sudo parted --script /dev/sdb \
+    parted --script /dev/sdb \
     mklabel gpt \
     mkpart primary ext2 1Mib 101Mib \
     mkpart primary ext4 101Mib 5G \
@@ -25,3 +25,13 @@ function mount_part() {
     /sbin/swapon -v /dev/sdb2
 }
 
+
+
+main() {
+    create_part &&
+    format_part &&
+    mount_part
+}
+
+
+main
