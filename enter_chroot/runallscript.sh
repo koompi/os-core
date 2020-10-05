@@ -12,5 +12,4 @@ function enter_chroot() {
     bash $CWD/enter_chroot/5_create_file_and_symlinks.sh
 }
 
-
 enter_chroot
