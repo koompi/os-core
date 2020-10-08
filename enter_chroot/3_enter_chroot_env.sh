@@ -2,9 +2,10 @@
 # Author < HangsiaHONG hangsia@koompi.org >
 
 # Run as root
-CWD=$PWD
-
-source $CWD/enter_chroot/config
+# CWD=$PWD
+KFS=/mnt/kfs
+export KFS
+# source $CWD/enter_chroot/config
 
 chroot "$KFS" /usr/bin/env -i   \
     HOME=/root                  \

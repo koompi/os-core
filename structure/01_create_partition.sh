@@ -21,7 +21,7 @@ function format_part() {
 
 function mount_part() {
     mkdir -pv $KFS
-    mount /dev/sdb3 $KFS
+    mount -v -t ext4 /dev/sdb3 $KFS
     /sbin/swapon -v /dev/sdb2
 }
 

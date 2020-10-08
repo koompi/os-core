@@ -8,7 +8,7 @@ source $CWD/structure/config
 groupadd kfs
 /sbin/useradd -s /bin/bash -g kfs -m -k /dev/null kfs
 
-passwd kfs
+echo -e "123\n123" | passwd kfs
 
 chown -v kfs $KFS/{usr,lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
