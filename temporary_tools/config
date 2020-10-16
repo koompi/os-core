@@ -1,5 +1,0 @@
-MAKEFLAGS='-j4'
-KFS=/mnt/kfs
-
-
-export MAKEFLAGS KFS
