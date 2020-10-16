@@ -1,0 +1,19 @@
+#!/bin/bash
+# Author < HangsiaHONG hangsia@koompi.org >
+
+CWD=$PWD
+source $CWD/config
+
+cd /sources
+tar -xf less-551.tar.gz
+cd less-551
+
+./configure --prefix=/usr --sysconfdir=/etc
+
+make -j1
+
+make install
+
+
+cd /sources
+rm -rf less-551

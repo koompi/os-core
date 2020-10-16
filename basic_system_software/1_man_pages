@@ -1,0 +1,14 @@
+#!/bin/bash
+# Author < HangsiaHONG hangsia@koompi.org >
+
+CWD=$PWD
+source $CWD/config
+
+cd /sources
+tar -xf man-pages-5.08.tar.xz
+cd man-pages-5.08
+
+make install
+
+cd /sources
+rm -rf man-pages-5.08

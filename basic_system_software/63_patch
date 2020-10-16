@@ -1,0 +1,18 @@
+#!/bin/bash
+# Author < HangsiaHONG hangsia@koompi.org >
+
+CWD=$PWD
+source $CWD/config
+
+cd /sources
+tar -xf patch-2.7.6.tar.xz
+cd patch-2.7.6
+
+./configure --prefix=/usr
+
+make -j1
+#make check
+make install
+
+cd /sources
+rm -rf patch-2.7.6

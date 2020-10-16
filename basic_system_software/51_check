@@ -1,0 +1,20 @@
+#!/bin/bash
+# Author < HangsiaHONG hangsia@koompi.org >
+
+CWD=$PWD
+source $CWD/config
+
+cd /sources
+tar -xf check-0.15.2.tar.gz
+cd check-0.15.2
+
+./configure --prefix=/usr --disable-static
+
+make -j1
+#make check
+
+make docdir=/usr/share/doc/check-0.15.2 install
+
+
+cd /sources
+rm -rf check-0.15.2
