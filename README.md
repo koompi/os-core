@@ -23,9 +23,9 @@ In order to build your own KOOMPI From Scratch, you need to learn alot of things
 
 ## Explanation:
 
--> 1. We build cross compling toolchain from scratch.
--> 2. After we built it already, we install tools(softwares that requirement to start Linux on your machine)
--> 3. And Lastly, we will build it into ISO so you can install it on your own machine.
+1. We build cross compling toolchain from scratch.
+2. After we built it already, we install tools(softwares that requirement to start Linux on your machine)
+3. And Lastly, we will build it into ISO so you can install it on your own machine.
 
 You can refer to this link if you would like to learn more about how to build Linux or How Linux works.
 
