@@ -19,7 +19,7 @@ You can watch this [tutorial](__) to learn how to setup your own virtual machine
 
 # How KOOMPI From Scratch Work?
 
-In order to build your own KOOMPI From Scratch, you need to learn alot of things and take too much times, in order to learn to build one of your own. That why we create this project to solve the problem for people who want to build their own Linux Distribution. This project automate the building process by using Bash scripting. The reason why this project recommend to use virtual machine as host because it is dangerous to build it on your real machine and the script also made for run on virtual machine.
+In order to build your own KOOMPI From Scratch, you need to learn alot of things and take too much times, in order to learn to build one of your own. That why we create this project to solve the problem for people who want to build their own Linux Distribution. This project automate the building process by using Bash scripting. The reason why this project recommend to use virtual machine as host because it is dangerous to build it on your real machine and the script also made for running on virtual machine.
 
 ## Explanation:
 
