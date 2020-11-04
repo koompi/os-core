@@ -1,5 +1,13 @@
 #!/bin/bash
 
+checkroot() {
+    if (($EUID != 0)); then
+        echo "Please run this script as root user
+Example: sudo bash install-qemu.sh"
+        exit
+    fi
+}
+
 install() {
     sudo gpasswd -a $USER kvm
     sudo touch /etc/modules-load.d/kvm.conf.test
@@ -13,7 +21,7 @@ start_service() {
     sudo systemctl enable libvirtd
 
 }
-
+checkroot
 install
 start_service
 
