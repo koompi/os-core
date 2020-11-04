@@ -1,21 +1,24 @@
 # KOOMPI From Scratch
 
-This is an automate script for building KOOMPI From Scratch.
+This is an automate script for building KOOMPI From Scratch. This project will be done using Virtual machine. We will use Qemu but you can use any virtual machine you want(only if you are sure what you are doing). We recommend our [KOOMPI OS](http://repo.koompi.org/iso/KOOMPI-OS-2020.05.20-x86_64.iso) to install as Host on the virtual machine.
 
-Before the building process started, you need to install [VirtualBox](https://www.virtualbox.org/). During the process, it will be done using virtual machine.
+## Prerequisite:
 
-I will assume you are using KOOMPI OS or Arch Linux.
-To install Virtualbox, use the command below:
+> CLONE THE REPOSITORY
 
 ```
-sudo pacman -S virtualbox
+git clone https://github.com/koompi/os-kfs
 ```
 
-We recommend our [KOOMPI OS](http://repo.koompi.org/iso/KOOMPI-OS-2020.05.20-x86_64.iso) iso for install inside the Virtualbox. (You can use any kind of Linux distribution as long as it based on Arch Linux)
+> INSTALL QEMU/KVM
 
-# How to setup KOOMPI OS on Virtualbox?
+```
+sudo bash install-qemu.sh
+```
 
-You can watch this [tutorial](__) to learn how to setup your own virtual machine and installing KOOMPI OS on Virtualbox.
+## How to setup KOOMPI OS on Qemu?
+
+You can refer to this [link](). It is a video guide on how to install KOOMPI OS on Qemu.
 
 # How KOOMPI From Scratch Work?
 
