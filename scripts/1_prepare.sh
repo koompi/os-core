@@ -28,7 +28,7 @@ create_part && mount_part
 
 mkdir -v $LFS/sources
 chmod -v a+wt $LFS/sources
-wget --input-file=wget-list --continue --directory-prefix=$LFS/sources
+wget --input-file=scripts/wget-list --continue --directory-prefix=$LFS/sources
 
 mkdir -pv $LFS/{bin,etc,lib,sbin,usr,var}
 case $(uname -m) in
