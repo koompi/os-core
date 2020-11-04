@@ -10,8 +10,8 @@ Example: sudo bash install-qemu.sh"
 
 install() {
     sudo gpasswd -a $USER kvm
-    sudo touch /etc/modules-load.d/kvm.conf.test
-    sudo bash -c "echo 'kvm_intel' > /etc/modules-load.d/kvm.conf.test"
+    sudo touch /etc/modules-load.d/kvm.conf
+    sudo bash -c "echo 'kvm_intel' > /etc/modules-load.d/kvm.conf"
     sudo modprobe kvm_intel
     sudo pacman -S qemu virt-manager dnsmasq iptables ebtables dnsmasq
 }
