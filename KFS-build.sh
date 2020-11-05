@@ -31,7 +31,7 @@ checkroot() {
 }
 
 printf "${Green}This script created for helping automate building KOOMPI FROM SCRATCH\n\n-----------"
-printf "${Blue}Now we are checking your system to meet our requirement in order to start the script\n"
+printf "${Normal}Now we are checking your system to meet our requirement in order to start the script\n"
 
 check_dep() {
     MISSING_NUM=0
@@ -68,8 +68,8 @@ check_dep() {
 
 function main() {
     bash $CWD/scripts/1_prepare.sh
-    su lfs -s /bin/sh scripts/2_setup_env.sh
-    su lfs -s /bin/sh scripts/3_kfs_build_stage1.sh
+    su lfs -s /bin/sh /mnt/lfs/scripts/2_setup_env.sh
+    su lfs -s /bin/sh /mnt/lfs/scripts/3_kfs_build_stage1.sh
     su root -s /bin/sh scripts/4_setup_chroot.sh
 
 }

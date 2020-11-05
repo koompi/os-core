@@ -53,6 +53,8 @@ chown -v lfs $LFS/sources
 
 cd $CWD
 cd ..
+cp -r os-lfs /mnt/lfs/os-lfs
+cd /mnt/lfs
 sudo chown -Rcc lfs os-kfs
 # cp -r os-kfs $LFS/
 # sudo chown lfs $LFS/os-kfs
