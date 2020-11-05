@@ -70,7 +70,7 @@ function main() {
     bash $CWD/scripts/1_prepare.sh
     su lfs -s /bin/sh scripts/2_setup_env.sh
     su lfs -s /bin/sh scripts/3_kfs_build_stage1.sh
-    su lfs -s /bin/sh scripts/4_setup_chroot.sh
+    su root -s /bin/sh scripts/4_setup_chroot.sh
 
 }
 
