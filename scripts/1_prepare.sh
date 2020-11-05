@@ -53,9 +53,9 @@ chown -v lfs $LFS/sources
 
 cd $CWD
 cd ..
-cp -r os-lfs /mnt/lfs/os-lfs
+sudo cp -r os-kfs /mnt/lfs/os-kfs
 cd /mnt/lfs
-sudo chown -Rcc lfs os-kfs
+sudo chown -Rcc lfs /mnt/lfs/os-kfs
 # cp -r os-kfs $LFS/
 # sudo chown lfs $LFS/os-kfs
 # echo 'Download source from github again'
