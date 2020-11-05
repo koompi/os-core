@@ -13,7 +13,7 @@ create_part() {
     mkpart prmary ext4 5G 20G
 
   mkfs -v -t ext2 /dev/${DISK}1
-  mkswap /dev/{DISK}2
+  mkswap /dev/${DISK}2
   mkfs -v -t ext4 /dev/${DISK}3
 }
 
@@ -21,8 +21,8 @@ mount_part() {
   mkdir -pv $LFS
   mkdir -pv $LFS/boot
   mount -v -t ext2 /dev/${DISK}1 $LFS/boot
-  mount -v -t ext4 /dev/{DISK}3 $LFS
-  /sbin/swapon -v /dev/{DISK}2
+  mount -v -t ext4 /dev/${DISK}3 $LFS
+  /sbin/swapon -v /dev/${DISK}2
 }
 
 create_part && mount_part
