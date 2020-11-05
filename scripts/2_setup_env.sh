@@ -17,4 +17,5 @@ PATH=$LFS/tools/bin:$PATH
 export LFS LC_ALL LFS_TGT PATH
 EOF
 
-source ~/.bash_profile
+# source ~/.bash_profile
+exit
