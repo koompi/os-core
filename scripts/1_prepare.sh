@@ -3,25 +3,26 @@
 
 CWD=$PWD
 source $CWD/config
+export DISK LFS
 
 create_part() {
-  parted --script /dev/sdb \
+  parted --script /dev/${DISK} \
     mklabel gpt \
     mkpart primary ext2 1Mib 101Mib \
     mkpart primary ext4 101Mib 5G \
     mkpart prmary ext4 5G 20G
 
-  mkfs -v -t ext2 /dev/sdb1
-  mkswap /dev/sdb2
-  mkfs -v -t ext4 /dev/sdb3
+  mkfs -v -t ext2 /dev/${DISK}1
+  mkswap /dev/{DISK}2
+  mkfs -v -t ext4 /dev/${DISK}3
 }
 
 mount_part() {
   mkdir -pv $LFS
   mkdir -pv $LFS/boot
-  mount -v -t ext2 /dev/sdb1 $LFS/boot
-  mount -v -t ext4 /dev/sdb3 $LFS
-  /sbin/swapon -v /dev/sdb2
+  mount -v -t ext2 /dev/${DISK}1 $LFS/boot
+  mount -v -t ext4 /dev/{DISK}3 $LFS
+  /sbin/swapon -v /dev/{DISK}2
 }
 
 create_part && mount_part

@@ -8,12 +8,20 @@ BLUE=$(tput setaf 4)
 NORMAL=$(tput sgr0)
 Green='\033[0;32m' # Green
 Blue='\033[0;34m'  # Blue
+BOLD="$(echo -e "\e[1m")"
+CYAN="$(echo -e "\e[36m")"
+WHITE='\033[0;37m' # White
+CLEAR=clear
+NPROC=nproc
 # KFS_DEPS
 KFS_DEPS=("bash" "binutils" "bison" "bzip2" "coreutils" "diffutils" "gawk" "gcc" "glibc" "grep" "gzip" "m4" "make" "patch" "perl" "sed" "tar" "texinfo" "xz")
 MISSING_DEPS=""
 
 #------------ Current directory
 CWD=$PWD
+
+# CORE
+ncore=0
 
 checkroot() {
     if (($EUID != 0)); then
@@ -66,6 +74,36 @@ function main() {
 
 }
 
+question() {
+    #----------------- Ask for drive ----------------------------------
+    num=0
+    echo ">>Inside your machine, this is the list of the hard drive availble for you to use<<"
+    IFS=, read -r -a array <<<$(lsblk -dn -o NAME,SIZE,TYPE | tr '\n' ,)
+    # IFS=, read -r -a array <<<$(lsblk -dn -o NAME | tr '\n' ,)
+    for disk in "${array[@]}"; do
+        ((num += 1))
+        printf "$num. $disk\n"
+    done
+    read -p 'Enter the drive you want to your
+Example: nvme01 | sda | sdb | vdb
+-> ' drive
+    echo "DISK=${drive}" | tee -a config
+    #------------------------------------------------------------------
+
+    # ---------------- Ask for CPU ------------------------------------
+    while read line; do
+        [ "$line" ] && [ -z "${line%processor*}" ] && ncore=$((ncore + 1))
+    done </proc/cpuinfo
+    echo "You have $ncore core"
+    read -p 'How many core you want to use for compiling?: ' core
+    echo "MAKEFLAGS='-j${core}'" | tee -a config
+
+    #------------------------------------------------------------------
+
+}
+
 checkroot
+$CLEAR
+question
 check_dep
 main

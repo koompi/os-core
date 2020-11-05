@@ -3,6 +3,7 @@
 
 CWD=$PWD
 source $CWD/config
+export MAKEFLAGS
 
 function build_tool() {
     bash $CWD/toolchain/1_binutils_pass1 &&
