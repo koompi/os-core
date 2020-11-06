@@ -91,12 +91,12 @@ Example: nvme01 | sda | sdb | vdb
     #------------------------------------------------------------------
 
     # ---------------- Ask for CPU ------------------------------------
-    while read line; do
-        [ "$line" ] && [ -z "${line%processor*}" ] && ncore=$((ncore + 1))
-    done </proc/cpuinfo
-    echo "You have $ncore core"
-    read -p 'How many core you want to use for compiling?: ' core
-    echo "MAKEFLAGS='-j${core}'" | tee -a config
+    # while read line; do
+    #     [ "$line" ] && [ -z "${line%processor*}" ] && ncore=$((ncore + 1))
+    # done </proc/cpuinfo
+    # echo "You have $ncore core"
+    # read -p 'How many core you want to use for compiling?: ' core
+    # echo "MAKEFLAGS='-j${core}'" | tee -a config
 
     #------------------------------------------------------------------
 

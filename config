@@ -1,1 +1,2 @@
 LFS=/mnt/lfs
+MAKEFLAGS="-j$(nproc)"
