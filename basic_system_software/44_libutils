@@ -10,9 +10,8 @@ cd elfutils-0.180
 
 ./configure --prefix=/usr --disable-debuginfod --libdir=/lib
 
-make -j1
+make
 # make check
-
 
 make -C libelf install
 install -vm644 config/libelf.pc /usr/lib/pkgconfig

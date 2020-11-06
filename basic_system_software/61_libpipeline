@@ -10,10 +10,9 @@ cd libpipeline-1.5.3
 
 ./configure --prefix=/usr
 
-make -j1
+make
 # make check
 make install
-
 
 cd /sources
 rm -rf libpipeline-1.5.3

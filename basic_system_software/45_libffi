@@ -10,7 +10,7 @@ cd libffi-3.3
 
 ./configure --prefix=/usr --disable-static --with-gcc-arch=native
 
-make -j1
+make
 make check
 make install
 

@@ -10,10 +10,9 @@ cd less-551
 
 ./configure --prefix=/usr --sysconfdir=/etc
 
-make -j1
+make
 
 make install
-
 
 cd /sources
 rm -rf less-551
