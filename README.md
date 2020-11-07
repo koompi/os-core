@@ -30,6 +30,11 @@ In order to build your own KOOMPI From Scratch, you need to learn alot of things
 2. After we built it already, we install tools(softwares that requirement to start Linux on your machine)
 3. And Lastly, we will build it into ISO so you can install it on your own machine.
 
+##Terms
+<b>Host</b>: the host signifies the very machine on which you'll be doing the vast majority of the work, including cross compilation and installation of the target image.
+<b>Target</b>: the target is the final cross-compiled operating system that you'll be building from source packages. It'll be built using the cross compiler on the host machine.
+<b>Cross compiler</b>: you'll be building and using a cross compiler to create the target image on the host machine. A cross compiler is built to run on a host machine, but it's used to compile for a target architecture or microprocessor that isn't compatible with the host machine.
+
 You can refer to this link if you would like to learn more about how to build Linux or How Linux works.
 
 > 1. [POSIX.1-2008](https://pubs.opengroup.org/onlinepubs/9699919799/)
