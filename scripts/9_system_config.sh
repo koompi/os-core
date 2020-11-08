@@ -24,7 +24,7 @@ cat /etc/udev/rules.d/70-persistent-net.rules
 
 udevadm info -a -p /sys/class/video4linux/video0
 
-cat >/etc/udev/rules.d/83-duplicate_devs.rules <<"EOF"
+cat > /etc/udev/rules.d/83-duplicate_devs.rules <<"EOF"
 
 # Persistent symlinks for webcam and tuner
 KERNEL=="video*", ATTRS{idProduct}=="1910", ATTRS{idVendor}=="0d81", SYMLINK+="webcam"
@@ -34,7 +34,7 @@ EOF
 
 # Creating Network Interface Configuration Files
 cd /etc/sysconfig/
-cat >ifconfig.eth0 <<"EOF"
+cat > ifconfig.eth0 <<"EOF"
 ONBOOT=yes
 IFACE=eth0
 SERVICE=ipv4-static
@@ -49,7 +49,7 @@ EOF
 # nameserver 96.9.64.12
 
 # Creating the /etc/resolv.conf File
-cat >/etc/resolv.conf <<"EOF"
+cat > /etc/resolv.conf <<"EOF"
 # Begin /etc/resolv.conf
 
 nameserver 180.178.124.12
@@ -59,10 +59,10 @@ nameserver 96.9.64.12
 EOF
 
 # Configuring the system hostname
-echo "KOOMPI" >/etc/hostname
+echo "KOOMPI" > /etc/hostname
 
 # Customizing the /etc/hosts File
-cat >/etc/hosts <<"EOF"
+cat > /etc/hosts <<"EOF"
 # Begin /etc/hosts
 
 127.0.0.1 localhost.localdomain localhost
@@ -75,7 +75,7 @@ ff02::2   ip6-allrouters
 EOF
 
 # Configuring Sysvinit
-cat >/etc/inittab <<"EOF"
+cat > /etc/inittab <<"EOF"
 # Begin /etc/inittab
 
 id:3:initdefault:
@@ -105,7 +105,7 @@ su:S016:once:/sbin/sulogin
 EOF
 
 # Configuring the System Clock
-cat >/etc/sysconfig/clock <<"EOF"
+cat > /etc/sysconfig/clock <<"EOF"
 # Begin /etc/sysconfig/clock
 
 UTC=1
@@ -118,7 +118,7 @@ CLOCKPARAMS=
 EOF
 
 # Configuring the Linux Console
-cat >/etc/sysconfig/console <<"EOF"
+cat > /etc/sysconfig/console <<"EOF"
 # Begin /etc/sysconfig/console
 
 UNICODE="1"
@@ -145,7 +145,7 @@ SYSKLOGD_PARMS=
 # locale -a
 LC_ALL=en_GB.iso88591 locale charmap
 
-cat >/etc/profile <<"EOF"
+cat > /etc/profile <<"EOF"
 # Begin /etc/profile
 
 export LANG=en_GB.ISO-8859-1
@@ -154,7 +154,7 @@ export LANG=en_GB.ISO-8859-1
 EOF
 
 # Creating the /etc/inputrc File
-cat >/etc/inputrc <<"EOF"
+cat > /etc/inputrc <<"EOF"
 # Begin /etc/inputrc
 # Modified by Chris Lynn <roryo@roryo.dynup.net>
 
@@ -199,7 +199,7 @@ set bell-style none
 EOF
 
 # Creating the /etc/shells File
-cat >/etc/shells <<"EOF"
+cat > /etc/shells <<"EOF"
 # Begin /etc/shells
 
 /bin/sh
@@ -209,7 +209,7 @@ cat >/etc/shells <<"EOF"
 EOF
 
 # Creating the /etc/fstab File
-cat >/etc/fstab <<"EOF"
+cat > /etc/fstab <<"EOF"
 # Begin /etc/fstab
 
 # file system  mount-point  type     options             dump  fsck
@@ -228,6 +228,10 @@ EOF
 
 build_kernel() {
     bash $CWD/basic_system_software/75_linux
+    bash $CWD/basic_system_software/76_libburn
+    bash $CWD/basic_system_software/77_libisofs
+    bash $CWD/basic_system_software/78_libisoburn
+
 }
 
 build_kernel
@@ -236,7 +240,7 @@ build_kernel
 grub-install /dev/vdb
 
 # Creating the grub confi file
-cat >/boot/grub/grub.cfg <<"EOF"
+cat > /boot/grub/grub.cfg << "EOF"
 # Begin /boot/grub/grub.cfg
 set default=0
 set timeout=5
@@ -249,16 +253,16 @@ menuentry "GNU/Linux, Linux 5.8.3-lfs-10.0" {
 }
 EOF
 
-echo 10.0 >/etc/lfs-release
+echo 10.0 > /etc/lfs-release
 
-cat >/etc/lsb-release <<"EOF"
+cat > /etc/lsb-release << "EOF"
 DISTRIB_ID="Linux From Scratch"
 DISTRIB_RELEASE="10.0"
 DISTRIB_CODENAME="Hangsia HONG"
 DISTRIB_DESCRIPTION="Linux From Scratch"
 EOF
 
-cat >/etc/os-release <<"EOF"
+cat > /etc/os-release << "EOF"
 NAME="Linux From Scratch"
 VERSION="10.0"
 ID=lfs
@@ -267,4 +271,4 @@ VERSION_CODENAME="Hangsia HONG"
 EOF
 
 echo -e "Run the Last Script for umount virtual file systems"
-logout
+# logout

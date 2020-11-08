@@ -1,0 +1,14 @@
+#!/bin/bash
+# Author < HangsiaHONG hangsia@koompi.org >
+
+CWD=$PWD
+source $CWD/config
+
+cd /sources
+
+tar -xf libisofs-1.5.2.tar.gz
+cd libisofs-1.5.2
+
+./configure --prefix=/usr --disable-static &&
+make
+make install
