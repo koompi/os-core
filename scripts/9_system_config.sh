@@ -236,6 +236,11 @@ build_kernel() {
 
 build_kernel
 
+cd /tmp 
+grub-mkrescue --output=grub-img.iso 
+xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso
+
+
 # install grub
 grub-install /dev/vdb
 
@@ -269,6 +274,9 @@ ID=lfs
 PRETTY_NAME="Linux From Scratch 10.0"
 VERSION_CODENAME="Hangsia HONG"
 EOF
+
+
+
 
 echo -e "Run the Last Script for umount virtual file systems"
 # logout
