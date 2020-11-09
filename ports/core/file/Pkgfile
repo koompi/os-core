@@ -1,0 +1,17 @@
+# Description: Utility for determining the type of a given file or files
+# URL:         
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Depends on:  
+
+name=file
+version=5.38
+release=1
+source=(ftp://ftp.astron.com/pub/$name/$name-$version.tar.gz)
+
+build() {
+        cd $name-$version
+
+        ./configure --prefix=/usr
+        make
+        make DESTDIR=$PKG install
+}

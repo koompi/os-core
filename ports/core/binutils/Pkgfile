@@ -1,0 +1,30 @@
+# Description: A linker, an assembler, and other tools for handling object files
+# URL:         
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Depends on:  
+
+name=binutils
+version=2.34
+release=1
+source=(https://ftp.gnu.org/gnu/binutils/$name-$version.tar.xz)
+
+build() {
+        cd $name-$version
+
+        mkdir -v build
+        cd       build
+
+        ../configure \
+	             --prefix=/usr       \
+	             --enable-gold       \
+	             --enable-ld=default \
+	             --enable-plugins    \
+	             --enable-shared     \
+	             --disable-werror    \
+	             --enable-64-bit-bfd \
+	             --with-system-zlib  \
+	             --enable-multilib   \
+	             --with-lib-path=/usr/lib:/lib:/usr/lib32
+        make tooldir=/usr
+        make tooldir=/usr DESTDIR=$PKG install
+}

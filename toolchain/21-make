@@ -1,0 +1,10 @@
+name=make
+version=4.3
+source=(http://ftp.gnu.org/gnu/make/make-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/tools --without-guile
+	make
+	make install
+}
