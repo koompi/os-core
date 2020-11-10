@@ -1,0 +1,47 @@
+#!/bin/bash
+# Author: HangsiaHONG, hangsia@koompi.org
+LFS=/mnt/lfs
+
+checkroot() {
+    if (($EUID != 0)); then
+        echo "Please run this script as root user by using sudo"
+        exit
+    fi
+}
+
+
+setup_disk() {
+    num=0
+    echo ">>Inside your machine, this is the list of the hard drive available for you to use<<"
+    IFS=, read -r -a array <<<$(lsblk -dn -o NAME,SIZE,TYPE | tr '\n' ,)
+    # IFS=, read -r -a array <<<$(lsblk -dn -o NAME | tr '\n' ,)
+    for disk in "${array[@]}"; do
+        ((num += 1))
+        printf "$num. $disk\n"
+    done
+
+    read -p "Enter your disk label's name: " disks
+
+    parted --script /dev/${disks} \
+    mklabel gpt \
+    mkpart primary ext2 1Mib 101Mib \
+    mkpart primary ext4 101Mib 5G \
+    mkpart primary ext4 5G 20G 
+
+    #[-------------------Format-Disk-----------------------------]
+
+    mkfs -v -t ext4 /dev/${disks}3
+    mkfs -v -t ext2 /dev/${disks}1
+    mkswap /dev/${disks}2
+
+    #[-------------------Mount Disks-----------------------------]
+
+    mkdir -pv $LFS
+    mount -v -t ext4 /dev/${disks}3 $LFS
+
+    /sbin/swapon -v /dev/${disks}2
+
+}
+
+checkroot
+setup_disk
