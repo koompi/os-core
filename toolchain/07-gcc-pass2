@@ -35,13 +35,12 @@ build() {
 	sed -i -e '/MULTILIB_OSDIRNAMES/d' gcc/config/i386/t-linux64
 	echo "MULTILIB_OSDIRNAMES = m64=../lib m32=../lib32 mx32=../libx32" >> gcc/config/i386/t-linux64
 	
-	# fix a problem introduced by Glibc-2.31
-	sed -e '1161 s|^|//|' \
-	    -i libsanitizer/sanitizer_common/sanitizer_platform_limits_posix.cc
+	
 
 	mkdir -v build
 	cd       build
 	
+
 	CC=$LFS_TGT-gcc                                    \
 	CXX=$LFS_TGT-g++                                   \
 	AR=$LFS_TGT-ar                                     \
