@@ -12,6 +12,8 @@ source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
 build() {
         cd $name-$version
 
+        sed -r -i '/^char.*parseopt_program_(doc|args)/d' src/parseopt.c
+        
         ./configure --prefix=/usr    \
 	            --disable-static \
 	            --enable-libgdbm-compat
