@@ -1,7 +1,8 @@
 # Description: Set of programs for listing PCI devices, inspecting their status and setting their configuration registers
-# URL:         https://mj.ucw.cz/sw/pciutils/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=pciutils
 version=3.6.4

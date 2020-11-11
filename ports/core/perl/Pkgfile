@@ -1,7 +1,8 @@
 # Description: The Practical Extraction and Report Language
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=perl
 version=5.32.0

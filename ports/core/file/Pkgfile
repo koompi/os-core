@@ -1,6 +1,7 @@
 # Description: Utility for determining the type of a given file or files
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=file

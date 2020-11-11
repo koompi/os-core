@@ -1,6 +1,7 @@
 # Description: Vi Improved, a highly configurable, improved version of the vi text editor
-# URL:         https://www.vim.org/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  acl gawk
 
 name=vim

@@ -1,7 +1,9 @@
 # Description: Asynchronous event notification software library
-# URL:         http://libevent.org/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-
+# Organization:  KOOMPI, koompi.com
+# Depends on:
+ 
 name=libevent
 version=2.1.11
 release=1

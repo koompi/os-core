@@ -1,6 +1,7 @@
 # Description: Programs for monitoring processes
-# URL:         https://gitlab.com/procps-ng/procps
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  ncurses
 
 name=procps-ng

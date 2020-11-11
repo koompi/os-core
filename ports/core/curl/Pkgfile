@@ -1,6 +1,7 @@
-# Description: Utility and a library used for transferring files
-# URL:         https://curl.haxx.se/
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  ca-certificates openssl
 
 name=curl

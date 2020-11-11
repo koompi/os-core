@@ -1,7 +1,8 @@
 # Description: Logging system messages, such as those given by the kernel
-# URL:         http://www.infodrom.org/projects/sysklogd/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com 
+# Depends on:
 
 name=sysklogd
 version=1.5.1

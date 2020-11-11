@@ -1,6 +1,7 @@
 # Description: Contains math libraries that useful functions for arbitrary precision arithmetic
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=gmp

@@ -1,6 +1,7 @@
 # Description: A parser generator
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=bison

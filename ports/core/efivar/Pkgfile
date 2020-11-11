@@ -1,6 +1,7 @@
-# Description: Tools and library to manipulate EFI variables
-# URL:         
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  popt
 
 name=efivar

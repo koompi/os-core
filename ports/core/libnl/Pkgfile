@@ -1,6 +1,8 @@
 # Description: Collection of libraries providing APIs to netlink protocol based Linux kernel interfaces
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=libnl
 version=3.5.0

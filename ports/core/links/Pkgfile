@@ -1,6 +1,7 @@
 # Description: Text and graphics mode WWW browser
-# URL:         http://links.twibright.com/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  openssl libevent
 
 name=links

@@ -1,7 +1,8 @@
 # Description: GNU stream editor
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=sed
 version=4.8

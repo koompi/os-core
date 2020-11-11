@@ -1,6 +1,7 @@
-# Description: Utilities to administer Access Control Lists, which are used to define more fine-grained discretionary access rights for files and directories
-# URL:         http://savannah.nongnu.org/projects/acl
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=acl

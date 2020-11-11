@@ -1,6 +1,7 @@
 # Description: Utilities to administer the extended attributes on filesystem objects
-# URL:         http://savannah.nongnu.org/projects/attr
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=attr

@@ -1,6 +1,7 @@
 # Description: Portable foreign function interface library
-# URL:         https://sourceware.org/libffi/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=libffi

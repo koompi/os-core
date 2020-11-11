@@ -1,6 +1,7 @@
 # Description: Next generation of the python high-level scripting language
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  libffi
 
 name=python3

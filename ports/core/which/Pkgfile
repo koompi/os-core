@@ -1,7 +1,8 @@
 # Description: A utility to show the full path of commands
-# URL:         https://savannah.gnu.org/projects/which
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com 
+# Depends on:
 
 name=which
 version=2.21

@@ -1,6 +1,7 @@
 # Description: A text file viewer
-# URL:         http://www.greenwoodsoftware.com/less
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  ncurses
 
 name=less

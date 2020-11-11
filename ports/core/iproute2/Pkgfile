@@ -1,6 +1,7 @@
 # Description: Programs for basic and advanced IPV4-based networking
-# URL:         https://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=iproute2

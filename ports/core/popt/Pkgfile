@@ -1,7 +1,8 @@
 # Description: Popt libraries which are used by some programs to parse command-line options
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=popt
 version=1.16

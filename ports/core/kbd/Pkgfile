@@ -1,6 +1,7 @@
 # Description: Key-table files, console fonts, and keyboard utilities
-# URL:         http://www.kbd-project.org/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=kbd

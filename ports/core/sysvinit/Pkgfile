@@ -1,7 +1,8 @@
 # Description: programs for controlling the startup, running, and shutdown of the system
-# URL:         https://savannah.nongnu.org/projects/sysvinit
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=sysvinit
 version=2.96

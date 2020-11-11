@@ -1,7 +1,8 @@
 # Description: Functions for multiple precision math
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com 
+# Depends on:
 
 name=mpfr
 version=4.0.2

@@ -1,6 +1,7 @@
 # Description: Reading/writing various compression formats
-# URL:         https://libarchive.org/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=libarchive

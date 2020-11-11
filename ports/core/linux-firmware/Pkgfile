@@ -1,7 +1,8 @@
 # Description: Firmware files for Linux
-# URL:         http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=linux-firmware
 version=20201022

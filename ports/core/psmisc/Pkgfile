@@ -1,7 +1,8 @@
 # Description: Programs for displaying information about running processes
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com 
+# Depends on:
 
 name=psmisc
 version=23.2

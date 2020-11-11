@@ -1,7 +1,8 @@
 # Description: Programs for handling passwords in a secure way
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=shadow
 version=4.8.1

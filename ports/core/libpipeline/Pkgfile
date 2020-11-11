@@ -1,7 +1,8 @@
 # Description: A library for manipulating pipelines of subprocesses in a flexible and convenient way
-# URL:         http://libpipeline.nongnu.org/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=libpipeline
 version=1.5.2

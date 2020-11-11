@@ -1,6 +1,7 @@
 # Description: Various utilities for use with the FAT family of file systems
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=dosfstools

@@ -1,6 +1,7 @@
 # Description: Mouse server for the console and xterm
-# URL:         https://www.nico.schottelius.org/software/gpm/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=gpm

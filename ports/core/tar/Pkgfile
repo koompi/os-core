@@ -1,6 +1,7 @@
 # Description: An archiving program
-# URL:         https://www.gnu.org/software/tar/tar.html
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  acl attr
 
 name=tar

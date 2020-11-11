@@ -1,6 +1,7 @@
 # Description: Simple interface for userspace programs to export a virtual filesystem to the Linux kernel
-# URL:         https://github.com/libfuse/libfuse
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=fuse2

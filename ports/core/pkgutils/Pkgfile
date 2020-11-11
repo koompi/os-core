@@ -1,6 +1,7 @@
 # Description: A set of utilities to manage software packages 
-# URL:         http://crux.nu/gitweb/?p=tools/pkgutils.git
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  libarchive
 
 name=pkgutils

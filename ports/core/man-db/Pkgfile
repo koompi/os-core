@@ -1,6 +1,7 @@
 # Description: Programs for finding and viewing man pages
-# URL:         https://www.nongnu.org/man-db/
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.comoompi.org
 # Depends on:  bash gdbm groff less libpipeline zlib
 
 name=man-db

@@ -1,7 +1,8 @@
 # Description: Sources for time zone and daylight saving time data
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=tzdata
 version=2019c

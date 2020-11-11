@@ -1,7 +1,8 @@
 # Description: Expat-based XML parser module for perl
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=perl-xml-parser
 version=2.46

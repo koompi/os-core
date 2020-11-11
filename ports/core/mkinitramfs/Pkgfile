@@ -1,6 +1,7 @@
 # Description: Modular initramfs image creation utility
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  libarchive bash
 
 name=mkinitramfs

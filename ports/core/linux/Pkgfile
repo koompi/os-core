@@ -1,6 +1,7 @@
 # Description: Linux kernel, sources and modules
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  elfutils mkinitramfs openssl linux-firmware
 
 name=linux

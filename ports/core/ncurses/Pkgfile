@@ -1,7 +1,8 @@
 # Description: Libraries for terminal-independent handling of character screens
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com  
+# Depends on:
 
 name=ncurses
 version=6.2

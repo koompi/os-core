@@ -1,6 +1,7 @@
 # Description: Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=libcap

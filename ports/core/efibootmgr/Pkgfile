@@ -1,6 +1,7 @@
-# Description: Manipulate efi boot managers
-# URL:         
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  efivar pciutils
 
 name=efibootmgr

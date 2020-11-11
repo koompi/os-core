@@ -1,6 +1,7 @@
 # Description: One way sync over http
-# URL:         https://github.com/winkj/httpup
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  curl
 
 name=httpup

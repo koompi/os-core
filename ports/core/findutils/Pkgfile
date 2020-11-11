@@ -1,6 +1,7 @@
-# Description: Programs to find files
-# URL:         https://www.gnu.org/software/findutils
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  bash
 
 name=findutils

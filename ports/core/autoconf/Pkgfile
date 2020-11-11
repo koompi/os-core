@@ -1,6 +1,7 @@
 # Description: Programs for producing shell scripts that can automatically configure source code
-# URL:         http://www.gnu.org/software/autoconf
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=autoconf

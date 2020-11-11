@@ -1,6 +1,7 @@
 # Description: A set of scripts to start/stop the LFS system at bootup/shutdown
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=lfs-bootscripts

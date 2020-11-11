@@ -1,6 +1,7 @@
 # Description: Tools for squashfs, a highly compressed read-only filesystem for Linux
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  zlib lzo xz lz4
 
 name=squashfs-tools

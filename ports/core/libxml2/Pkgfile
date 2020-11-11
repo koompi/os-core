@@ -1,7 +1,8 @@
 # Description: Libraries and utilities used for parsing XML files
-# URL:         
+# URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Depends on:  
+# Organization:  KOOMPI, koompi.com  
+# Depends on:
 
 name=libxml2
 version=2.9.10
