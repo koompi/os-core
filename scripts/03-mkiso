@@ -60,7 +60,7 @@ LFS="/mnt/lfs"
 WORKDIR="$LFS/tmp"
 WDIR="$WORKDIR/iso"
 LABEL="LFSLIVECD"
-OUTPUT="lfs-livecd-$(date +"%Y%m%d").iso"
+OUTPUT="kfs-livecd-$(date +"%Y%m%d").iso"
 FILEDIR="$CWD/files"
 
 . $CWD/config
