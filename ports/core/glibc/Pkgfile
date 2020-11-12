@@ -8,7 +8,7 @@ name=glibc
 version=2.32
 release=1
 source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/lfs/10.1/$name-$version-fhs-1.patch)
+	http://www.linuxfromscratch.org/patches/downloads/$name/$name-$version-fhs-1.patch)
 
 build() {
 	cd $name-$version
