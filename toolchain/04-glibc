@@ -17,7 +17,8 @@ build() {
 		  --enable-kernel=3.2                \
 		  --with-headers=/tools/include      \
 		  CC="$LFS_TGT-gcc -m32"             \
-		  CXX="$LFS_TGT-g++ -m32"
+		  CXX="$LFS_TGT-g++ -m32"			 \
+		  libc_cv_slibdir=/lib
 	make
 	make install
 	cd -
