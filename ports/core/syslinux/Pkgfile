@@ -5,10 +5,9 @@
 # Depends on:  mtools
 
 name=syslinux
-version=6.04
+version=6.04-pre1
 release=1
-source=(http://www.kernel.org/pub/linux/utils/boot/$name/$name-$version.tar.xz
-        $name-$version-sysmacros.patch)
+source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/Testing/6.04/syslinux-6.04-pre1.tar.xz)
 
 build() {
 	cd $name-$version
