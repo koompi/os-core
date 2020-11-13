@@ -21,5 +21,5 @@ build() {
         done
 
         cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
-        zic -d $ZONEINFO -p America/New_York
+        zic -d $ZONEINFO -p Asia/Phnom_Penh
 }
