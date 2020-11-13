@@ -5,9 +5,9 @@
 # Depends on:  
 
 name=iana-etc
-version=20200821
+version=2.30
 release=1
-source=(https://github.com/Mic92/iana-etc/releases/download/20200821/iana-etc-$version.tar.gz)
+source=(http://anduin.linuxfromscratch.org/LFS/$name-$version.tar.bz2)
 
 
 build() {
