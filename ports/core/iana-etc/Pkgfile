@@ -12,6 +12,7 @@ source=(https://github.com/Mic92/iana-etc/releases/download/20200821/iana-etc-$v
 
 build() {
         cd $name-$version
-        make
-        make DESTDIR=$PKG install
+        #make
+        #make DESTDIR=$PKG install
+        cp services protocols /etc
 }
