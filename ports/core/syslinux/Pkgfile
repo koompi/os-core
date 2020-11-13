@@ -5,7 +5,7 @@
 # Depends on:  mtools
 
 name=syslinux
-version=6.03
+version=6.04
 release=1
 source=(http://www.kernel.org/pub/linux/utils/boot/$name/$name-$version.tar.xz
         $name-$version-sysmacros.patch)
@@ -13,7 +13,7 @@ source=(http://www.kernel.org/pub/linux/utils/boot/$name/$name-$version.tar.xz
 build() {
 	cd $name-$version
 
-	patch -p1 -i $SRC/$name-$version-sysmacros.patch
+	#patch -p1 -i $SRC/$name-$version-sysmacros.patch
 
 	make OPTFLAGS="$CFLAGS" installer
 	make OPTFLAGS="$CFLAGS" INSTALLROOT=$PKG MANDIR=/usr/share/man install
