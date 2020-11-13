@@ -14,6 +14,6 @@ build() {
 
 	#patch -p1 -i $SRC/$name-$version-sysmacros.patch
 
-	make OPTFLAGS="$CFLAGS" installer
-	make OPTFLAGS="$CFLAGS" INSTALLROOT=$PKG MANDIR=/usr/share/man install
+	make
+	make DESTDIR=$PKG install
 }
