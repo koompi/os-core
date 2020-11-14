@@ -31,7 +31,7 @@ unmount() {
 	exit 1
 }
 
-LFS="/mnt/kfs"
+LFS="/mnt/lfs"
 
 if [ -f ./config ]; then
 	. ./config

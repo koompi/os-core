@@ -56,10 +56,10 @@ printerror() {
 }
 
 CWD=$PWD
-LFS="/mnt/kfs"
+LFS="/mnt/lfs"
 WORKDIR="$LFS/tmp"
 WDIR="$WORKDIR/iso"
-LABEL="KFSLIVECD"
+LABEL="LFSLIVECD"
 OUTPUT="kfs-livecd-$(date +"%Y%m%d").iso"
 FILEDIR="$CWD/files"
 

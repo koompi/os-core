@@ -8,7 +8,7 @@ Usage:
   $(basename $0) <path to install>
   
 Example:
-  $(basename $0) /mnt/kfs
+  $(basename $0) /mnt/lfs
   
 Note:
   You should first configure partition then mount it somewhere

@@ -1,4 +1,4 @@
-  KOOMPI From Scratch LiveCD (Unofficial)
+  Linux From Scratch LiveCD (Unofficial)
   ======================================
 
 Project: https://github.com/emmett1/lfs-scripts
@@ -25,21 +25,21 @@ Install instruction
 
 2. mount partition
   - create mountpoint directory then mount your root partition.
-     # mkdir -p /mnt/kfs
-     # mount /dev/sda3 /mnt/kfs
+     # mkdir -p /mnt/lfs
+     # mount /dev/sda3 /mnt/lfs
   - for UEFI, mount EFI partition created earlier to /boot/efi in
     your root partition.
-     # mkdir -p /mnt/kfs/boot/efi
-     # mount /dev/sda1 /mnt/kfs/boot/efi
+     # mkdir -p /mnt/lfs/boot/efi
+     # mount /dev/sda1 /mnt/lfs/boot/efi
 
 3. install now
-  - run 'kfs-install <root mountpoint>' to extract squashed filesystem
+  - run 'lfs-install <root mountpoint>' to extract squashed filesystem
     into your root partition.
-     # kfs-install /mnt/kfs
+     # lfs-install /mnt/lfs
 
 4. chroot into your installed lfs system
-  - run 'kfs-chroot <root mountpoint>' to enter chroot.
-     # kfs-chroot /mnt/kfs
+  - run 'lfs-chroot <root mountpoint>' to enter chroot.
+     # lfs-chroot /mnt/lfs
 
 5. configure fstab
   - on UEFI, make sure uncomment entry for EFI partition
@@ -77,6 +77,6 @@ Install instruction
 
 11. Exit chroot and reboot
      # exit
-     # umount /mnt/kfs/boot/efi
-     # umount /mnt/kfs
+     # umount /mnt/lfs/boot/efi
+     # umount /mnt/lfs
      # reboot
