@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: HangsiaHONG, hangsia@koompi.org
-LFS=/mnt/lfs
+LFS=/mnt/kfs
 
 checkroot() {
     if (($EUID != 0)); then
