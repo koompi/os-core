@@ -31,14 +31,14 @@ unmount() {
 	exit 1
 }
 
-LFS="/mnt/lfs"
+KFS="/mnt/kfs"
 
 if [ -f ./config ]; then
 	. ./config
 fi
 
-[ -d "$LFS" ] || {
-	msgerr "Directory '$LFS' not exist!"
+[ -d "$KFS" ] || {
+	msgerr "Directory '$KFS' not exist!"
 	printhelp
 	exit 1
 }
@@ -53,26 +53,26 @@ if [ -e /sys/firmware/efi/systab ]; then
 	EFI_SYSTEM=1
 fi
 
-mount --bind /dev $LFS/dev
-mount -t devpts devpts $LFS/dev/pts -o gid=5,mode=620
-mount -t proc proc $LFS/proc
-mount -t sysfs sysfs $LFS/sys
+mount --bind /dev $KFS/dev
+mount -t devpts devpts $KFS/dev/pts -o gid=5,mode=620
+mount -t proc proc $KFS/proc
+mount -t sysfs sysfs $KFS/sys
 if [ -n "$EFI_SYSTEM" ]; then
-	mount --bind /sys/firmware/efi/efivars $LFS/sys/firmware/efi/efivars
+	mount --bind /sys/firmware/efi/efivars $KFS/sys/firmware/efi/efivars
 fi
-mount -t tmpfs tmpfs $LFS/run
+mount -t tmpfs tmpfs $KFS/run
 
-if [ -h $LFS/dev/shm ]; then
-  mkdir -p $LFS/$(readlink $LFS/dev/shm)
+if [ -h $KFS/dev/shm ]; then
+  mkdir -p $KFS/$(readlink $KFS/dev/shm)
 fi
 
-[ -f $LFS/etc/resolv.conf ] && {
+[ -f $KFS/etc/resolv.conf ] && {
 	backupresolvconf=1
-	mv $LFS/etc/resolv.conf $LFS/etc/resolv.conf.tmp
+	mv $KFS/etc/resolv.conf $KFS/etc/resolv.conf.tmp
 }
-cp -L /etc/resolv.conf $LFS/etc
+cp -L /etc/resolv.conf $KFS/etc
 
-chroot "$LFS" /usr/bin/env -i \
+chroot "$KFS" /usr/bin/env -i \
 HOME=/root \
 TERM="$TERM" \
 PS1='\u:\w\$ ' \
@@ -81,17 +81,17 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin $CMD
 retval=$?
 
 [ "$backupresolvconf" = 1 ] && {
-	mv $LFS/etc/resolv.conf.tmp $LFS/etc/resolv.conf
+	mv $KFS/etc/resolv.conf.tmp $KFS/etc/resolv.conf
 }
 
-unmount $LFS/dev/pts
-unmount $LFS/dev
-unmount $LFS/run
-unmount $LFS/proc
+unmount $KFS/dev/pts
+unmount $KFS/dev
+unmount $KFS/run
+unmount $KFS/proc
 if [ -n "$EFI_SYSTEM" ]; then
-	unmount $LFS/sys/firmware/efi/efivars
+	unmount $KFS/sys/firmware/efi/efivars
 fi
-unmount $LFS/sys
+unmount $KFS/sys
 
 exit $retval
 

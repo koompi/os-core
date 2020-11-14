@@ -3,9 +3,9 @@
 if [ -f /lib/modules/KERNELVERSION ]; then
 	kver=$(cat /lib/modules/KERNELVERSION)
 else
-	kver=$(file /boot/vmlinuz-lfs | cut -d ' ' -f9)
+	kver=$(file /boot/vmlinuz-kfs | cut -d ' ' -f9)
 fi
 
-mkinitramfs -q -k $kver -o /boot/initrd-lfs.img
+mkinitramfs -q -k $kver -o /boot/initrd-kfs.img
 depmod $kver
 

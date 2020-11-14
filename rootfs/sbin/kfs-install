@@ -1,14 +1,14 @@
 #!/bin/bash
 
-LFSMOUNT=$1
+KFSMOUNT=$1
 
-if [ ! "$LFSMOUNT" ]; then
+if [ ! "$KFSMOUNT" ]; then
 	cat << EOF
 Usage:
   $(basename $0) <path to install>
   
 Example:
-  $(basename $0) /mnt/lfs
+  $(basename $0) /mnt/kfs
   
 Note:
   You should first configure partition then mount it somewhere
@@ -17,30 +17,30 @@ EOF
 	exit 1
 fi
 
-if ! mountpoint -q $LFSMOUNT; then
-	echo "'$LFSMOUNT' is not a mountpoint!"
+if ! mountpoint -q $KFSMOUNT; then
+	echo "'$KFSMOUNT' is not a mountpoint!"
 	exit 1
 fi
 
 if [ -f "/run/initramfs/ram/root.sfs" ]; then
 	ROOTSFS="/run/initramfs/ram/root.sfs"
-elif [ -f "/run/initramfs/medium/lfs/root.sfs" ]; then
-	ROOTSFS="/run/initramfs/medium/lfs/root.sfs"
+elif [ -f "/run/initramfs/medium/kfs/root.sfs" ]; then
+	ROOTSFS="/run/initramfs/medium/kfs/root.sfs"
 else
 	echo "squashed image not found!"
 	exit 1
 fi
 
-unsquashfs -f -i -d $LFSMOUNT $ROOTSFS
+unsquashfs -f -i -d $KFSMOUNT $ROOTSFS
 
 if [ "$?" = "0" ]; then
 	echo
-	echo "Successfully installed to '$LFSMOUNT'"
+	echo "Successfully installed to '$KFSMOUNT'"
 	echo
-	echo "Run 'lfs-chroot $LFSMOUNT' to chroot into $LFSMOUNT."
+	echo "Run 'kfs-chroot $KFSMOUNT' to chroot into $KFSMOUNT."
 	echo "Then start configure your new installation."
 else
-	echo "failed to install lfs system"
+	echo "failed to install kfs system"
 	exit 1
 fi
 

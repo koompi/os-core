@@ -16,7 +16,7 @@ build() {
 	mv -v ../mpc-$mpc_version mpc
 	
 	cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-		`dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
+		`dirname $($KFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
 		
 	for file in gcc/config/{linux,i386/linux{,64}}.h
 	do
@@ -41,10 +41,10 @@ build() {
 	cd       build
 	
 
-	CC=$LFS_TGT-gcc                                    \
-	CXX=$LFS_TGT-g++                                   \
-	AR=$LFS_TGT-ar                                     \
-	RANLIB=$LFS_TGT-ranlib                             \
+	CC=$KFS_TGT-gcc                                    \
+	CXX=$KFS_TGT-g++                                   \
+	AR=$KFS_TGT-ar                                     \
+	RANLIB=$KFS_TGT-ranlib                             \
 	../configure                                           \
 		--prefix=/tools                                \
 		--with-local-prefix=/tools                     \

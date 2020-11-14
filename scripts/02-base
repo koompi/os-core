@@ -1,21 +1,21 @@
 #!/bin/bash
 
-lfs_dirs() {
-	mkdir -pv $LFS/dev
-	mknod -m 600 $LFS/dev/console c 5 1 || true
-	mknod -m 666 $LFS/dev/null c 1 3 || true
+kfs_dirs() {
+	mkdir -pv $KFS/dev
+	mknod -m 600 $KFS/dev/console c 5 1 || true
+	mknod -m 666 $KFS/dev/null c 1 3 || true
 
-	mkdir -pv $LFS/bin $LFS/usr/{lib,bin} $LFS/etc || true
-	ln -svf /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} $LFS/bin
-	ln -svf /tools/bin/{env,install,perl,printf}         $LFS/usr/bin
-	ln -svf /tools/lib/libgcc_s.so{,.1}                  $LFS/usr/lib
-	ln -svf /tools/lib/libstdc++.{a,so{,.6}}             $LFS/usr/lib
+	mkdir -pv $KFS/bin $KFS/usr/{lib,bin} $KFS/etc || true
+	ln -svf /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} $KFS/bin
+	ln -svf /tools/bin/{env,install,perl,printf}         $KFS/usr/bin
+	ln -svf /tools/lib/libgcc_s.so{,.1}                  $KFS/usr/lib
+	ln -svf /tools/lib/libstdc++.{a,so{,.6}}             $KFS/usr/lib
 
-	ln -svf bash $LFS/bin/sh
+	ln -svf bash $KFS/bin/sh
 
-	ln -svf /proc/self/mounts $LFS/etc/mtab
+	ln -svf /proc/self/mounts $KFS/etc/mtab
 
-cat > $LFS/etc/passwd << "EOF"
+cat > $KFS/etc/passwd << "EOF"
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/bin/false
@@ -23,7 +23,7 @@ messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
 nobody:x:99:99:Unprivileged User:/dev/null:/bin/false
 EOF
 
-cat > $LFS/etc/group << "EOF"
+cat > $KFS/etc/group << "EOF"
 root:x:0:
 bin:x:1:daemon
 sys:x:2:
@@ -51,28 +51,28 @@ users:x:999:
 EOF
 
 	# pkgutils
-	mkdir -p $LFS/var/lib/pkg/{pkg,src,work}
-	touch $LFS/var/lib/pkg/db
+	mkdir -p $KFS/var/lib/pkg/{pkg,src,work}
+	touch $KFS/var/lib/pkg/db
 }
 
 mount_pseudo() {
-	mkdir -p $LFS/{dev,run,proc,sys}
-	mount --bind /dev $LFS/dev
-	mount -t devpts devpts $LFS/dev/pts -o gid=5,mode=620
-	mount -t proc proc $LFS/proc
-	mount -t sysfs sysfs $LFS/sys
-	mount -t tmpfs tmpfs $LFS/run
-	if [ -h $LFS/dev/shm ]; then
-	  mkdir -p $LFS/$(readlink $LFS/dev/shm)
+	mkdir -p $KFS/{dev,run,proc,sys}
+	mount --bind /dev $KFS/dev
+	mount -t devpts devpts $KFS/dev/pts -o gid=5,mode=620
+	mount -t proc proc $KFS/proc
+	mount -t sysfs sysfs $KFS/sys
+	mount -t tmpfs tmpfs $KFS/run
+	if [ -h $KFS/dev/shm ]; then
+	  mkdir -p $KFS/$(readlink $KFS/dev/shm)
 	fi
 }
 
 umount_pseudo() {
-	unmount $LFS/dev/pts
-	unmount $LFS/dev
-	unmount $LFS/run
-	unmount $LFS/proc
-	unmount $LFS/sys
+	unmount $KFS/dev/pts
+	unmount $KFS/dev
+	unmount $KFS/run
+	unmount $KFS/proc
+	unmount $KFS/sys
 }
 
 unmount() {
@@ -83,13 +83,13 @@ unmount() {
 }
 
 runinchroot() {
-	pushd $LFS &>/dev/null
+	pushd $KFS &>/dev/null
 	mount_pseudo
-	cp -L /etc/resolv.conf $LFS/etc/
-	chroot "$LFS" $ENVLFS -i \
+	cp -L /etc/resolv.conf $KFS/etc/
+	chroot "$KFS" $ENVKFS -i \
 	    HOME=/root                  \
 	    TERM="$TERM"                \
-	    PS1='(lfs chroot) \u:\w\$ ' \
+	    PS1='(kfs chroot) \u:\w\$ ' \
 	    PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin $@
 	retval=$?
 	umount_pseudo
@@ -122,10 +122,10 @@ if [ $(id -u) != 0 ]; then
 	exit 1
 fi
 
-if [ -x $LFS/usr/bin/env ]; then
-	ENVLFS=/usr/bin/env
+if [ -x $KFS/usr/bin/env ]; then
+	ENVKFS=/usr/bin/env
 else
-	ENVLFS=/tools/bin/env
+	ENVKFS=/tools/bin/env
 fi
 
 PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib bzip2 file readline m4 bc binutils gmp mpfr mpc attr acl shadow gcc
@@ -136,14 +136,14 @@ PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib bzip2 file readli
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 	curl ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn"
 
-if [ ! -f $LFS/var/lib/pkg/db ]; then
-	lfs_dirs
+if [ ! -f $KFS/var/lib/pkg/db ]; then
+	kfs_dirs
 fi
 
-rm -fr $LFS/usr/ports
-mkdir -p $LFS/usr/ports/
+rm -fr $KFS/usr/ports
+mkdir -p $KFS/usr/ports/
 echo "==> Copying ports"
-cp -Ra ports/* $LFS/usr/ports/
+cp -Ra ports/* $KFS/usr/ports/
 
 for pkg in $PKGS; do
 	case $pkg in

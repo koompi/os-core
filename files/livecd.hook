@@ -26,12 +26,12 @@ run_earlyhook() {
 mount_livecd() {
 	newroot=$1
 		
-	MEDIA=/dev/disk/by-label/LFSLIVECD
+	MEDIA=/dev/disk/by-label/KFSLIVECD
 	MEDIUM=/run/initramfs/medium
 	SYSTEM=/run/initramfs/system
 	WRITEDIR=/run/initramfs/overlayfs/write
 	WORKDIR=/run/initramfs/overlayfs/work
-	sfsimg=/run/initramfs/medium/lfs/root.sfs
+	sfsimg=/run/initramfs/medium/kfs/root.sfs
 	wait=${wait:-5}
 	count=0
 	

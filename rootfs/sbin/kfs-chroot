@@ -21,7 +21,7 @@ if [ "$UID" != "0" ]; then
 	exit 1
 fi
 
-LFS=$1
+KFS=$1
 
 if [ -z $1 ]; then
 	msgerr "Please set directory for chroot!"
@@ -29,8 +29,8 @@ if [ -z $1 ]; then
 	exit 1
 fi
 
-if [ ! -d $LFS ]; then
-	msgerr "Directory '$LFS' not exist"
+if [ ! -d $KFS ]; then
+	msgerr "Directory '$KFS' not exist"
 	printhelp
 	exit 1
 fi
@@ -46,26 +46,26 @@ if [ -e /sys/firmware/efi/systab ]; then
 	EFI_SYSTEM=1
 fi
 
-pushd $LFS &>/dev/null
+pushd $KFS &>/dev/null
 
-mount --bind /dev $LFS/dev
-mount -t devpts devpts $LFS/dev/pts -o gid=5,mode=620
-mount -t proc proc $LFS/proc
-mount -t sysfs sysfs $LFS/sys
+mount --bind /dev $KFS/dev
+mount -t devpts devpts $KFS/dev/pts -o gid=5,mode=620
+mount -t proc proc $KFS/proc
+mount -t sysfs sysfs $KFS/sys
 if [ -n "$EFI_SYSTEM" ]; then
-	mount --bind /sys/firmware/efi/efivars $LFS/sys/firmware/efi/efivars
+	mount --bind /sys/firmware/efi/efivars $KFS/sys/firmware/efi/efivars
 fi
-mount -t tmpfs tmpfs $LFS/run
+mount -t tmpfs tmpfs $KFS/run
 
-if [ -h $LFS/dev/shm ]; then
-  mkdir -p $LFS/$(readlink $LFS/dev/shm)
+if [ -h $KFS/dev/shm ]; then
+  mkdir -p $KFS/$(readlink $KFS/dev/shm)
 fi
 
-cp -L /etc/resolv.conf $LFS/etc
+cp -L /etc/resolv.conf $KFS/etc
 
-echo ":: entering chroot to $LFS."
+echo ":: entering chroot to $KFS."
 
-chroot "$LFS" /usr/bin/env -i \
+chroot "$KFS" /usr/bin/env -i \
 HOME=/root \
 TERM="$TERM" \
 PS1='\u:\w\$ ' \
@@ -75,14 +75,14 @@ retval=$?
 
 popd &>/dev/null
 
-umount $LFS/dev/pts
-umount $LFS/dev
-umount $LFS/run
-umount $LFS/proc
+umount $KFS/dev/pts
+umount $KFS/dev
+umount $KFS/run
+umount $KFS/proc
 if [ -n "$EFI_SYSTEM" ]; then
-	umount $LFS/sys/firmware/efi/efivars
+	umount $KFS/sys/firmware/efi/efivars
 fi
-umount $LFS/sys
+umount $KFS/sys
 
 echo ":: chroot exited."
 

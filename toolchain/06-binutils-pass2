@@ -8,9 +8,9 @@ build() {
 	mkdir -v build
 	cd       build
 
-	CC=$LFS_TGT-gcc                \
-	AR=$LFS_TGT-ar                 \
-	RANLIB=$LFS_TGT-ranlib         \
+	CC=$KFS_TGT-gcc                \
+	AR=$KFS_TGT-ar                 \
+	RANLIB=$KFS_TGT-ranlib         \
 	../configure                   \
 		--prefix=/tools            \
 		--disable-nls              \
