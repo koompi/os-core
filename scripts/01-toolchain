@@ -67,11 +67,11 @@ build_src() {
 }
 
 register() {
-	echo $name-$version > $KFS/tools/$(basename $script)
+	echo $name-$version > $LFS/tools/$(basename $script)
 }
 
 checkdone() {
-	if [ -e $KFS/tools/$(basename $script) ]; then
+	if [ -e $LFS/tools/$(basename $script) ]; then
 		echo "*** skip $(basename $script) ***"
 		return 1
 	else
@@ -94,7 +94,7 @@ main() {
 		checkdone || continue
 		build_stage1 $script
 	done
-	sudo chown -Rv 0:0 $KFS
+	sudo chown -Rv 0:0 $LFS
 }
 
 if [ $(id -u) = 0 ]; then
@@ -112,20 +112,20 @@ TCDIR=$CWD/toolchain
 PATCHDIR=$CWD/patches
 FILEDIR=$CWD/files
 
-export LC_ALL=C PATH MAKEFLAGS KFS KFS_TGT
+export LC_ALL=C PATH MAKEFLAGS LFS LFS_TGT
 
 mkdir -p $TCDIR $SRCDIR $WORKDIR
 
-if [ ! -d $KFS/tools ]; then
-	sudo mkdir -pv $KFS/tools
+if [ ! -d $LFS/tools ]; then
+	sudo mkdir -pv $LFS/tools
 fi
 
-if [ ! -w $KFS ]; then
-	sudo chown -Rv $USER:$USER $KFS
+if [ ! -w $LFS ]; then
+	sudo chown -Rv $USER:$USER $LFS
 fi
 
-if [ ! -L /tools ] || [ $(realpath /tools) != $KFS/tools ]; then
-	sudo ln -svf $KFS/tools /
+if [ ! -L /tools ] || [ $(realpath /tools) != $LFS/tools ]; then
+	sudo ln -svf $LFS/tools /
 fi
 
 main $@

@@ -11,13 +11,13 @@ build() {
 	echo slibdir=/tools/lib32 > configparms
 	../configure                             \
 		  --prefix=/tools                    \
-		  --host=$KFS_TGT32                  \
+		  --host=$LFS_TGT32                  \
 		  --build=$(../scripts/config.guess) \
 		  --libdir=/tools/lib32              \
 		  --enable-kernel=3.2                \
 		  --with-headers=/tools/include      \
-		  CC="$KFS_TGT-gcc -m32"             \
-		  CXX="$KFS_TGT-g++ -m32"			 \
+		  CC="$LFS_TGT-gcc -m32"             \
+		  CXX="$LFS_TGT-g++ -m32"			 \
 		  libc_cv_slibdir=/lib
 	make
 	make install
@@ -28,7 +28,7 @@ build() {
 	
 	../configure                             \
 		  --prefix=/tools                    \
-		  --host=$KFS_TGT                    \
+		  --host=$LFS_TGT                    \
 		  --build=$(../scripts/config.guess) \
 		  --enable-kernel=3.2             \
 		  --with-headers=/tools/include

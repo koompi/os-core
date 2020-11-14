@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: HangsiaHONG, hangsia@koompi.org
-KFS=/mnt/kfs
+LFS=/mnt/lfs
 
 checkroot() {
     if (($EUID != 0)); then
@@ -36,8 +36,8 @@ setup_disk() {
 
     #[-------------------Mount Disks-----------------------------]
 
-    mkdir -pv $KFS
-    mount -v -t ext4 /dev/${disks}3 $KFS
+    mkdir -pv $LFS
+    mount -v -t ext4 /dev/${disks}3 $LFS
 
     /sbin/swapon -v /dev/${disks}2
 

@@ -4,7 +4,7 @@
 
 CWD=$PWD
 
-cd $KFS
+cd $LFS
 tar cvJpf $CWD/toolchain.tar.xz tools
 
 exit 0

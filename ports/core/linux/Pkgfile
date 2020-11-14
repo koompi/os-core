@@ -19,7 +19,7 @@ build() {
 	make olddefconfig
 
 	sed '/^CONFIG_LOCALVERSION=/d' -i .config
-	echo 'CONFIG_LOCALVERSION="-KFS"' >> .config
+	echo 'CONFIG_LOCALVERSION="-LFS"' >> .config
 
 	kernver=${version}$(grep CONFIG_LOCALVERSION= .config | cut -d '"' -f2)
 
@@ -29,7 +29,7 @@ build() {
 
 	mkdir -p $PKG/boot
 
-	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-kfs
+	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-lfs
 	echo $kernver > $PKG/lib/modules/KERNELVERSION
 
 	make clean

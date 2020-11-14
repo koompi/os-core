@@ -1,57 +1,52 @@
-#!/bin/sh
-#
-# script to enter chroot
-#
+#!/bin/bash
 
 printhelp() {
 	cat << EOF
 
 Usage:
-  $(basename $0) [command]
+  $(basename $0) <newroot> <command>
   
-If 'command' is unspecified, ${0##*/} will launch /bin/sh.
+(omit command to chroot only)
   
 EOF
 }
 
 msgerr() {
-	echo "ERROR: $*"
-}
-
-unmount() {
-	while true; do
-		mountpoint -q $1 || break
-		umount $1 2>/dev/null
-	done
+	echo -e "ERROR: $@"
 }
 	
-[ "$(id -u)" = "0" ] || {
+if [ "$UID" != "0" ]; then
 	msgerr "$(basename $0) need root access!"
 	printhelp
 	exit 1
-}
-
-LFS="/mnt/lfs"
-
-if [ -f ./config ]; then
-	. ./config
 fi
 
-[ -d "$LFS" ] || {
-	msgerr "Directory '$LFS' not exist!"
+LFS=$1
+
+if [ -z $1 ]; then
+	msgerr "Please set directory for chroot!"
 	printhelp
 	exit 1
-}
+fi
 
-if [ ! "$1" ]; then
-	CMD="/bin/sh"
-else
-	CMD=$*
+if [ ! -d $LFS ]; then
+	msgerr "Directory '$LFS' not exist"
+	printhelp
+	exit 1
+fi
+
+shift
+
+CMD=$@
+if [ -z $2 ]; then
+	CMD="/bin/bash --login"
 fi
 
 if [ -e /sys/firmware/efi/systab ]; then
 	EFI_SYSTEM=1
 fi
+
+pushd $LFS &>/dev/null
 
 mount --bind /dev $LFS/dev
 mount -t devpts devpts $LFS/dev/pts -o gid=5,mode=620
@@ -66,11 +61,9 @@ if [ -h $LFS/dev/shm ]; then
   mkdir -p $LFS/$(readlink $LFS/dev/shm)
 fi
 
-[ -f $LFS/etc/resolv.conf ] && {
-	backupresolvconf=1
-	mv $LFS/etc/resolv.conf $LFS/etc/resolv.conf.tmp
-}
 cp -L /etc/resolv.conf $LFS/etc
+
+echo ":: entering chroot to $LFS."
 
 chroot "$LFS" /usr/bin/env -i \
 HOME=/root \
@@ -80,18 +73,17 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin $CMD
 
 retval=$?
 
-[ "$backupresolvconf" = 1 ] && {
-	mv $LFS/etc/resolv.conf.tmp $LFS/etc/resolv.conf
-}
+popd &>/dev/null
 
-unmount $LFS/dev/pts
-unmount $LFS/dev
-unmount $LFS/run
-unmount $LFS/proc
+umount $LFS/dev/pts
+umount $LFS/dev
+umount $LFS/run
+umount $LFS/proc
 if [ -n "$EFI_SYSTEM" ]; then
-	unmount $LFS/sys/firmware/efi/efivars
+	umount $LFS/sys/firmware/efi/efivars
 fi
-unmount $LFS/sys
+umount $LFS/sys
+
+echo ":: chroot exited."
 
 exit $retval
-

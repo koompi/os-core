@@ -16,7 +16,7 @@ build() {
 	make BINDIR=/tools/bin MANDIR=/tools/man ETCDIR=/tools/etc install
 	sed -i 's,/etc/pkgmk.conf,/tools/etc/pkgmk.conf,' /tools/bin/pkgmk
 
-	#mkdir -p $KFS/var/lib/pkg/{src,pkg,work}
+	#mkdir -p $LFS/var/lib/pkg/{src,pkg,work}
 
 	cp $FILEDIR/pkgin /tools/bin/pkgin
 	

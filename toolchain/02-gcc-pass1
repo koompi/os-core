@@ -36,10 +36,10 @@ build() {
 	cd       build
 
 	../configure \
-		--target=$KFS_TGT                              \
+		--target=$LFS_TGT                              \
 		--prefix=/tools                                \
 		--with-glibc-version=2.11                      \
-		--with-sysroot=$KFS                            \
+		--with-sysroot=$LFS                            \
 		--with-newlib                                  \
 		--without-headers                              \
 		--with-local-prefix=/tools                     \
