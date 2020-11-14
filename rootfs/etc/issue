@@ -3,8 +3,8 @@ Linux From Scratch \r (\l)
 login:    root
 password: root
 
-login:    lfs
-password: lfs
+login:    kfs
+password: kfs
 
-install:  run 'lfs-readme' to view instruction
+install:  run 'kfs-readme' to view instruction
 
