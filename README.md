@@ -1,17 +1,4 @@
-OS-KFS
+<p align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.barcampcambodia.org%2Fpage%2F4%2F%3F030O2aGC0176%26mode%3Dlist&psig=AOvVaw0BE3gXS0Vt3uu_IFryx1In&ust=1605689207020000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPiL-ceYie0CFQAAAAAdAAAAABAJ" alt="KOOMPI"></p>
 
 
-
-
-
-`` Code that run throughout this test
-sudo bash 1_prepare.sh
-git clone https://github.com/hangsiaongithub/os-kfs
-cd os-kfs
-bash 2_setup_env.sh
-bash 3_kfs_build_stage1.sh
-exit
-sudo bash 4_setup_chroot.sh
-sudo bash 5_enter_chroot.sh
-cd os-kfs
-bash 7_kfs_build_stage2.sh 
+# KOOMPI
