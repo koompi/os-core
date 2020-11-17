@@ -1,0 +1,98 @@
+#!/bin/bash
+
+# Description: Script to setup Disk
+# URL: 
+# Maintainer: HangsiaHong, hangsia@koompi.org
+# Organization: KOOMPI, koompi.com
+
+# Color variables ------------------------------------------------------------------
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+NORMAL=$(tput sgr0)
+Green='\033[0;32m' # Green
+Blue='\033[0;34m'  # Blue
+BOLD="$(echo -e "\e[1m")"
+CYAN="$(echo -e "\e[36m")"
+WHITE='\033[0;37m' # White
+
+KFS_DEPS=("xorriso", "bash" "binutils" "bison" "bzip2" "coreutils" "diffutils" "gawk" "gcc" "glibc" "grep" "gzip" "m4" "make" "patch" "perl" "sed" "tar" "texinfo" "xz")
+MISSING_DEPS=""
+
+CWD=$PWD
+
+source $CWD/kmp-config
+
+checkroot() {
+    if (($EUID != 0)); then
+        echo "Please run this script as root user"
+        exit
+    fi
+}
+
+internet() {
+    wget -q --tries=10 --timeout=20 --spider http://google.com
+    if [[ $? -eq 0 ]]; then
+        echo "Online"
+    else
+        echo "Offline"
+        exit;
+    fi
+}
+
+check_dep() {
+    MISSING_NUM=0
+    FOUND_NUM=0
+
+    sudo pacman -Sy
+
+    for ((i = 0; i < ${#KFS_DEPS[@]}; i++)); do
+        NUM=$((i + 1))
+        echo -ne "Checking Dependencies:${YELLOW} $(($NUM * 100 / ${#KFS_DEPS[@]}))%${NORMAL}\033[0K\r"
+        pacman -Qi --color always "${KFS_DEPS[$i]}" &>/dev/null
+        if [ $? -eq 0 ]; then
+            ((FOUND_NUM++))
+        else
+            ((MISSING_NUM++))
+            MISSING_DEPS+=" ${KFS_DEPS[$i]}"
+        fi
+    done
+
+    if [[ $MISSING_NUM -gt 0 ]]; then
+        echo -e ""
+        echo -e "${RED}[no] Some Problems Found.${NORMAL}\n"
+        echo -e "Dependencies Found: \t${GREEN}${FOUND_NUM}${NORMAL}"
+        echo -e "Dependencies Missing: \t${RED}${MISSING_NUM}${NORMAL}"
+        echo -e "Installing Missing Dependencies:\n"
+        sudo pacman -S --noconfirm $MISSING_DEPS
+    else
+        echo -e ""
+        echo -e "${BLUE}[ok] No Problems Found.${NORMAL}\n"
+        echo -e "Dependencies Found: \t${GREEN}${FOUND_NUM}${NORMAL}"
+        echo -e "Dependencies Missing: \t${RED}${MISSING_NUM}${NORMAL}\n"
+    fi
+}
+
+
+
+checkroot
+internet
+check_dep
+
+#--- Create Partition
+parted --script /dev/${DISK} \
+    mklabel gpt \
+    mkpart primary ext2 1Mib 101Mib \
+    mkpart primary ext4 101Mib 5G \
+    mkpart primary ext4 5G 30G 
+
+#--- Format the Partition
+mkfs.ext4 /dev/${DISK}3
+mkfs.ext2 /dv/${DISK}1
+mkswap /dev/${DISK}2
+
+#--- Mount the partition
+mkdir -pv $KFS
+mount -v -t ext4 /dev/${DISK}3 $KFS
+/sbin/swapon -v /dev/${DISK}2

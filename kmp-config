@@ -1,0 +1,11 @@
+# config file for toolchain scripts
+# modify according your needs
+
+DISK=sda
+MAKEFLAGS="-j$(nproc)"
+KFS="/mnt/kfs"
+KFS_TGT=$(uname -m)-kfs-linux-gnu
+KFS_TGT32=i686-kfs-linux-gnu
+SRCDIR=$KFS/var/lib/pkg/src
+WORKDIR=$KFS/tmp
+CFLAGS="${CFLAGS:--O2 -march=x86-64 -pipe}"

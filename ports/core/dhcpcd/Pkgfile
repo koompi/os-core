@@ -1,0 +1,33 @@
+# Description: Implementation of the DHCP client specified in RFC2131
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=dhcpcd
+version=9.3.2
+bootscriptsversion=20191204
+release=1
+source=(https://roy.marples.name/downloads/dhcpcd/dhcpcd-$version.tar.xz
+	http://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-$bootscriptsversion.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --libexecdir=/lib/dhcpcd \
+                    --dbdir=/var/lib/dhcpcd
+	make
+	make DESTDIR=$PKG install
+
+        cd ../blfs-bootscripts-$bootscriptsversion
+	make DESTDIR=$PKG install-service-dhcpcd
+
+	mkdir -p $PKG/etc/sysconfig/
+	cat > $PKG/etc/sysconfig/ifconfig.eth0 << "EOF"
+ONBOOT="no"
+IFACE="eth0"
+SERVICE="dhcpcd"
+#DHCP_START="-b -q <insert appropriate start options here>"
+#DHCP_STOP="-k <insert additional stop options here>"
+EOF
+}

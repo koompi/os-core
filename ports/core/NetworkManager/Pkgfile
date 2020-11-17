@@ -1,0 +1,43 @@
+# Description: Ninja is a small build system with a focus on speed. 
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com  
+# Depends on:
+
+name=NetworkManager
+version=1.26.4
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/NetworkManager/1.26/NetworkManager-$version.tar.xz)
+
+build() {
+        cd $name-$version
+
+        mkdir build &&
+        cd    build &&
+
+        CXXFLAGS+="-O2 -fPIC"            \
+        meson --prefix /usr              \
+              -Djson_validation=false    \
+              -Dlibaudit=no              \
+              -Dlibpsl=false             \
+              -Dnmtui=true               \
+              -Dovs=false                \
+              -Dppp=false                \
+              -Dselinux=false            \
+              -Dudev_dir=/lib/udev       \
+              -Dsession_tracking=elogind \
+              -Dmodem_manager=false      \
+              -Dsystemdsystemunitdir=no  \
+              -Dsystemd_journal=false    \
+              -Dqt=false                 \
+              .. &&
+        ninja
+
+        ninja install &&
+        mv -v /usr/share/doc/NetworkManager{,-1.26.4}
+
+        make install-networkmanager
+        
+
+}
+

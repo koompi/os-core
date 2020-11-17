@@ -1,0 +1,27 @@
+# Description: A set of scripts to start/stop the KFS system at bootup/shutdown
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=kfs-bootscripts
+version=20200818
+release=1
+source=(https://github.com/hangsiaongithub/kfs-bootscripts-$version/releases/download/v1.0/kfs-bootscripts-$version.tar.gz
+	kfs-bootscripts_add-support-uefi.patch
+	clock
+	console
+	inittab)
+
+build() {
+	install -d $PKG/etc/sysconfig
+	install -m0644 clock $PKG/etc/sysconfig
+	install -m0644 console $PKG/etc/sysconfig
+	install -m0644 inittab $PKG/etc
+
+	cd $name-$version
+
+	patch -Np1 -i $SRC/kfs-bootscripts_add-support-uefi.patch
+
+	make DESTDIR=$PKG install
+}

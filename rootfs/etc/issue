@@ -1,0 +1,10 @@
+KOOMPI From Scratch \r (\l)
+
+login:    root
+password: root
+
+login:    kfs
+password: kfs
+
+install:  run 'kfs-readme' to view instruction
+

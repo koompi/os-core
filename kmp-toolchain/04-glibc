@@ -1,0 +1,37 @@
+name=glibc
+version=2.32
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	mkdir -v build32
+	cd       build32
+		
+	echo slibdir=/tools/lib32 > configparms
+	../configure                             \
+		  --prefix=/tools                    \
+		  --host=$KFS_TGT32                  \
+		  --build=$(../scripts/config.guess) \
+		  --libdir=/tools/lib32              \
+		  --enable-kernel=3.2                \
+		  --with-headers=/tools/include      \
+		  CC="$KFS_TGT-gcc -m32"             \
+		  CXX="$KFS_TGT-g++ -m32"			 \
+		  libc_cv_slibdir=/lib
+	make
+	make install
+	cd -
+
+	mkdir -v build
+	cd       build
+	
+	../configure                             \
+		  --prefix=/tools                    \
+		  --host=$KFS_TGT                    \
+		  --build=$(../scripts/config.guess) \
+		  --enable-kernel=3.2             \
+		  --with-headers=/tools/include
+	make
+	make install
+}
