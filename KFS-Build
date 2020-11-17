@@ -1,9 +1,0 @@
-#!/bin/bash
-# Author: HangsiaHONG, hangsia@koompi.org
-
-function build_script() {
-    ./scripts/01-toolchain && sudo ./scripts/02-base && sudo ./scripts/03-mkiso
-
-}
-
-build_script
