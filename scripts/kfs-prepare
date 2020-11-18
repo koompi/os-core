@@ -89,7 +89,7 @@ parted --script /dev/${DISK} \
 
 #--- Format the Partition
 mkfs.ext4 /dev/${DISK}3
-mkfs.ext2 /dv/${DISK}1
+mkfs.ext2 /dev/${DISK}1
 mkswap /dev/${DISK}2
 
 #--- Mount the partition
