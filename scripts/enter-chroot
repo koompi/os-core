@@ -1,0 +1,97 @@
+#!/bin/sh
+#
+# script to enter chroot
+#
+
+printhelp() {
+	cat << EOF
+
+Usage:
+  $(basename $0) [command]
+  
+If 'command' is unspecified, ${0##*/} will launch /bin/sh.
+  
+EOF
+}
+
+msgerr() {
+	echo "ERROR: $*"
+}
+
+unmount() {
+	while true; do
+		mountpoint -q $1 || break
+		umount $1 2>/dev/null
+	done
+}
+	
+[ "$(id -u)" = "0" ] || {
+	msgerr "$(basename $0) need root access!"
+	printhelp
+	exit 1
+}
+
+KFS="/mnt/kfs"
+
+if [ -f ./config ]; then
+	. ./config
+fi
+
+[ -d "$KFS" ] || {
+	msgerr "Directory '$KFS' not exist!"
+	printhelp
+	exit 1
+}
+
+if [ ! "$1" ]; then
+	CMD="/bin/sh"
+else
+	CMD=$*
+fi
+
+if [ -e /sys/firmware/efi/systab ]; then
+	EFI_SYSTEM=1
+fi
+
+mount --bind /dev $KFS/dev
+mount -t devpts devpts $KFS/dev/pts -o gid=5,mode=620
+mount -t proc proc $KFS/proc
+mount -t sysfs sysfs $KFS/sys
+if [ -n "$EFI_SYSTEM" ]; then
+	mount --bind /sys/firmware/efi/efivars $KFS/sys/firmware/efi/efivars
+fi
+mount -t tmpfs tmpfs $KFS/run
+
+if [ -h $KFS/dev/shm ]; then
+  mkdir -p $KFS/$(readlink $KFS/dev/shm)
+fi
+
+[ -f $KFS/etc/resolv.conf ] && {
+	backupresolvconf=1
+	mv $KFS/etc/resolv.conf $KFS/etc/resolv.conf.tmp
+}
+cp -L /etc/resolv.conf $KFS/etc
+
+chroot "$KFS" /usr/bin/env -i \
+HOME=/root \
+TERM="$TERM" \
+PS1='\u:\w\$ ' \
+PATH=/bin:/usr/bin:/sbin:/usr/sbin $CMD
+
+retval=$?
+
+[ "$backupresolvconf" = 1 ] && {
+	mv $KFS/etc/resolv.conf.tmp $KFS/etc/resolv.conf
+}
+
+unmount $KFS/dev/pts
+unmount $KFS/dev
+unmount $KFS/run
+unmount $KFS/proc
+if [ -n "$EFI_SYSTEM" ]; then
+	unmount $KFS/sys/firmware/efi/efivars
+fi
+unmount $KFS/sys
+
+exit $retval
+
