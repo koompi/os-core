@@ -1,0 +1,21 @@
+# Description: A stream oriented C library for parsing XML
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=fakeroot
+version=1.12.4
+release=1
+source=(http://slackbuilds.org/sources/13.0/fakeroot_1.12.4.tar.gz)
+
+build() {
+        cd $name-$version
+
+        ./configure --prefix=/tools                 \
+            --libdir=/tools/lib/libfakeroot \
+            --with-ipc=sysv
+        
+        make
+        make DESTDIR=$PKG install
+}

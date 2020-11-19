@@ -1,0 +1,26 @@
+# Description: Management tools and libraries relating to cryptography
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com 
+# Depends on:
+
+name=pacman
+version=5.2.2
+release=1
+source=(https://sources.archlinux.org/other/pacman/pacman-5.2.2.tar.gz
+)
+
+build() {
+        cd $name-$version
+
+        ./configure --prefix=/tools   \
+            --disable-doc     \
+            --disable-shared  \
+            --sysconfdir=/etc \
+            --localstatedir=/var
+
+            
+        make
+        DESTDIR=$PKG install
+
+}
