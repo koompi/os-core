@@ -34,7 +34,7 @@ d:squashfs-tools
 d:linux
 d:iana-etc
 d:findutils
-d:lfs-bootscripts
+d:kfs-bootscripts
 d:filesystem
 d:readline
 d:autoconf
@@ -151,11 +151,11 @@ f:d41d8cd98f00b204e9800998ecf8427e:linux/.nostrip
 f:6346ee810a00bb25bd41178b0be6c87d:linux/Pkgfile
 f:71cb7e398d0cf7e9716cbc34c2deac64:iana-etc/Pkgfile
 f:100529075ed8c45dfb1ad4c677c427d1:findutils/Pkgfile
-f:36ed2d4d4be4d4883c1e6b6b9ae9c962:lfs-bootscripts/console
-f:a58f103a6bfaf14df58f7f0b936ebc95:lfs-bootscripts/Pkgfile
-f:4c237b74a64155c12c0f2169efeb9a07:lfs-bootscripts/inittab
-f:680723f0829e4b76845859f984dc878a:lfs-bootscripts/clock
-f:41f27ba63e202d46a0936498550b3de5:lfs-bootscripts/lfs-bootscripts_add-support-uefi.patch
+f:36ed2d4d4be4d4883c1e6b6b9ae9c962:kfs-bootscripts/console
+f:a58f103a6bfaf14df58f7f0b936ebc95:kfs-bootscripts/Pkgfile
+f:4c237b74a64155c12c0f2169efeb9a07:kfs-bootscripts/inittab
+f:680723f0829e4b76845859f984dc878a:kfs-bootscripts/clock
+f:41f27ba63e202d46a0936498550b3de5:kfs-bootscripts/kfs-bootscripts_add-support-uefi.patch
 f:2ed0cf9d92e8a8fa49a41918b8a0207f:filesystem/shells
 f:646ca28ca35dffaed560924a2ba3deb0:filesystem/bashrc.skel
 f:ce77eb879a4379040c5273389459b4a5:filesystem/i18n.sh
