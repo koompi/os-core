@@ -1,0 +1,342 @@
+xorg-server
+├─libepoxy
+│ └─glibc
+│   ├─linux-api-headers provides linux-api-headers>=4.10
+│   ├─tzdata
+│   └─filesystem
+│     └─iana-etc
+├─libxfont2
+│ ├─freetype2
+│ │ ├─zlib
+│ │ │ └─glibc
+│ │ ├─bzip2
+│ │ │ ├─glibc
+│ │ │ └─bash provides sh
+│ │ │   ├─readline provides readline>=7.0
+│ │ │   │ ├─glibc
+│ │ │   │ ├─ncurses
+│ │ │   │ │ ├─glibc
+│ │ │   │ │ └─gcc-libs
+│ │ │   │ │   └─glibc provides glibc>=2.27
+│ │ │   │ └─ncurses provides libncursesw.so=6-64
+│ │ │   ├─glibc
+│ │ │   └─ncurses
+│ │ ├─bash provides sh
+│ │ ├─libpng
+│ │ │ ├─zlib
+│ │ │ └─bash provides sh
+│ │ └─harfbuzz
+│ │   ├─glib2
+│ │   │ ├─pcre
+│ │   │ │ ├─gcc-libs
+│ │   │ │ ├─readline
+│ │   │ │ ├─zlib
+│ │   │ │ ├─bzip2
+│ │   │ │ └─bash
+│ │   │ ├─libffi
+│ │   │ │ └─glibc
+│ │   │ ├─util-linux-libs
+│ │   │ ├─zlib
+│ │   │ └─util-linux-libs provides libmount.so=1-64
+│ │   ├─freetype2
+│ │   ├─graphite
+│ │   │ └─gcc-libs
+│ │   ├─glib2 provides libglib-2.0.so=0-64
+│ │   ├─freetype2 provides libfreetype.so=6-64
+│ │   └─glib2 provides libgobject-2.0.so=0-64
+│ └─libfontenc
+│   ├─zlib
+│   └─xorg-fonts-encodings
+├─pixman
+│ └─glibc
+├─xorg-server-common
+│ ├─xkeyboard-config
+│ ├─xorg-xkbcomp
+│ │ └─libxkbfile
+│ │   └─libx11
+│ │     ├─libxcb
+│ │     │ ├─xcb-proto
+│ │     │ ├─libxdmcp
+│ │     │ │ └─glibc
+│ │     │ └─libxau
+│ │     │   └─glibc
+│ │     └─xorgproto
+│ └─xorg-setxkbmap
+│   └─libxkbfile
+├─libunwind
+│ ├─glibc
+│ └─xz
+│   └─bash provides sh
+├─dbus
+│ ├─systemd-libs
+│ │ ├─glibc
+│ │ ├─libcap
+│ │ │ ├─glibc
+│ │ │ └─pam
+│ │ │   ├─glibc
+│ │ │   ├─libtirpc
+│ │ │   │ └─krb5
+│ │ │   │   ├─e2fsprogs
+│ │ │   │   │ ├─bash provides sh
+│ │ │   │   │ └─util-linux-libs
+│ │ │   │   ├─libldap
+│ │ │   │   │ ├─libsasl
+│ │ │   │   │ │ └─openssl
+│ │ │   │   │ │   └─perl
+│ │ │   │   │ │     ├─gdbm provides gdbm>=1.17
+│ │ │   │   │ │     │ ├─glibc
+│ │ │   │   │ │     │ └─bash provides sh
+│ │ │   │   │ │     ├─db
+│ │ │   │   │ │     │ ├─gcc-libs
+│ │ │   │   │ │     │ └─bash provides sh
+│ │ │   │   │ │     ├─glibc
+│ │ │   │   │ │     ├─libxcrypt
+│ │ │   │   │ │     │ └─glibc
+│ │ │   │   │ │     └─libxcrypt provides libcrypt.so=2-64
+│ │ │   │   │ └─e2fsprogs
+│ │ │   │   └─keyutils
+│ │ │   │     ├─glibc
+│ │ │   │     └─bash provides sh
+│ │ │   ├─pambase
+│ │ │   └─audit
+│ │ │     ├─krb5
+│ │ │     └─libcap-ng
+│ │ │       └─glibc
+│ │ ├─libgcrypt
+│ │ │ └─libgpg-error
+│ │ │   ├─glibc
+│ │ │   └─bash provides sh
+│ │ ├─lz4
+│ │ │ └─glibc
+│ │ ├─xz
+│ │ └─zstd
+│ │   ├─zlib
+│ │   ├─xz
+│ │   └─lz4
+│ ├─expat
+│ │ └─glibc
+│ ├─audit
+│ ├─systemd-libs provides libsystemd.so=0-64
+│ └─audit provides libaudit.so=1-64
+├─libglvnd provides libgl
+│ ├─libxext
+│ │ └─libx11
+│ ├─mesa
+│ │ ├─libdrm
+│ │ │ └─libpciaccess
+│ │ │   └─glibc
+│ │ ├─wayland
+│ │ │ ├─glibc
+│ │ │ ├─libffi
+│ │ │ ├─expat
+│ │ │ └─libxml2
+│ │ │   ├─zlib
+│ │ │   ├─readline
+│ │ │   ├─ncurses
+│ │ │   ├─xz
+│ │ │   └─icu
+│ │ │     ├─gcc-libs
+│ │ │     └─bash provides sh
+│ │ ├─libxxf86vm
+│ │ │ └─libxext
+│ │ ├─libxdamage
+│ │ │ └─libxfixes
+│ │ │   └─libx11
+│ │ ├─libxshmfence
+│ │ │ └─glibc
+│ │ ├─libelf
+│ │ │ ├─gcc-libs
+│ │ │ ├─zlib
+│ │ │ ├─bzip2
+│ │ │ ├─xz
+│ │ │ └─curl
+│ │ │   ├─ca-certificates
+│ │ │   │ └─ca-certificates-mozilla
+│ │ │   │   └─ca-certificates-utils provides ca-certificates-utils>=20181109-3
+│ │ │   │     ├─bash
+│ │ │   │     ├─coreutils
+│ │ │   │     │ ├─glibc
+│ │ │   │     │ ├─acl
+│ │ │   │     │ │ └─attr
+│ │ │   │     │ │   └─glibc
+│ │ │   │     │ ├─attr
+│ │ │   │     │ ├─gmp
+│ │ │   │     │ │ ├─gcc-libs
+│ │ │   │     │ │ └─bash provides sh
+│ │ │   │     │ ├─libcap
+│ │ │   │     │ └─openssl
+│ │ │   │     ├─findutils
+│ │ │   │     │ ├─glibc
+│ │ │   │     │ └─bash provides sh
+│ │ │   │     └─p11-kit provides p11-kit>=0.23.19
+│ │ │   │       ├─libp11-kit provides libp11-kit=0.23.21-1
+│ │ │   │       │ ├─glibc
+│ │ │   │       │ ├─libtasn1
+│ │ │   │       │ │ └─glibc
+│ │ │   │       │ └─libffi
+│ │ │   │       ├─coreutils
+│ │ │   │       ├─libp11-kit provides libp11-kit.so=0-64
+│ │ │   │       └─systemd-libs provides libsystemd.so=0-64
+│ │ │   ├─krb5
+│ │ │   ├─libssh2
+│ │ │   │ ├─openssl
+│ │ │   │ └─zlib
+│ │ │   ├─libssh2 provides libssh2.so=1-64
+│ │ │   ├─openssl
+│ │ │   ├─zlib
+│ │ │   ├─libpsl
+│ │ │   │ ├─libidn2
+│ │ │   │ │ └─libunistring
+│ │ │   │ │   └─glibc
+│ │ │   │ ├─libidn2 provides libidn2.so=0-64
+│ │ │   │ └─libunistring
+│ │ │   ├─libpsl provides libpsl.so=5-64
+│ │ │   ├─libnghttp2
+│ │ │   │ └─glibc
+│ │ │   ├─libidn2
+│ │ │   ├─libidn2 provides libidn2.so=0-64
+│ │ │   └─zstd
+│ │ ├─libomxil-bellagio
+│ │ │ └─glibc
+│ │ ├─libunwind
+│ │ ├─llvm-libs
+│ │ │ ├─gcc-libs
+│ │ │ ├─zlib
+│ │ │ ├─libffi
+│ │ │ ├─libedit
+│ │ │ │ └─ncurses
+│ │ │ ├─ncurses
+│ │ │ └─libxml2
+│ │ ├─lm_sensors
+│ │ │ └─perl
+│ │ ├─libglvnd
+│ │ ├─zstd
+│ │ └─vulkan-icd-loader
+│ │   └─glibc
+│ └─mesa provides opengl-driver
+├─xf86-input-libinput
+│ └─libinput provides libinput>=1.2.0
+│   ├─mtdev
+│   │ └─glibc
+│   ├─systemd
+│   │ ├─acl
+│   │ ├─acl provides libacl.so=1-64
+│   │ ├─bash
+│   │ ├─cryptsetup
+│   │ │ ├─device-mapper
+│   │ │ │ ├─glibc
+│   │ │ │ ├─systemd-libs
+│   │ │ │ └─systemd-libs provides libudev.so=1-64
+│   │ │ ├─device-mapper provides libdevmapper.so=1.02-64
+│   │ │ ├─openssl
+│   │ │ ├─popt
+│   │ │ │ └─glibc
+│   │ │ ├─util-linux-libs provides libutil-linux
+│   │ │ ├─util-linux-libs provides libuuid.so=1-64
+│   │ │ ├─json-c
+│   │ │ │ └─glibc
+│   │ │ ├─json-c provides libjson-c.so=5-64
+│   │ │ ├─argon2
+│   │ │ │ └─glibc
+│   │ │ └─argon2 provides libargon2.so=1-64
+│   │ ├─cryptsetup provides libcryptsetup.so=12-64
+│   │ ├─dbus
+│   │ ├─iptables
+│   │ │ ├─libnftnl
+│   │ │ │ └─libmnl
+│   │ │ │   └─glibc
+│   │ │ ├─libpcap
+│   │ │ │ ├─glibc
+│   │ │ │ ├─libnl
+│   │ │ │ │ └─glibc
+│   │ │ │ ├─bash provides sh
+│   │ │ │ └─dbus provides libdbus-1.so=3-64
+│   │ │ ├─libnfnetlink
+│   │ │ │ └─glibc
+│   │ │ ├─libnetfilter_conntrack
+│   │ │ │ ├─libnfnetlink
+│   │ │ │ └─libmnl
+│   │ │ └─bash
+│   │ ├─kbd
+│   │ │ ├─glibc
+│   │ │ └─pam
+│   │ ├─kmod
+│   │ │ ├─glibc
+│   │ │ ├─zlib
+│   │ │ ├─openssl
+│   │ │ └─xz
+│   │ ├─kmod provides libkmod.so=2-64
+│   │ ├─hwids
+│   │ ├─libcap
+│   │ ├─libcap provides libcap.so=2-64
+│   │ ├─libgcrypt
+│   │ ├─libxcrypt
+│   │ ├─libxcrypt provides libcrypt.so=2-64
+│   │ ├─systemd-libs
+│   │ ├─libidn2
+│   │ ├─libidn2 provides libidn2.so=0-64
+│   │ ├─lz4
+│   │ ├─pam
+│   │ ├─libelf
+│   │ ├─libseccomp
+│   │ │ └─glibc
+│   │ ├─libseccomp provides libseccomp.so=2-64
+│   │ ├─util-linux
+│   │ │ ├─pam
+│   │ │ ├─shadow
+│   │ │ │ ├─pam
+│   │ │ │ ├─acl
+│   │ │ │ ├─acl provides libacl.so=1-64
+│   │ │ │ ├─audit
+│   │ │ │ ├─audit provides libaudit.so=1-64
+│   │ │ │ ├─libcap-ng
+│   │ │ │ ├─libcap-ng provides libcap-ng.so
+│   │ │ │ ├─libxcrypt
+│   │ │ │ └─libxcrypt provides libcrypt.so=2-64
+│   │ │ ├─coreutils
+│   │ │ ├─systemd-libs
+│   │ │ ├─systemd-libs provides libsystemd.so=0-64
+│   │ │ ├─systemd-libs provides libudev.so=1-64
+│   │ │ ├─libcap-ng
+│   │ │ ├─libxcrypt
+│   │ │ ├─libxcrypt provides libcrypt.so=2-64
+│   │ │ ├─util-linux-libs
+│   │ │ ├─file provides libmagic.so=1-64
+│   │ │ │ ├─glibc
+│   │ │ │ ├─zlib
+│   │ │ │ ├─xz
+│   │ │ │ ├─bzip2
+│   │ │ │ ├─libseccomp
+│   │ │ │ └─libseccomp provides libseccomp.so=2-64
+│   │ │ ├─ncurses provides libncursesw.so=6-64
+│   │ │ └─readline provides libreadline.so=8-64
+│   │ ├─util-linux-libs provides libblkid.so=1-64
+│   │ ├─util-linux-libs provides libmount.so=1-64
+│   │ ├─xz
+│   │ ├─pcre2
+│   │ │ ├─gcc-libs
+│   │ │ ├─readline
+│   │ │ ├─zlib
+│   │ │ ├─bzip2
+│   │ │ └─bash
+│   │ ├─audit
+│   │ ├─audit provides libaudit.so=1-64
+│   │ ├─libp11-kit
+│   │ ├─libp11-kit provides libp11-kit.so=0-64
+│   │ └─openssl
+│   ├─libevdev
+│   │ └─glibc
+│   └─libwacom
+│     ├─glib2
+│     ├─systemd
+│     └─libgudev
+│       ├─systemd-libs
+│       ├─glib2
+│       ├─glib2 provides libglib-2.0.so=0-64
+│       ├─glib2 provides libgobject-2.0.so=0-64
+│       └─systemd-libs provides libudev.so=1-64
+├─nettle
+│ └─gmp
+├─libpciaccess
+├─libdrm
+└─libxshmfence

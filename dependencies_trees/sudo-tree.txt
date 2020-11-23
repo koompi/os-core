@@ -1,0 +1,50 @@
+sudo
+├─glibc
+│ ├─linux-api-headers provides linux-api-headers>=4.10
+│ ├─tzdata
+│ └─filesystem
+│   └─iana-etc
+├─libgcrypt
+│ └─libgpg-error
+│   ├─glibc
+│   └─bash provides sh
+│     ├─readline provides readline>=7.0
+│     │ ├─glibc
+│     │ ├─ncurses
+│     │ │ ├─glibc
+│     │ │ └─gcc-libs
+│     │ │   └─glibc provides glibc>=2.27
+│     │ └─ncurses provides libncursesw.so=6-64
+│     ├─glibc
+│     └─ncurses
+├─pam
+│ ├─glibc
+│ ├─libtirpc
+│ │ └─krb5
+│ │   ├─e2fsprogs
+│ │   │ ├─bash provides sh
+│ │   │ └─util-linux-libs
+│ │   ├─libldap
+│ │   │ ├─libsasl
+│ │   │ │ └─openssl
+│ │   │ │   └─perl
+│ │   │ │     ├─gdbm provides gdbm>=1.17
+│ │   │ │     │ ├─glibc
+│ │   │ │     │ └─bash provides sh
+│ │   │ │     ├─db
+│ │   │ │     │ ├─gcc-libs
+│ │   │ │     │ └─bash provides sh
+│ │   │ │     ├─glibc
+│ │   │ │     ├─libxcrypt
+│ │   │ │     │ └─glibc
+│ │   │ │     └─libxcrypt provides libcrypt.so=2-64
+│ │   │ └─e2fsprogs
+│ │   └─keyutils
+│ │     ├─glibc
+│ │     └─bash provides sh
+│ ├─pambase
+│ └─audit
+│   ├─krb5
+│   └─libcap-ng
+│     └─glibc
+└─libldap
