@@ -35,6 +35,5 @@ meson --prefix=/usr                 \
 
 ninja
 
-	install -D -m 644 -o root -g root $SRC/system-session $PKG/etc/pam.d/system-session
-	install -D -m 644 -o root -g root $SRC/systemd-user $PKG/etc/pam.d/systemd-user
+	
 }
