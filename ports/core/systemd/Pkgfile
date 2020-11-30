@@ -1,0 +1,40 @@
+# description	: Pluggable Authentication Modules used to enable the local system administrator to choose how applications authenticate users
+
+name=systemd
+version=246
+release=1
+source="https://github.com/systemd/systemd/archive/v246/systemd-246.tar.gz"
+
+build() {
+	cd systemd-$version
+
+	sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
+
+
+mkdir build &&
+cd    build &&
+
+meson --prefix=/usr                 \
+      -Dblkid=true                  \
+      -Dbuildtype=release           \
+      -Ddefault-dnssec=no           \
+      -Dfirstboot=false             \
+      -Dinstall-tests=false         \
+      -Dldconfig=false              \
+      -Dman=auto                    \
+      -Drootprefix=                 \
+      -Drootlibdir=/lib             \
+      -Dsplit-usr=true              \
+      -Dsysusers=false              \
+      -Drpmmacrosdir=no             \
+      -Db_lto=false                 \
+      -Dhomed=false                 \
+      -Duserdb=false                \
+      -Ddocdir=/usr/share/doc/systemd-246 \
+      ..                            &&
+
+ninja
+
+	install -D -m 644 -o root -g root $SRC/system-session $PKG/etc/pam.d/system-session
+	install -D -m 644 -o root -g root $SRC/systemd-user $PKG/etc/pam.d/systemd-user
+}
