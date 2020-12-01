@@ -1,0 +1,21 @@
+# Description: The libusb package contains a library used by some applications for USB device access
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=libunistring
+version=0.9.10
+release=1
+source=(https://github.com//libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2)
+
+build() {
+        cd $name-$version
+
+	sed -i "s/^PROJECT_LOGO/#&/" doc/doxygen.cfg.in &&
+
+	./configure --prefix=/usr --disable-static 
+
+	make -j1
+        make DESTDIR=$PKG install
+}

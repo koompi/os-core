@@ -1,0 +1,34 @@
+# Description: Utility for generating programs that recognize patterns in text
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on: glib js78
+
+name=polkit
+version=0.118
+release=1
+source=(https://www.freedesktop.org/software/polkit/releases/polkit-0.118.tar.gz)
+
+build() {
+        cd $name-$version
+
+	
+groupadd -fg 27 polkitd &&
+useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
+        -g polkitd -s /bin/false polkitd
+
+
+sed -i "s:/sys/fs/cgroup/systemd/:/sys:g" configure
+
+
+
+./configure --prefix=/usr        \
+            --sysconfdir=/etc    \
+            --localstatedir=/var \
+            --disable-static     \
+            --with-os-type=KFS   &&
+make
+
+
+        make DESTDIR=$PKG install
+}

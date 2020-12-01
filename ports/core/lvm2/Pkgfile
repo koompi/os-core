@@ -1,0 +1,37 @@
+# Description: Utility for generating programs that recognize patterns in text
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on: libaio
+
+name=lvm2
+version=2.03.10
+release=1
+source=(https://sourceware.org/ftp/lvm2/LVM2.2.03.10.tgz)
+
+build() {
+        cd $name-$version
+
+SAVEPATH=$PATH                  &&
+PATH=$PATH:/sbin:/usr/sbin      &&
+./configure --prefix=/usr       \
+            --exec-prefix=      \
+            --enable-cmdlib     \
+            --enable-pkgconfig  \
+            --enable-udev_sync  &&
+make                            &&
+PATH=$SAVEPATH                  &&
+unset SAVEPATH
+
+
+make -C tools install_tools_dynamic &&
+make -C udev  install                 &&
+make -C libdm install
+
+        make DESTDIR=$PKG install
+	make install_systemd_units
+
+
+
+
+}
