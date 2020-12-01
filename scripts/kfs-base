@@ -142,7 +142,7 @@ PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file
 	pkg-config ncurses libtool dialog libcap sed psmisc iana-etc bison flex grep bash gdbm gperf expat inetutils linux-pam
 	perl perl-xml-parser intltool autoconf automake libuv xz kmod gettext elfutils libffi openssl python3 python3-setuptools ninja coreutils
 	diffutils gawk findutils groff fuse2 grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng
-	util-linux e2fsprogs sysklogd systemd eudev kfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
+	util-linux e2fsprogs sysklogd eudev kfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 	curl cmake ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn sudo fakeroot"
 
