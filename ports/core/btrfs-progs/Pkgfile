@@ -4,8 +4,8 @@
 # Organization:  KOOMPI, koompi.com
 # Depends on:  lzo
 
-name=bison
-version=3.7.3
+name=btrfs-progs
+version=v5.9
 release=1
 source=(https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v5.9.tar.xz)
 
