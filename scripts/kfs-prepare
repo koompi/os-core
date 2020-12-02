@@ -17,7 +17,7 @@ BOLD="$(echo -e "\e[1m")"
 CYAN="$(echo -e "\e[36m")"
 WHITE='\033[0;37m' # White
 
-KFS_DEPS=("xorriso", "bash" "binutils" "bison" "bzip2" "coreutils" "diffutils" "gawk" "gcc" "glibc" "grep" "gzip" "m4" "make" "patch" "perl" "sed" "tar" "texinfo" "xz")
+KFS_DEPS=("xorriso" "bash" "binutils" "bison" "bzip2" "coreutils" "diffutils" "gawk" "gcc" "glibc" "grep" "gzip" "m4" "make" "patch" "perl" "sed" "tar" "texinfo" "xz")
 MISSING_DEPS=""
 
 CWD=$PWD
