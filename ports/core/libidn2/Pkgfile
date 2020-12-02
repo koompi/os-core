@@ -7,7 +7,7 @@
 name=libidn2
 version=2.3.0
 release=1
-source=(https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.39.tar.bz2)
+source=(https://ftp.gnu.org/gnu/libidn/libidn2-2.3.0.tar.gz)
 
 build() {
         cd $name-$version
