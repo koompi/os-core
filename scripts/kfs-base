@@ -144,8 +144,7 @@ PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file
 	diffutils gawk findutils groff fuse2 grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng
 	util-linux e2fsprogs sysklogd eudev kfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
-	curl cmake ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn fakeroot btrfs-progs libxslt libaio lvm2 systemd libgpg-error libgcrypt libunistring libidn
-	polkit"
+	curl cmake ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn fakeroot systemd"
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
 	kfs_dirs
