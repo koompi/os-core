@@ -10,5 +10,3 @@ You should change the config to the way you like in the kmp-config file.
 
 
 
-### Building Stage:
-
