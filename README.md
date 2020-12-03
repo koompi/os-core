@@ -8,5 +8,9 @@
 ### Building Process:
 You should change the config to the way you like in the kmp-config file.
 
-
+### Prerequisite
+- You should use virtual machine for this project. You can use QEMU or Virtualbox.
+- Create external hard disk for building the ISO.
+- Change drive variable name in the config file(kmp-config)
+- Clone the project and run kfs-build
 
