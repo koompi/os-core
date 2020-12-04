@@ -1,0 +1,18 @@
+Description: Reading/writing various compression formats
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=libassuan 
+version=2.5.4 
+release=1
+source=(https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-2.5.4.tar.bz2)
+
+build() {
+        cd $name-$version
+
+        ./configure --prefix=/usr 
+        make
+        make DESTDIR=$PKG install
+}

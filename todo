@@ -20,4 +20,21 @@
 [] qrencode
 [] quota-tools
 [] sphinx
-[] 
+
+
+
+##############################################################
+todo!
+[x] GnuPG-2.2.25
+	[x] libassuan-2.5.4
+	[x] libgcrypt-1.8.4
+	[x] libksba-1.5.0
+	[x] npth-1.6
+	[x] pinentry-1.1.0
+
+
+[x] OpenSSH-8.4p1
+
+[] Python2
+	[] sqlite
+	
