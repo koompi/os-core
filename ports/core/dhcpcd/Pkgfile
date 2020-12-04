@@ -8,7 +8,7 @@ name=dhcpcd
 version=9.3.2
 bootscriptsversion=20191204
 release=1
-source=(https://roy.marples.name/downloads/dhcpcd/dhcpcd-$version.tar.xz
+source=(https://ftp.osuosl.org/pub/blfs/conglomeration/dhcpcd/dhcpcd-9.3.2.tar.xz
 	http://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-$bootscriptsversion.tar.xz)
 
 build() {
