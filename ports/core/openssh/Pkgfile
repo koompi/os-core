@@ -1,4 +1,4 @@
-Description: The OpenSSH package contains ssh clients and the sshd daemon. 
+# Description: The OpenSSH package contains ssh clients and the sshd daemon. 
 # URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
 # Organization:  KOOMPI, koompi.com
