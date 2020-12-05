@@ -144,7 +144,7 @@ PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file
 	util-linux e2fsprogs sysklogd eudev kfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 	curl cmake ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn fakeroot sysvinit libgpg-error libassuan libgcrypt libksba npth pinentry
-	gnupg openssh libssh2 sqlite python2 llvm rust icu js78 libxslt glib gobject-introspection polkit pixman git graphviz vala nss pcre slang newt python3-cairo python3-gobject3
+	gnupg openssh libssh2 sqlite python2 llvm rust icu js78 libxslt glib gobject-introspection polkit pixman git graphviz vala nspr nss pcre slang newt python3-cairo python3-gobject3
 	NetworkManager sudo"
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then

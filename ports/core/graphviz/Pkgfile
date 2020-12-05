@@ -5,7 +5,7 @@
 # Depends on: 
 
 name=graphviz
-version=0.50.2
+version=2.44.1
 release=1
 source=(https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.1.tar.gz)
 
