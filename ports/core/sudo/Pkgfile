@@ -26,6 +26,8 @@ build() {
     make DESTDIR=$PKG install
     ln -sfv libsudo_util.so.0.0.0 /usr/lib/sudo/libsudo_util.so.0
 
+mkdir -pv /etc/sudoers.d
+mkdir -pv /etc/pam.d
 
 cat > /etc/sudoers.d/sudo << "EOF"
 Defaults secure_path="/usr/bin:/bin:/usr/sbin:/sbin"
