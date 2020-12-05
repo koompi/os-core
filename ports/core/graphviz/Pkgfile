@@ -1,0 +1,23 @@
+# Description: Contain visualize software
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on: 
+
+name=graphviz
+version=0.50.2
+release=1
+source=(https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.1.tar.gz)
+
+build() {
+        cd $name-$version
+
+	sed -i '/LIBPOSTFIX="64"/s/64//' configure.ac &&
+
+	autoreconf                            &&
+	./configure --prefix=/usr PS2PDF=true &&
+	make
+
+        make DESTDIR=$PKG install
+	ln -v -s /usr/share/graphviz/doc /usr/share/doc/graphviz-2.44.1
+}
