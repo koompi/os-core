@@ -5,15 +5,15 @@
 # Depends on:  
 
 name=glib
-version=2.66.2
+version=2.66.3
 release=1
-source=(http://ftp.gnome.org/pub/gnome/sources/glib/2.66/glib-2.66.2.tar.xz
-	http://www.linuxfromscratch.org/patches/blfs/svn/glib-2.66.2-skip_warnings-1.patch)
+source=(http://ftp.gnome.org/pub/gnome/sources/glib/2.66/glib-2.66.3.tar.xz
+	http://www.linuxfromscratch.org/patches/blfs/svn/glib-2.66.3-skip_warnings-1.patch)
 
 build() {
 	cd $name-$version
 
-	patch -Np1 -i ../glib-2.66.2-skip_warnings-1.patch
+	patch -Np1 -i ../glib-2.66.3-skip_warnings-1.patch
 
 	mkdir build &&
     cd    build &&
