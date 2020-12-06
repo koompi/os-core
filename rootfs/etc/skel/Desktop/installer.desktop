@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Install
+Comment=Install Koompi Linux into HDD
+Exec=pkexec /usr/sbin/koompi-installer
+Icon=/usr/share/icons/hicolor/scalable/apps/koompilinux.png
+Terminal=true
+Type=Application
+X-KeepTerminal=true
+Path=
+StartupNotify=false
+Name[en_US]=Install

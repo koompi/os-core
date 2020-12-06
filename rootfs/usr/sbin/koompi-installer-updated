@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+[ "$(id -u)" = 0 ] || {
+	echo "Please as root."
+	exit 1
+}
+
+cd /tmp
+
+curl -# -o venom-installer https://raw.githubusercontent.com/os-kfs/ports/master/rootfs/usr/sbin/koomopi-installer && \
+chmod +x koompi-installer && \
+./koompi-installer "$@"

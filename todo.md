@@ -78,6 +78,7 @@
 ### Display Managers
 1. [ ] lightdm-1.30.0
 1. [ ] lxdm-0.5.3
+1. [ ] sddm-0.15.0
 
 ### Window Managers
 1. [ ] Fluxbox-1.3.7
@@ -124,6 +125,79 @@
 1. [ ] libkcddb-20.08.0
 1. [ ] k3b-20.08.0
 
-
 ### KDE Plasma 5
 1. [ ] Building Plasma 5
+
+## GNOME
+### GNOME Libraries and Desktop
+### Libraries
+1. [ ] Gcr-3.38.0	
+1. [ ] gsettings-desktop-schemas-3.38.0
+1. [ ] libsecret-0.20.4
+1. [ ] rest-0.8.1
+1. [ ] totem-pl-parser-3.26.5
+1. [ ] VTE-0.62.1
+1. [ ] yelp-xsl-3.38.2
+1. [ ] GConf-3.2.6
+1. [ ] geocode-glib-3.26.2
+1. [ ] Gjs-1.66.1
+1. [ ] gnome-autoar-0.2.4
+1. [ ] gnome-desktop-3.38.2
+1. [ ] gnome-menus-3.36.0
+1. [ ] gnome-video-effects-0.5.0
+1. [ ] gnome-online-accounts-3.38.0
+1. [ ] Grilo-0.3.13
+1. [ ] libchamplain-0.12.20
+1. [ ] libgdata-0.17.13
+1. [ ] libgee-0.20.3
+1. [ ] libgtop-2.40.0
+1. [ ] libweather-3.36.1
+1. [ ] libpeas-1.128.0
+1. [ ] libwnck-3.36.0
+1. [ ] evolution-data-server-3.38.2
+1. [ ] Folks-0.14.0
+1. [ ] gfbgraph-0.2.4
+1. [ ] Tracker-2.3.6
+1. [ ] Tracker-3.0.1
+1. [ ] Tracker-miners-2.3.5
+1. [ ] Tracker-miners-3.0.1
+1. [ ] GSound-1.0.2
+
+### GNOME Desktop Components
+1. [ ]
+
+### GNOME Application
+
+## Xfce
+### Xfce Desktop
+1. [ ]
+
+### Xfce Applications
+1. [ ]
+
+## LXDE
+### LXDE Desktop
+1. [ ]
+
+### LXDE Applications
+1. [ ]
+
+## X Software
+### Office Programs	
+1. [ ]
+
+### Graphical Web Browser
+1. [ ]
+
+### Other X-based Programs
+1. [ ]
+
+## Multimedia	
+### Multimedia Libraries and Drivers
+1. [ ]
+
+### Audio Utilities
+1. [ ]
+
+### Videos Utilities
+1. [ ]
