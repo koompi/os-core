@@ -1,0 +1,22 @@
+# Description: companion library to GObject and GTK+ that adds APIs for special graphical effects.
+# URL: http://ftp.gnome.org/pub/gnome/sources/libdazzle/3.36/libdazzle-3.36.0.tar.xz
+# Maintainer: Jiren Edison
+# Organization: KOOMPI
+# Depends on: GTK3
+
+name=libdazzle
+version=3.36.0
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/libdazzle/3.36/libdazzle-3.36.0.tar.xz)
+
+build() {
+	cd $name-$version
+
+	mkdir build &&
+	cd build &&
+
+	meson --prefix=/usr .. &&
+	ninja
+
+	DESTDIR=$PKG ninja install
+}

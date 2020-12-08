@@ -1,0 +1,17 @@
+# URL: Document centric objects and utilities.
+# Maintainer: Edison Jiren
+# Organization: KOOMPI
+# Depends on: GTK+-3, libgsf, librsvg, libxslt, Which
+
+name=goffice
+version=0.10.48
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/goffice/0.10/goffice-0.10.48.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,23 @@
+# Description: contains libraries used for extending the GTK+ text functions to include syntax highlighting.
+# URL: http://ftp.gnome.org/pub/gnome/sources/gtksourceview/4.6/gtksourceview-4.6.1.tar.xz
+# Maintainer: Edison Jiren
+# Organization: KOOMPI
+# Depends on: GTK3
+
+name=gtksourceview
+version=4.6.1
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/gtksourceview/4.6/gtksourceview-4.6.1.tar.xz)
+
+build() {
+	cd $name-$version
+
+	mkdir build
+	cd build
+
+	meson --prefix=/usr .. &&
+
+	ninja
+
+	DESTDIR=$PKG ninja install	
+}

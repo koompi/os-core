@@ -1,0 +1,22 @@
+# Description: GTK UI widgets for use in developing user interfaces.
+# URL: https://source.puri.sm/Librem5/libhandy/-/archive/v0.0.13/libhandy-v0.0.13.tar.bz2
+# Maintainer: Jiren Edision
+# Organization: KOOMPI
+# Depends on: GTK3
+
+name=libhandy
+version=v0.0.13
+release=1
+source=(https://source.puri.sm/Librem5/libhandy/-/archive/v0.0.13/libhandy-v0.0.13.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	mkdir build &&
+	cd build &&
+
+	meson --prefix=/usr .. &&
+	ninja
+
+	DESTDIR=$PKG ninja install
+}

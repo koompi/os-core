@@ -42,39 +42,38 @@
 1. [x] clutter-gtk-3.0.27
 1. [x] colord-gtk-0.2.0
 1. [x] FLTK-1.3.5
-1. [ ] Freeglut-3.2.1
-1. [ ] gdk-pixbuf-2.42.0
-1. [ ] gdk-pixbuf-xlib-3116b8ae
-1. [ ] GDL-3.34.0
-1. [ ] GLEW-2.1.0
-1. [ ] GLU-9.0.1
-1. [ ] GOffice-0.10.48
-1. [ ] Graphene-1.10.2
-1. [ ] GTK+-2.24.32
-1. [ ] GTK+-3.24.23 
-1. [ ] GTK Engines-2.20.2
-1. [ ] Gtkmm-2.24.5
-1. [ ] Gtkmm-3.24.2
-1. [ ] gtksourceview-3.24.11
-1. [ ] gtksourceview4-4.8.0
-1. [ ] imlib2-1.7.0
-1. [ ] keybinder-0.3.1
-1. [ ] keybinder-3.0-0.3.2
-1. [ ] libdazzle-3.38.0
-1. [ ] Libhandy-1.0.2
-1. [ ] libiepoxy-1.5.4
-1. [ ] libglade-2.6.4	
-1. [ ] libnotify-0.7.9
-1. [ ] libxklavier-5.4
-1. [ ] Pango-1.48.0
-1. [ ] Pangomm-2.42.1
-1. [ ] libdrm-2.4.103
-1. [ ] Qt-5.15.2
-1. [ ] QtWebEngine-5.15.2
-1. [ ] startup-notification-0.12
-1. [ ] Qt-5.15.2
-1. [ ] Tepl-5.0.1
-1. [ ] WebKitGTK+-2.30.3
+1. [x] Freeglut-3.2.1
+1. [x] gdk-pixbuf-2.42.0
+1. [x] gdk-pixbuf-xlib-3116b8ae
+1. [x] GDL-3.34.0
+1. [x] GLEW-2.1.0
+1. [x] GLU-9.0.1
+1. [x] GOffice-0.10.48
+1. [x] Graphene-1.10.2
+1. [x] GTK+-2.24.32
+1. [x] GTK+-3.24.23 
+1. [x] GTK Engines-2.20.2
+1. [x] Gtkmm-2.24.5
+1. [x] Gtkmm-3.24.2
+1. [x] gtksourceview-3.24.11
+1. [x] gtksourceview4-4.8.0
+1. [x] imlib2-1.7.0
+1. [x] keybinder-0.3.1
+1. [x] keybinder-3.0-0.3.2
+1. [x] libdazzle-3.38.0
+1. [x] Libhandy-1.0.2
+1. [x] libepoxy-1.5.4
+1. [x] libglade-2.6.4	
+1. [x] libnotify-0.7.9
+1. [x] libxklavier-5.4
+1. [x] Pango-1.48.0
+1. [x] Pangomm-2.42.1
+1. [x] libdrm-2.4.103
+1. [x] Qt-5.15.2
+1. [x] QtWebEngine-5.15.2
+1. [x] startup-notification-0.12
+1. [x] Tepl-5.0.1
+1. [x] WebKitGTK+-2.30.3
 
 ### Display Managers
 1. [ ] lightdm-1.30.0

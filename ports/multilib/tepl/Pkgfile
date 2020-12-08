@@ -1,0 +1,18 @@
+# Description:  A library that eases the development of GTKSourceView-based text editors and IDES
+# URL: http://ftp.gnome.org/pub/gnome/sources/tepl/4.4/tepl-4.4.0.tar.xz
+# Maintainer: Jiren Edison
+# Organization: KOOMPI
+# Depends on: amtk, gtksourceview4, libxml2, uchardet	
+
+name=tepl
+version=4.4.0
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/tepl/4.4/tepl-4.4.0.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
