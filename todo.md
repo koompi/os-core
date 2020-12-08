@@ -29,18 +29,19 @@
 1. [ ] Xorg-7 Testing and Configuration
 
 ### X Libraries
-1. [ ] Amtk-5.2.0
-1. [ ] ATK-2.36.0
-1. [ ] Atkmm-2.28.0
-1. [ ] at-spi2-core-2.38.0
-1. [ ] at-spi2-atk-2.38.0
-1. [ ] Cairo-1.17.2+f93fc72c03e
-1. [ ] libbcairomm-1.0
-1. [ ] Cogl-1.22.8
-1. [ ] Clutter-1.26.4
-1. [ ] clutter-gst-3.0.27
-1. [ ] colord-gtk-0.2.0
-1. [ ] FLTK-1.3.5
+1. [x] Amtk-5.2.0
+1. [x] ATK-2.36.0
+1. [x] Atkmm-2.28.0
+1. [x] at-spi2-core-2.38.0
+1. [x] at-spi2-atk-2.38.0
+1. [x] Cairo-1.17.2+f93fc72c03e
+1. [x] Cairomm-1.22.2
+1. [x] Cogl-1.22.8
+1. [x] Clutter-1.26.4
+1. [x] clutter-gst-3.0.27
+1. [x] clutter-gtk-3.0.27
+1. [x] colord-gtk-0.2.0
+1. [x] FLTK-1.3.5
 1. [ ] Freeglut-3.2.1
 1. [ ] gdk-pixbuf-2.42.0
 1. [ ] gdk-pixbuf-xlib-3116b8ae

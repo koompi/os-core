@@ -1,0 +1,18 @@
+# Description: a library providing facilities to integrate Clutter  into GTK+ applications.
+# URL: http://ftp.gnome.org/pub/gnome/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
+# Maintainer: Edison Jiren
+# Organization: KOOMPI
+# Depends on: Clutter, GTK+-3.24.22
+
+name=clutter-gtk
+version=1.8.4
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

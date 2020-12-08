@@ -1,0 +1,18 @@
+# Description: The Amtk package contain a basic GTKUIManager replacement based on GAction.
+# URL: http://ftp.gnome.org/pub/gnome/sources/amtk/5.1/amtk-5.1.1.tar.xz
+# Maintainer: Edison Jiren
+# Organization: KOOMPI, 
+# Depends on: GTK+-3.24.22
+
+name=amtk
+version=5.1.1
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/amtk/5.1/amtk-5.1.1.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
