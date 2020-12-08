@@ -1,18 +1,15 @@
-# Description: Programs for generating Makefiles for use with Autoconf
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Programs for generating Makefiles for use with Autoconf
+# depends	: bash perl autoconf
 
 name=automake
-version=1.16.2
+version=1.16.3
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure --prefix=/usr
-        make
-        make DESTDIR=$PKG install
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
 }

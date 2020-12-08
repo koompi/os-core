@@ -1,18 +1,15 @@
-Description: Reading/writing various compression formats
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Inter process communication library used by some of the other GnuPG related packages
+# depends	: libgpg-error
 
-name=libassuan 
-version=2.5.4 
+name=libassuan
+version=2.5.4
 release=1
-source=(https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-2.5.4.tar.bz2)
+source="ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure --prefix=/usr 
-        make
-        make DESTDIR=$PKG install
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
 }

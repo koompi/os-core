@@ -1,25 +1,27 @@
-# Description: The btrfs-progs package contains administration and debugging tools for the B-tree file system (btrfs).
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  lzo
+# description	: Administration and debugging tools for the B-tree file system (btrfs)
+# depends	: lzo zstd
 
 name=btrfs-progs
-version=v5.9
+version=5.9
 release=1
-source=(https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v5.9.tar.xz)
+source="https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v$version.tar.xz"
 
 build() {
-        cd $name-$version
-        ./configure --prefix=/usr \
-            --bindir=/bin \
-            --libdir=/lib \
-            --with-pkgconfigdir=/usr/lib/pkgconfig 
+	cd $name-v$version
 
-        make
-        make DESTDIR=$PKG install
-        ln -sfv ../../lib/$(readlink /lib/libbtrfs.so) /usr/lib/libbtrfs.so &&
-        ln -sfv ../../lib/$(readlink /lib/libbtrfsutil.so) /usr/lib/libbtrfsutil.so &&
-        rm -fv /lib/libbtrfs.{a,so} /lib/libbtrfsutil.{a,so} &&
-        mv -v /bin/{mkfs,fsck}.btrfs /sbin
+	./configure \
+		--prefix=/usr \
+		--bindir=/sbin \
+		--disable-documentation \
+		--disable-backtrace \
+		--disable-python
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -p $PKG/usr/share/man/{man5,man8}
+	install -m644 Documentation/*.5 $PKG/usr/share/man/man5/
+	install -m644 Documentation/*.8 $PKG/usr/share/man/man8/
+
+	# install bash completion (FS#44618)
+	install -Dm644 btrfs-completion $PKG/usr/share/bash-completion/completions/btrfs
 }

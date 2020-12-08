@@ -1,33 +1,26 @@
-# Description: Implementation of the DHCP client specified in RFC2131
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: An implementation of the DHCP client specified in RFC2131
 
 name=dhcpcd
-version=9.3.2
-bootscriptsversion=20191204
+version=9.3.4
 release=1
-source=(https://ftp.osuosl.org/pub/blfs/conglomeration/dhcpcd/dhcpcd-9.3.2.tar.xz
-	http://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-$bootscriptsversion.tar.xz)
+source="http://roy.marples.name/downloads/$name/$name-$version.tar.xz
+	rc.network
+	run
+	conf"
 
 build() {
 	cd $name-$version
 
-	./configure --libexecdir=/lib/dhcpcd \
-                    --dbdir=/var/lib/dhcpcd
+  	./configure --libexecdir=/lib/dhcpcd \
+	            --dbdir=/var/lib/dhcpcd
 	make
 	make DESTDIR=$PKG install
 
-        cd ../blfs-bootscripts-$bootscriptsversion
-	make DESTDIR=$PKG install-service-dhcpcd
+	# rc service
+	install -Dm755 $SRC/rc.network $PKG/etc/rc.d/network
 
-	mkdir -p $PKG/etc/sysconfig/
-	cat > $PKG/etc/sysconfig/ifconfig.eth0 << "EOF"
-ONBOOT="no"
-IFACE="eth0"
-SERVICE="dhcpcd"
-#DHCP_START="-b -q <insert appropriate start options here>"
-#DHCP_STOP="-k <insert additional stop options here>"
-EOF
+	# runit service
+        install -Dm755 $SRC/run $PKG/etc/sv/$name/run
+        install -Dm644 $SRC/conf $PKG/etc/sv/$name/conf
+        ln -s /run/runit/supervise.$name $PKG/etc/sv/$name/supervise
 }

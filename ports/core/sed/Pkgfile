@@ -1,21 +1,18 @@
-# Description: GNU stream editor
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: GNU stream editor
+# depends	: acl attr gettext
 
 name=sed
 version=4.8
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-	sed -i 's/usr/tools/'                 build-aux/help2man
-	sed -i 's/testsuite.panic-tests.sh//' Makefile.in
+	./configure --prefix=/usr --bindir=/bin --disable-nls
+	make
+	make html
+	make DESTDIR=$PKG install
 
-        ./configure --prefix=/usr --bindir=/bin
-        make
-        make DESTDIR=$PKG install
+	rm -r $PKG/usr/share/info
 }

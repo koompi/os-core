@@ -1,19 +1,14 @@
-# Description: An arbitrary precision numeric processing language
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Library for writing preformatted data onto optical media: CD, DVD and BD (Blu-Ray)
 
 name=libburn
 version=1.5.2
 release=1
-source=(http://files.libburnia-project.org/releases/libburn-1.5.2.tar.gz)
+source="http://files.libburnia-project.org/releases/$name-$version.tar.gz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure --prefix=/usr --disable-static && make
-
-        make DESTDIR=$PKG install
-
+	./configure --prefix=/usr --disable-static
+	make
+	make DESTDIR=$PKG install
 }

@@ -1,20 +1,22 @@
-# Description: Reading/writing various compression formats
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Reading/writing various compression formats
+# depends	: acl xz bzip2
 
 name=libarchive
-version=3.4.3
+version=3.5.0
 release=1
-source=(https://github.com/libarchive/libarchive/releases/download/v$version/libarchive-$version.tar.gz)
+source="https://github.com/libarchive/libarchive/releases/download/v$version/libarchive-$version.tar.gz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure \
-                --prefix=/usr \
-                --disable-static
-        make
-        make DESTDIR=$PKG install
+  	./configure \
+		--prefix=/usr \
+		--without-xml2 \
+		--without-nettle \
+		--without-lz4 \
+		--without-zstd \
+		--without-openssl \
+		--disable-static
+	make
+	make DESTDIR=$PKG install
 }

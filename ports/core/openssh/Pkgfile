@@ -1,15 +1,12 @@
-# Description: The OpenSSH package contains ssh clients and the sshd daemon. 
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Free version of the SSH connectivity tools
+# depends	: openssl xauth
 
 name=openssh
 version=8.4p1
 release=1
-source=(https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz
+source="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz
 	rc.sshd
-	run)
+	run"
 
 build() {
 	cd $name-$version
@@ -33,6 +30,6 @@ build() {
 	install -Dm755 $SRC/rc.sshd $PKG/etc/rc.d/sshd
 
 	# runit service
-    install -Dm755 $SRC/run $PKG/etc/sv/sshd/run
-    ln -s /run/runit/supervise.sshd $PKG/etc/sv/sshd/supervise
+        install -Dm755 $SRC/run $PKG/etc/sv/sshd/run
+        ln -s /run/runit/supervise.sshd $PKG/etc/sv/sshd/supervise
 }

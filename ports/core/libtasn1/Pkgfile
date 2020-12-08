@@ -1,18 +1,17 @@
-# Description: Highly portable C library that encodes and decodes DER/BER data following an ASN.1 schema
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com 
-# Depends on:
+# description	: Highly portable C library that encodes and decodes DER/BER data following an ASN.1 schema
 
 name=libtasn1
 version=4.16.0
 release=1
-source=(https://ftp.gnu.org/gnu/libtasn1/libtasn1-$version.tar.gz)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr --disable-static
+	./configure \
+		--prefix=/usr \
+		--disable-static
 	make
 	make DESTDIR=$PKG install
+	rm -r $PKG/usr/share/info
 }

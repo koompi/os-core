@@ -1,24 +1,25 @@
-# Description: Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
+# depends	: attr linux-api-headers
 
 name=libcap
 version=2.45
 release=1
-source=(https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/$name-$version.tar.xz)
+source="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        sed -i '/install.*STALIBNAME/d' libcap/Makefile
+	# use our buildflags
+	sed -i "s/CFLAGS :=/CFLAGS += \$(CPPFLAGS) /" Make.Rules
+	sed -i "s/LDFLAGS :=/LDFLAGS +=/" Make.Rules
 
-        make
-        make RAISE_SETFCAP=no lib=lib prefix=/usr DESTDIR=$PKG install
-        chmod -v 755 $PKG/usr/lib/libcap.so
+	# Disable tests, as they cause cross-build failure
+	sed -e '/test:/,/.sh/d' -e '/tests/d' -i Makefile
 
-        mkdir -p $PKG/lib
-        mv -v $PKG/usr/lib/libcap.so.* $PKG/lib
-        ln -sfv ../../lib/$(readlink $PKG/usr/lib/libcap.so) $PKG/usr/lib/libcap.so
+	make GOLANG=no RAISE_SETFCAP=no lib=lib prefix=/usr DESTDIR=$PKG install
+	chmod -v 755 $PKG/usr/lib/libcap.so
+
+	mkdir -p $PKG/lib
+	mv -v $PKG/usr/lib/libcap.so.* $PKG/lib
+	ln -sfv ../../lib/$(readlink $PKG/usr/lib/libcap.so) $PKG/usr/lib/libcap.so
 }

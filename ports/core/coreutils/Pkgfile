@@ -1,38 +1,43 @@
-# Description: An arbitrary precision numeric processing language
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com 
+# description	: Utilities for showing and setting the basic system characteristics
+# depends	: acl attr gmp
 
 name=coreutils
 version=8.32
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
-        http://www.linuxfromscratch.org/patches/lfs/10.0/coreutils-$version-i18n-1.patch)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
+	$name-i18n-1.patch"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        # fixes POSIX requires that programs from Coreutils recognize
-        # character boundaries correctly even in multibyte locales
-        patch -Np1 -i ../coreutils-$version-i18n-1.patch
-        sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk
+	# fixes POSIX requires that programs from Coreutils recognize
+	# character boundaries correctly even in multibyte locales
+	#patch -Np1 -i ../$name-i18n-1.patch
+	sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk
 
-        autoreconf -fiv
-        FORCE_UNSAFE_CONFIGURE=1 \
-        ./configure \
-                --prefix=/usr \
-                --enable-no-install-program=kill,uptime
-        make
-        make DESTDIR=$PKG install
+	autoreconf -fiv
+	FORCE_UNSAFE_CONFIGURE=1 \
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--enable-no-install-program=kill,uptime \
+		--disable-nls
+	FORCE_UNSAFE_CONFIGURE=1 make
+	make DESTDIR=$PKG install
 
-	mkdir -pv $PKG/{bin,usr/sbin}
-        mv -v $PKG/usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo} $PKG/bin
-        mv -v $PKG/usr/bin/{false,ln,ls,mkdir,mknod,mv,pwd,rm} $PKG/bin
-        mv -v $PKG/usr/bin/{rmdir,stty,sync,true,uname} $PKG/bin
-        mv -v $PKG/usr/bin/chroot $PKG/usr/sbin
-        mkdir -pv $PKG/usr/share/man/man8
-        mv -v $PKG/usr/share/man/man1/chroot.1 $PKG/usr/share/man/man8/chroot.8
-        sed -i s/\"1\"/\"8\"/1 $PKG/usr/share/man/man8/chroot.8
+	mkdir -pv $PKG/bin \
+	          $PKG/usr/sbin
 
-        mv -v $PKG/usr/bin/{head,sleep,nice} $PKG/bin
+	for i in cat chgrp chmod chown cp date dd df echo \
+		false ln ls mkdir mknod mv pwd rm rmdir \
+		stty sync true uname head sleep nice; do
+		mv -v $PKG/usr/bin/$i $PKG/bin
+	done
+
+	mv -v $PKG/usr/bin/chroot $PKG/usr/sbin
+	mkdir -pv $PKG/usr/share/man/man8
+	mv -v $PKG/usr/share/man/man1/chroot.1 $PKG/usr/share/man/man8/chroot.8
+	sed -i s/\"1\"/\"8\"/1 $PKG/usr/share/man/man8/chroot.8
+
+	rm -r $PKG/usr/share/info
 }

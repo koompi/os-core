@@ -1,20 +1,15 @@
-# Description: An arbitrary precision numeric processing language
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  popt
+# description	: Tools and library to manipulate EFI variables
+# depends	: popt
 
 name=efivar
 version=37
 release=1
-source=(https://github.com/rhboot/efivar/releases/download/$version/$name-$version.tar.bz2
-        0dad6d78a7fb5f6c5fb4a1d646040539db6cf865.patch
-        b98ba8921010d03f46704a476c69861515deb1ca.patch
-        c3c553db85ff10890209d0fe48fb4856ad68e4e0.patch)
+source="https://github.com/rhboot/efivar/releases/download/$version/$name-$version.tar.bz2"
 
 build() {
 	cd $name-$version
+
 	sed -e 's/-Werror//g' -i gcc.specs
-        make -j1
-        make libdir=/usr/lib DESTDIR=$PKG install
+	make -j1
+	make libdir=/usr/lib DESTDIR=$PKG install
 }

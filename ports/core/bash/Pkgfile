@@ -1,24 +1,40 @@
-# Description: The Bourne-Again SHell
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: The Bourne-Again SHell
+# depends	: ncurses readline
 
 name=bash
-version=5.0
+version=5.0.017
+majver=${version%%.*}
+basever=${version%.*}
+patchver=${version##*.}
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
+source="https://ftp.gnu.org/gnu/$name/$name-$basever.tar.gz
+	https://ftp.gnu.org/gnu/bash/bash-$basever-patches/bash${majver}0-$patchver"
+
+p=0; while [ $p -lt $patchver ]; do
+	p=$(( p + 1 ))
+	case $p in
+		 ?) s=00$p ;;
+		??) s=0$p  ;;
+		 *) s=$p   ;;
+	esac
+	source="$source https://ftp.gnu.org/gnu/bash/bash-$basever-patches/bash${majver}0-$s"
+done
 
 build() {
-        cd $name-$version
+	cd $name-$basever
 
-        ./configure --prefix=/usr                    \
-	            --without-bash-malloc            \
-	            --with-installed-readline
-        make
-        make DESTDIR=$PKG install
+	for i in $SRC/bash${majver}0-*; do
+		patch -p0 -i $i
+	done
 
-        mkdir -p $PKG/bin
-        mv $PKG/usr/bin/bash $PKG/bin
-        ln -s bash $PKG/bin/sh
+	./configure --prefix=/usr \
+	            --without-bash-malloc \
+	            --with-installed-readline \
+		    --disable-nls
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -p $PKG/bin
+	mv $PKG/usr/bin/bash $PKG/bin
+	ln -s bash $PKG/bin/sh
 }

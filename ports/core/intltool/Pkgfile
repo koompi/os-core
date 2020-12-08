@@ -1,20 +1,17 @@
-# Description: An internationalization tool used for extracting translatable strings from source files
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: An internationalization tool used for extracting translatable strings from source files
+# depends	: perl-xml-parser
 
 name=intltool
 version=0.51.0
 release=1
-source=(http://launchpad.net/intltool/trunk/$version/+download/$name-$version.tar.gz)
+source="http://launchpad.net/intltool/trunk/$version/+download/$name-$version.tar.gz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        sed -i 's:\\\${:\\\$\\{:' intltool-update.in
+	sed -i 's:\\\${:\\\$\\{:' intltool-update.in
 
-        ./configure --prefix=/usr
-        make
-        make DESTDIR=$PKG install
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
 }

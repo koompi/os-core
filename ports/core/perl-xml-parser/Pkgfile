@@ -1,18 +1,16 @@
-# Description: Expat-based XML parser module for perl
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: Expat-based XML parser module for perl
+# depends	: expat perl
 
 name=perl-xml-parser
 version=2.46
 release=1
-source=(http://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-$version.tar.gz)
+source="http://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-$version.tar.gz"
 
 build() {
-        cd XML-Parser-$version
+	cd XML-Parser-$version
 
-        perl Makefile.PL
-        make
-        make DESTDIR=$PKG install
+	perl Makefile.PL
+	make
+	make DESTDIR=$PKG install
 }
+

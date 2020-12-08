@@ -1,18 +1,14 @@
-# Description: A utility to show the full path of commands
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com 
-# Depends on:
+# description	: A utility to show the full path of commands
 
 name=which
 version=2.21
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
-
+	   
 	./configure --prefix=/usr
-        make
-        make DESTDIR=$PKG install
+	make
+	make DESTDIR=$PKG install
 }

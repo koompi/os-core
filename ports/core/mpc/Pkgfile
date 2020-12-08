@@ -1,19 +1,20 @@
-# Description: A library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: Minimalist command line interface to MPD
+# depends	: libmpdclient meson
 
 name=mpc
-version=1.1.0
+version=0.33
 release=1
-source=(https://ftp.gnu.org/gnu/mpc/mpc-$version.tar.gz)
+source="https://www.musicpd.org/download/$name/${version%.*}/$name-$version.tar.xz"
 
 build() {
-        cd mpc-$version
+	cd $name-$version
+	
+	mkdir builddir
+	cd builddir
 
-        ./configure --prefix=/usr    \
-                    --disable-static
-        make
-        make DESTDIR=$PKG install
+	meson --prefix=/usr
+	ninja
+	DESTDIR=$PKG ninja install
+
+	rm -r $PKG/usr/share
 }

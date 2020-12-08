@@ -1,23 +1,16 @@
-# Description: Contain visualize software
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on: 
+# description	: Graph visualization software
+# depends	: pango cairo fontconfig gtk2 poppler-glib
 
 name=graphviz
-version=2.44.1
+version=2.44.0
 release=1
-source=(https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.1.tar.gz)
+source="https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.0.tar.gz"
 
 build() {
-        cd $name-$version
-
-	sed -i '/LIBPOSTFIX="64"/s/64//' configure.ac &&
-
-	autoreconf                            &&
-	./configure --prefix=/usr PS2PDF=true &&
+	cd $name-$version
+	
+	export LIBPOSTFIX=/
+	./configure --prefix=/usr
 	make
-
-        make DESTDIR=$PKG install
-	ln -v -s /usr/share/graphviz/doc /usr/share/doc/graphviz-2.44.1
+	make DESTDIR=$PKG install
 }

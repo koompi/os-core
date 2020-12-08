@@ -3,7 +3,7 @@
 name=nspr
 version=4.29
 release=1
-source=(https://archive.mozilla.org/pub/$name/releases/v$version/src/$name-$version.tar.gz)
+source="https://archive.mozilla.org/pub/$name/releases/v$version/src/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version/$name

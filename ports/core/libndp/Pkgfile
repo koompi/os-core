@@ -1,22 +1,17 @@
-# Description:  The libndp package provides a wrapper for IPv6 Neighbor Discovery Protocol. It also provides a tool named ndptool for sending and receiving NDP messages. 
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: Wrapper for IPv6 Neighbor Discovery Protocol
 
 name=libndp
 version=1.7
 release=1
-source=(http://libndp.org/files/libndp-1.7.tar.gz)
+source="http://libndp.org/files/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr     \
-	            --sysconfdir=/etc \
-                --localstatedir=/var \
+	./configure --prefix=/usr        \
+	            --sysconfdir=/etc    \
+	            --localstatedir=/var \
 	            --disable-static
-                
 	make
 	make DESTDIR=$PKG install
 }

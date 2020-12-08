@@ -1,20 +1,15 @@
-# Description: libunistring is a library that provides functions for manipulating Unicode strings and for manipulating C strings according to the Unicode standard.
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  libunistring
+# description	: Library for manipulating Unicode strings and C strings
 
 name=libunistring
 version=0.9.10
 release=1
-source=(https://ftp.gnu.org/gnu/libunistring/libunistring-0.9.10.tar.xz)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
-	./configure --prefix=/usr \
-	--disable-static \
-	--docdir=/usr/share/doc/libunistring-0.9.10 &&
-	
+	cd $name-$version
+	./configure --prefix=/usr    \
+	            --disable-static
 	make
-        make DESTDIR=$PKG install
+	make DESTDIR=$PKG install
+	rm -r $PKG/usr/share
 }

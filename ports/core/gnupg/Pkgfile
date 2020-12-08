@@ -1,23 +1,19 @@
-# Description: The GnuPG package is GNU's tool for secure communication and data storage.
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  libassuan libgpg-error
+# description	: GNU's tool for secure communication and data storage
+# depends	: libassuan libgcrypt libgpg-error libksba npth pinentry
 
-name=gnupg 
+name=gnupg
 version=2.2.25
 release=1
-source=(https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.25.tar.bz2)
+source="https://gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2"
 
 build() {
-        cd $name-$version
-        sed -e '/noinst_SCRIPTS = gpg-zip/c sbin_SCRIPTS += gpg-zip' \
-            -i tools/Makefile.in
+	cd $name-$version
 
-        ./configure --prefix=/usr    \
-            --enable-symcryptrun     \
-            --localstatedir=/var     
-            
-        make
-        make DESTDIR=$PKG install
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/$name \
+		--enable-symcryptrun \
+		--disable-nls
+	make
+	make DESTDIR=$PKG install
 }

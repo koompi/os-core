@@ -1,18 +1,20 @@
-# Description: Programs for reading, writing, and converting info pages
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  gzip ncurses perl bash
+# description	: Programs for reading, writing, and converting info pages
+# depends	: gzip ncurses perl bash
 
 name=texinfo
 version=6.7
 release=1
-source=(https://ftp.gnu.org/gnu/texinfo/$name-$version.tar.xz)
+source="https://ftp.gnu.org/gnu/texinfo/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure --prefix=/usr --disable-static
-        make
-        make DESTDIR=$PKG install
+	# Fix a file that creates a lot of failures in the regression checks
+	sed -i '5481,5485 s/({/(\\{/' tp/Texinfo/Parser.pm
+
+	./configure --prefix=/usr --disable-static --disable-nls
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/info
 }

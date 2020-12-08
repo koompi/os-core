@@ -4,7 +4,7 @@
 name=zstd
 version=1.4.5
 release=1
-source=(https://github.com/facebook/zstd/releases/download/v$version/$name-$version.tar.gz)
+source="https://github.com/facebook/zstd/releases/download/v$version/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version

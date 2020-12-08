@@ -1,25 +1,26 @@
-# Description: Utilities for internationalization and localization
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Utilities for internationalization and localization
+# depends	: ncurses acl
 
 name=gettext
 version=0.21
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        # suppress two invocations of test-lock which on some machines can loop forever
-        sed -i '/^TESTS =/d' gettext-runtime/tests/Makefile.in
-        sed -i 's/test-lock..EXEEXT.//' gettext-tools/gnulib-tests/Makefile.in
-
-        ./configure --prefix=/usr \
-                    --disable-static
-        make || make -j1
-        make -j1 DESTDIR=$PKG install
-
-        chmod -v 0755 $PKG/usr/lib/preloadable_libintl.so
+	./configure \
+		--prefix=/usr \
+		--disable-static \
+		--disable-nls \
+		--disable-java \
+		--disable-csharp \
+                --without-git \
+                --without-emacs \
+                --with-included-libxml \
+                --with-included-libcroco \
+                --with-included-glib
+	make
+	make DESTDIR=$PKG install
 }
+

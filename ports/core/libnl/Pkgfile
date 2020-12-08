@@ -1,18 +1,15 @@
-# Description: Collection of libraries providing APIs to netlink protocol based Linux kernel interfaces
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: Collection of libraries providing APIs to netlink protocol based Linux kernel interfaces
 
 name=libnl
 version=3.5.0
+_version=$(echo $version | tr '.' '_')
 release=1
-source=(https://github.com/thom311/libnl/releases/download/libnl${version//./_}/libnl-$version.tar.gz)
+source="https://github.com/thom311/libnl/releases/download/${name}${_version}/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr     \
+  	./configure --prefix=/usr     \
 	            --sysconfdir=/etc \
 	            --disable-static
 	make

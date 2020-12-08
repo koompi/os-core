@@ -1,23 +1,26 @@
-# Description: programs for controlling the startup, running, and shutdown of the system
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: programs for controlling the startup, running, and shutdown of the system
 
 name=sysvinit
-version=2.97
+version=2.98
 release=1
-source=(http://download.savannah.gnu.org/releases/sysvinit/sysvinit-$version.tar.xz)
+source="https://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        make -C src
-        make -C src ROOT=$PKG install
+	make -C src
+	make -C src ROOT=$PKG install
 
-        rm $PKG/usr/bin/{last,lastb,readbootlog,mesg,utmpdump,wall}
-        rm $PKG/bin/pidof
-        rm $PKG/sbin/{sulogin,logsave}
-        rm $PKG/usr/share/man/man1/{last,lastb,readbootlog,mesg,utmpdump,wall}.1
-        rm $PKG/usr/share/man/man8/{pidof,logsave,sulogin}.8
+	for xx in last lastb readbootlog mesg utmpdump wall; do
+		rm $PKG/usr/bin/$xx
+	done
+	rm $PKG/bin/pidof
+	rm $PKG/sbin/sulogin
+	rm $PKG/sbin/logsave
+	for xx in last lastb readbootlog mesg utmpdump wall; do
+		rm $PKG/usr/share/man/man1/$xx.1
+	done
+	for xx in pidof logsave sulogin; do
+		rm $PKG/usr/share/man/man8/$xx.8
+	done
 }

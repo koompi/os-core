@@ -1,16 +1,12 @@
-# Description: Extremely fast compression algorithm
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:
+# description	: Extremely fast compression algorithm
 
 name=lz4
-version=1.9.2
+version=1.9.3
 release=1
-source=(https://github.com/lz4/lz4/archive/v$version/lz4-v$version.tar.gz)
+source="$name-$version.tar.gz::https://github.com/lz4/lz4/archive/v$version.tar.gz"
 
 build() {
 	cd $name-$version
 	make PREFIX=/usr
-        make DESTDIR=$PKG PREFIX=/usr install
+	make DESTDIR=$PKG PREFIX=/usr install
 }

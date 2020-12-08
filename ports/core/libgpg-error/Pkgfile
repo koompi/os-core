@@ -1,18 +1,17 @@
-# Description: The libgpg-error package contains a library that defines common error values for all GnuPG components.
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  bash
+# description	: Library that defines common error values for all GnuPG components
 
 name=libgpg-error
 version=1.39
 release=1
-source=(https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.39.tar.bz2)
+source="ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure --prefix=/usr
-        make
-        make DESTDIR=$PKG install
+	# allow building with gawk-5.0
+	sed -i 's/namespace/pkg_&/' src/Makefile.am src/Makefile.in src/mkstrtable.awk
+
+  	./configure --prefix=/usr --disable-nls
+	make
+	make DESTDIR=$PKG install
 }

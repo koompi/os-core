@@ -1,18 +1,15 @@
-Description: The Libksba package contains a library used to make X.509 certificates as well as making the CMS
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  
+# description	: Library used to make X.509 certificates as well as making the CMS (Cryptographic Message Syntax) easily accessible by other applications
+# depends	: libgpg-error
 
 name=libksba
 version=1.5.0
 release=1
-source=(https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.5.0.tar.bz2)
+source="https://gnupg.org/ftp/gcrypt/libksba/$name-$version.tar.bz2"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./configure --prefix=/usr 
-        make
-        make DESTDIR=$PKG install
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
 }

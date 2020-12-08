@@ -1,26 +1,22 @@
-# Description: Management tools and libraries relating to cryptography
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com 
-# Depends on:
+# description	: Management tools and libraries relating to cryptography
 
 name=openssl
 version=1.1.1h
 release=1
-source=(https://openssl.org/source/$name-$version.tar.gz)
+source="https://openssl.org/source/$name-$version.tar.gz"
 
 build() {
-        cd $name-$version
+	cd $name-$version
 
-        ./config --prefix=/usr         \
-                 --openssldir=/etc/ssl \
-                 --libdir=lib          \
-                 shared                \
-                 zlib-dynamic
-        make
+  	./config --prefix=/usr         \
+	         --openssldir=/etc/ssl \
+	         --libdir=lib          \
+	         shared                \
+	         zlib-dynamic
+	make
 
-        # disable static lib
-        sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
+	# disable static lib
+	sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
 
-        make DESTDIR=$PKG MANDIR=/usr/share/man MANSUFFIX=ssl install
+	make DESTDIR=$PKG MANDIR=/usr/share/man MANSUFFIX=ssl install
 }

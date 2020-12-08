@@ -15,10 +15,10 @@ utmp:x:13:
 usb:x:14:
 cdrom:x:15:
 adm:x:16:
+wheel:x:17:
 messagebus:x:18:
 input:x:24:
 mail:x:34:
 kvm:x:61:
-wheel:x:97:
 nogroup:x:99:
 users:x:999:
