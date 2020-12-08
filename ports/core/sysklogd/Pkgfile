@@ -1,25 +1,25 @@
-# description	: Logging system messages, such as those given by the kernel
+# Description: Logging system messages, such as those given by the kernel
+# URL:         http://www.infodrom.org/projects/sysklogd/
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
 
 name=sysklogd
-version=2.1.2
+version=1.5.1
 release=1
-source="https://github.com/troglobit/sysklogd/releases/download/v$version/sysklogd-$version.tar.gz
-	rc.$name
-	run"
+source=(http://www.infodrom.org/projects/$name/download/$name-$version.tar.gz)
 
 build() {
-	cd $name-$version
+        cd $name-$version
 
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--localstatedir=/var \
-		--without-logger
-	make
-	make DESTDIR=$PKG install
+        sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
+        sed -i 's/union wait/int/' syslogd.c
 
-	mkdir -p $PKG/etc
-	cat > $PKG/etc/syslog.conf << "EOF"
+        mkdir -p $PKG/{sbin,etc,usr/share/man/man{5,8}}
+
+        make
+        make BINDIR=$PKG/sbin MANDIR=$PKG/usr/share/man install
+
+        cat > $PKG/etc/syslog.conf << "EOF"
 # Begin /etc/syslog.conf
 
 auth,authpriv.* -/var/log/auth.log
@@ -32,11 +32,4 @@ user.* -/var/log/user.log
 
 # End /etc/syslog.conf
 EOF
-
-	# rc service
-	install -Dm755 $SRC/rc.$name $PKG/etc/rc.d/$name
-
-	# runit service
-        install -Dm755 $SRC/run $PKG/etc/sv/$name/run
-        ln -s /run/runit/supervise.$name $PKG/etc/sv/$name/supervise
 }

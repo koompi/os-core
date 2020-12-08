@@ -1,28 +1,21 @@
-# description	: Next generation of the python high-level scripting language
-# depends	: libffi sqlite
+# Description: Next generation of the python high-level scripting language
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  libffi
 
 name=python3
-version=3.8.5
+version=3.9.0
 release=1
-source="https://www.python.org/ftp/python/$version/Python-$version.tar.xz
-	pyconfig.h"
+source=(https://www.python.org/ftp/python/$version/Python-$version.tar.xz)
 
 build() {
-	cd Python-$version
+        cd Python-$version
 
-  	CXX="/usr/bin/g++"              \
-	./configure --prefix=/usr       \
-	            --enable-shared     \
-	            --with-system-expat \
-	            --with-system-ffi   \
-	            --without-ensurepip
-	make
-	make DESTDIR=$PKG install
-
-	chmod -v 755 $PKG/usr/lib/libpython${version%.*}.so
-	chmod -v 755 $PKG/usr/lib/libpython3.so
-
-	mv $PKG/usr/include/python${version%.*}/pyconfig.h \
-	   $PKG/usr/include/python${version%.*}/pyconfig-64.h
-	install -m 0644 $SRC/pyconfig.h $PKG/usr/include/python${version%.*}/
+        ./configure --prefix=/usr       \
+                    --enable-shared     \
+                    --with-system-expat \
+                    --with-system-ffi   \
+                    --without-ensurepip
+        make
+        make DESTDIR=$PKG install
 }

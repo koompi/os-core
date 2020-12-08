@@ -1,15 +1,17 @@
-# description	: A parser generator
-# depends	: m4 bash
+# Description: A parser generator
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
 
 name=bison
-version=3.7.4
+version=3.7.3
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 
 build() {
-	cd $name-$version
+        cd $name-$version
 
-	./configure --prefix=/usr --disable-nls
-	make
-	make DESTDIR=$PKG install
+        ./configure --prefix=/usr
+	make -j1
+        make -j1 DESTDIR=$PKG install
 }

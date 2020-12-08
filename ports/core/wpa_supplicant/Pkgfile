@@ -1,15 +1,15 @@
-# description	: Implements WPA key negotiation with a WPA Authenticator and Extensible Authentication Protocol (EAP) authentication with an Authentication Server
-# depends	: libnl openssl dbus dhcpcd
+# Description: Implements WPA key negotiation with a WPA Authenticator and Extensible Authentication Protocol (EAP) authentication with an Authentication Server
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  libnl openssl dbus libxml2
 
 name=wpa_supplicant
 version=2.9
-release=3
-backup="etc/wpa_supplicant.conf"
-source="https://w1.fi/releases/$name-$version.tar.gz
-	wpa_supplicant.conf
-	rc.wpa
-	run
-	conf"
+bootscriptsversion=20201002
+release=1
+source=(https://w1.fi/releases/wpa_supplicant-$version.tar.gz
+	http://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-$bootscriptsversion.tar.xz
+	wpa_supplicant.conf)
 
 build() {
 	cd $name-$version
@@ -45,32 +45,37 @@ CONFIG_CTRL_IFACE_DBUS_NEW=y
 CONFIG_CTRL_IFACE_DBUS_INTRO=y
 EOF
 
-	cd $name
+	cd wpa_supplicant
 	make BINDIR=/sbin LIBDIR=/lib
 
-	for xx in sbin usr/share/man/man5 usr/share/man/man8; do
-		install -d $PKG/$xx
-	done
+	install -d $PKG/{sbin,usr/share/man/man{5,8}}
 
-	for xx in cli passphrase supplicant; do
-		install -m755 wpa_$xx $PKG/sbin/
-		install -m644 doc/docbook/wpa_$xx.8 $PKG/usr/share/man/man8/
-	done
-	install -m644 doc/docbook/wpa_supplicant.conf.5 $PKG/usr/share/man/man5/
-	
-	install -d $PKG/etc/dbus-1/system.d/
-	install -d $PKG/usr/share/dbus-1/system-services/
-	install -m644 dbus/fi.w1.wpa_supplicant1.service $PKG/usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service
-	install -m644 dbus/dbus-wpa_supplicant.conf $PKG/etc/dbus-1/system.d/wpa_supplicant.conf
+        install -m755 wpa_{cli,passphrase,supplicant} $PKG/sbin/
+        install -m644 doc/docbook/wpa_supplicant.conf.5 $PKG/usr/share/man/man5/
+        install -m644 doc/docbook/wpa_{cli,passphrase,supplicant}.8 $PKG/usr/share/man/man8/
 
-	# wpa_supplicant.conf
-	install -Dm 600 $SRC/wpa_supplicant.conf $PKG/etc/wpa_supplicant.conf
+        install -d $PKG/{etc/dbus-1/system.d/,usr/share/dbus-1/system-services/}
+        install -m644 dbus/fi.w1.wpa_supplicant1.service $PKG/usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service
+        install -m644 dbus/dbus-wpa_supplicant.conf $PKG/etc/dbus-1/system.d/wpa_supplicant.conf
 
-	# rc service
-	install -Dm755 $SRC/rc.wpa $PKG/etc/rc.d/wpa
+        # wpa_supplicant.conf
+        install -Dm 600 $SRC/wpa_supplicant.conf $PKG/etc/wpa_supplicant.conf
 
-	# runit service
-        install -Dm755 $SRC/run $PKG/etc/sv/$name/run
-        install -Dm644 $SRC/conf $PKG/etc/sv/$name/conf
-        ln -s /run/runit/supervise.$name $PKG/etc/sv/$name/supervise
+        # rc service
+        cd ../../blfs-bootscripts-$bootscriptsversion
+	make DESTDIR=$PKG install-service-wpa
+
+	mkdir -p $PKG/etc/sysconfig
+	cat > $PKG/etc/sysconfig/ifconfig.wifi0 << "EOF"
+ONBOOT="no"
+IFACE="wlan0"
+SERVICE="wpa"
+
+# Additional arguments to wpa_supplicant
+WPA_ARGS=""
+
+WPA_SERVICE="dhcpcd"
+#DHCP_START="-b -q <insert appropriate start options here>"
+#DHCP_STOP="-k <insert additional stop options here>"
+EOF
 }

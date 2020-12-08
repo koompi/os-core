@@ -1,32 +1,30 @@
-# description	: Vi Improved, a highly configurable, improved version of the vi text editor
-# depends	: acl gawk
+# Description: Vi Improved, a highly configurable, improved version of the vi text editor
+# URL:         https://www.vim.org/
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  acl gawk
 
 name=vim
-version=8.2.2019
+version=8.2.1978
 release=1
-source="https://github.com/vim/vim/archive/v$version/vim-v$version.tar.gz"
+source=(https://github.com/vim/vim/archive/v$version.tar.gz)
 
 build() {
-	cd vim-$version
+        cd vim-$version
 
-	echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
+        echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 
-	./configure \
-		--prefix=/usr \
-		--enable-multibyte \
-		--disable-gui \
-		--with-tlib=ncursesw \
-		--without-x
-	make
-	make DESTDIR=$PKG install
+        ./configure --prefix=/usr --enable-multibyte --disable-gui
+        make
+        make DESTDIR=$PKG install
 
-	mv $PKG/usr/share/man/man1 $SRC/man1
-	rm -r $PKG/usr/share/man/*
-	mv $SRC/man1 $PKG/usr/share/man/man1
+        mv $PKG/usr/share/man/man1 $SRC/man1
+        rm -r $PKG/usr/share/man/*
+        mv $SRC/man1 $PKG/usr/share/man/man1
 
-	# no desktop files and icons
-	rm -r $PKG/usr/share/applications \
-	      $PKG/usr/share/icons
+        # no desktop files and icons
+        rm -r $PKG/usr/share/{applications,icons}
+
+        ln -sv vim $PKG/usr/bin/vi
 
 	mkdir -pv $PKG/etc
 cat > $PKG/etc/vimrc << "EOF"
@@ -34,7 +32,7 @@ cat > $PKG/etc/vimrc << "EOF"
 
 " Ensure defaults are set before customizing settings, not after
 source $VIMRUNTIME/defaults.vim
-let skip_defaults_vim=1 
+let skip_defaults_vim=1
 
 set nocompatible
 set backspace=2
@@ -46,6 +44,4 @@ endif
 
 " End /etc/vimrc
 EOF
-
-	ln -sv vim $PKG/usr/bin/vi
 }

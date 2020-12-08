@@ -1,7 +1,6 @@
 # Description: CRUX ports system tools
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
+# URL:         http://crux.nu
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
 # Depends on:  curl
 
 name=ports

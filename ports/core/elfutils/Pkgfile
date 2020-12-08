@@ -1,19 +1,17 @@
-# description	: utilities and libraries for handling ELF files
+# Description: utilities and libraries for handling ELF files
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
 
 name=elfutils
-version=0.182
+version=0.178
 release=1
-source="https://sourceware.org/ftp/elfutils/$version/elfutils-$version.tar.bz2"
+source=(https://sourceware.org/ftp/elfutils/$version/elfutils-$version.tar.bz2)
 
 build() {
-	cd $name-$version
+        cd $name-$version
 
-	./configure \
-		--prefix=/usr \
-		--program-prefix="eu-" \
-		--disable-nls \
-		--disable-debuginfod \
-		--enable-deterministic-archives
-	make
-	make DESTDIR=$PKG install
+        ./configure --prefix=/usr --program-prefix="eu-" --disable-debuginfod
+        make
+        make DESTDIR=$PKG install
 }

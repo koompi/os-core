@@ -1,9 +1,11 @@
-port_getver() {
+getver_libnl() {
 	fetch \
 	| grep archive \
 	| tr '_' '.' \
 	| grep -Eo libnl[0-9a-z.]+.tar.gz \
 	| grep -v rc \
-	| sed 's/libnl//;s/\.tar.*//'
+	| sed 's/libnl//;s/\.tar.*//' \
+	| sort -V \
+	| uniq
 }
 

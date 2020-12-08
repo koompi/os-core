@@ -1,23 +1,21 @@
-# description	: The GRand Unified Bootloader (EFI)
-# depends	: grub efivar efibootmgr freetype2 dosfstools
+# Description: The GRand Unified Bootloader (EFI)
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  grub efivar efibootmgr freetype2 dosfstools
 
 name=grub-efi
 version=2.04
-unifont_version=13.0.03
-release=2
-source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
-	https://ftp.gnu.org/gnu/unifont/unifont-$unifont_version/unifont-$unifont_version.bdf.gz
-	0006-BootHole.patch"
+release=1
+source=(https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+        https://ftp.gnu.org/gnu/unifont/unifont-12.1.02/unifont-12.1.02.bdf.gz)
 
 build() {
 	cd grub-$version
 
-	patch -Np1 -i $SRC/0006-BootHole.patch
+	gunzip $SRC/unifont-12.1.02.bdf.gz
+        cp $SRC/unifont-12.1.02.bdf unifont.bdf
 
-	gunzip $SRC/unifont-$unifont_version.bdf.gz
-	cp $SRC/unifont-$unifont_version.bdf unifont.bdf
-
-	./configure --prefix=/usr  \
+        ./configure --prefix=/usr  \
             --sbindir=/sbin        \
             --sysconfdir=/etc      \
             --disable-efiemu       \
@@ -25,13 +23,12 @@ build() {
             --with-platform=efi    \
             --target=x86_64        \
             --program-prefix=""    \
-	    --program-suffix="-efi" \
+            --program-suffix="-efi" \
             --with-bootdir="/boot" \
-            --disable-werror \
-	    --disable-nls
-	make
-	make DESTDIR=$PKG install
+            --disable-werror
+        make
+        make DESTDIR=$PKG install
 
-	rm -r $PKG/etc/ $PKG/usr/bin $PKG/sbin
-	rm $PKG/usr/share/grub/grub-mkconfig_lib
+        rm -r $PKG/etc/ $PKG/usr/bin $PKG/sbin $PKG/usr/share/{locale,info}
+        rm $PKG/usr/share/grub/grub-mkconfig_lib
 }

@@ -1,11 +1,13 @@
-# description	: Manipulate efi boot managers
-# depends	: efivar pciutils
+# Description: Manipulate efi boot managers
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  efivar pciutils
 
 name=efibootmgr
 version=17
 release=1
-source="$name-$version.tar.gz::https://github.com/rhboot/efibootmgr/archive/$version.tar.gz
-	efivar.patch"
+source=(https://github.com/rhboot/efibootmgr/archive/$version/$name-$version.tar.gz
+	efivar.patch)
 
 build() {
 	cd $name-$version
@@ -13,6 +15,6 @@ build() {
 	patch -Np1 -i $SRC/efivar.patch
 
 	EFIDIR=/boot/efi make
-	install -D src/efibootmgr $PKG/usr/sbin/efibootmgr
-	install -D src/efibootmgr.8 $PKG/usr/share/man/man8/efibootmgr.8
+        install -D src/efibootmgr $PKG/usr/sbin/efibootmgr
+        install -D src/efibootmgr.8 $PKG/usr/share/man/man8/efibootmgr.8
 }

@@ -1,15 +1,16 @@
-# description	: Tools and library to manipulate EFI variables
-# depends	: popt
+# Description: Tools and library to manipulate EFI variables
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  popt
 
 name=efivar
 version=37
 release=1
-source="https://github.com/rhboot/efivar/releases/download/$version/$name-$version.tar.bz2"
+source=(https://github.com/rhboot/efivar/releases/download/$version/$name-$version.tar.bz2)
 
 build() {
 	cd $name-$version
-
 	sed -e 's/-Werror//g' -i gcc.specs
-	make -j1
-	make libdir=/usr/lib DESTDIR=$PKG install
+        make -j1
+        make libdir=/usr/lib DESTDIR=$PKG install
 }
