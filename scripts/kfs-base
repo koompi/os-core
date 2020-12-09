@@ -150,9 +150,7 @@ PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file
 XORG="util-macros xorgproto libxau libxdmcp xcb-proto libxcb xtrans libx11 libxext libfs libice libsm libxscrnsaver libxt libxmu
 	libxpm libxaw libxfixes libxcomposite libxrender libxcursor libxdamage libfontenc libxfont2 libxft libxi libxinerama
 	libxrandr libxres libxtst libxv libxvmc libxxf86dga libxxf86vm libdmx libpciaccess libxkbfile libxshmfence
-	xcb-util-image xcb-util-keysyms xcb-util-renderutil"
-
-
+	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm"
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
 	kfs_dirs
@@ -165,13 +163,6 @@ echo "==> Copying ports"
 cp -Ra ports/* $KFS/usr/ports/
 
 for pkg in $PKGS; do
-	case $pkg in
-		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
-		*) runinchroot pkgin -i $pkg || die;;
-	esac
-done
-
-for pkg in $XORG; do
 	case $pkg in
 		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
 		*) runinchroot pkgin -i $pkg || die;;

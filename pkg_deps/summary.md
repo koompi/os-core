@@ -1,0 +1,58 @@
+# Summary Packages Dependencies
+
+KOOMPI-Packages List:
+* KOOMPI-Toolchain
+    * binutils
+    * gcc
+    * linux-api-headers
+    * glibc
+    * libstdc++
+    * m4
+    * ncurses
+    * bash
+    * bison
+    * bzip2
+    * coreutils
+    * diffutils
+    * file
+    * findutils
+    * gawk
+    * gettext
+    * grep
+    * gzip
+    * make
+    * patch
+    * perl
+    * python
+    * sed
+    * tar
+    * texinfo
+    * xz
+    * openssl
+    * certs
+    * curl
+    * libarchive
+    * pkgutils
+
+* KOOMPI-base-devel
+    * autoconf
+    * automake
+    * binutils
+    * bison
+    * fakeroot
+    * flex
+    * gawk
+    * gcc
+    * gettext
+    * grep
+    * groff
+    * gzip
+    * libtool
+    * m4
+    * make
+    * patch
+    * pkgconf
+    * sed
+    * sudo
+    * texinfo
+    * which
