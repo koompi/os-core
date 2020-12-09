@@ -11,7 +11,7 @@
 1. [x] xcb-util-0.4.0
 1. [x] xcb-util-image-0.4.0
 1. [x] xcb-util-keysyms-0.4.0
-1. [x] xcb-utils-renderutil-0.3.9
+1. [x] xcb-util-renderutil-0.3.9
 1. [x] xcb-util-wm-0.4.1
 1. [x] xcb-util-cursor-0.1.3
 1. [x] Mesa-20.2.3
