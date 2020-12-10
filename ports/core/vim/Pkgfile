@@ -1,10 +1,11 @@
 # Description: Vi Improved, a highly configurable, improved version of the vi text editor
-# URL:         https://www.vim.org/
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  acl gawk
 
 name=vim
-version=8.2.1978
+version=8.2.1976
 release=1
 source=(https://github.com/vim/vim/archive/v$version.tar.gz)
 

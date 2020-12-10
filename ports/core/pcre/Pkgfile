@@ -3,7 +3,7 @@
 name=pcre
 version=8.44
 release=1
-source="ftp://ftp.pcre.org/pub/$name/$name-$version.tar.bz2"
+source=(ftp://ftp.pcre.org/pub/$name/$name-$version.tar.bz2)
 
 build() {
 	cd $name-$version

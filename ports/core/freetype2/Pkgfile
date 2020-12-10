@@ -1,6 +1,7 @@
-# Description: Font rasterization library
-# URL:         https://www.freetype.org/
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  libpng which
 
 name=freetype2

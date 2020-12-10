@@ -1,17 +1,19 @@
-# description	: Collection of simple PIN or pass-phrase entry dialogs which utilize the Assuan protocol
-# depends	: libassuan libgpg-error
+# Description: contains a collection of simple PIN or pass-phrase entry dialogs which utilize the Assuan protocol as described by the Ägypten project. 
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  libassuan libgpg-error
 
-name=pinentry
+name=pinentry 
 version=1.1.0
 release=1
-source="ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2"
+source=(https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2)
 
 build() {
-	cd $name-$version
+        cd $name-$version
 
-	./configure --prefix=/usr --enable-pinentry-tty
-	make
-	make DESTDIR=$PKG install
+        ./configure --prefix=/usr --enable-pinentry-tty
 
-	rm -r $PKG/usr/share
+        make
+        make DESTDIR=$PKG install
 }

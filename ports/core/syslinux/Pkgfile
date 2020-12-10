@@ -1,6 +1,7 @@
 # Description: Collection of boot loaders for the Linux operating system
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  mtools
 
 name=syslinux
@@ -12,10 +13,8 @@ source=(http://www.kernel.org/pub/linux/utils/boot/$name/$name-$version.tar.xz
 build() {
 	cd $name-$version
 
-	export CFLAGS="$CFLAGS -fcommon"
-
 	patch -p1 -i $SRC/$name-$version-sysmacros.patch
-
+  export CFLAGS="$CFLAGS -fcommon"
 	make OPTFLAGS="$CFLAGS" installer
 	make OPTFLAGS="$CFLAGS" INSTALLROOT=$PKG MANDIR=/usr/share/man install
 }

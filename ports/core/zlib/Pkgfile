@@ -1,7 +1,8 @@
 # Description: Compression and decompression routines used by some programs
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
-# Depends on:  
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=zlib
 version=1.2.11

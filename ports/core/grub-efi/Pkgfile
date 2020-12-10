@@ -1,6 +1,7 @@
 # Description: The GRand Unified Bootloader (EFI)
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  grub efivar efibootmgr freetype2 dosfstools
 
 name=grub-efi

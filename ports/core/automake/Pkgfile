@@ -1,6 +1,7 @@
 # Description: Programs for generating Makefiles for use with Autoconf
-# URL:         https://www.gnu.org/software/autoconf
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=automake

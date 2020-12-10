@@ -1,7 +1,8 @@
 # Description: Program for compiling packages
-# URL:         https://www.gnu.org/software/make
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
-# Depends on:  
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com 
+# Depends on:
 
 name=make
 version=4.3

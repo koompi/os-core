@@ -1,19 +1,19 @@
 # Description: The GNU Database Manager
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=gdbm
 version=1.18.1
 release=1
-source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
-	fix-build-with-gcc10.patch)
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
 
 build() {
         cd $name-$version
 
-	patch -Np1 -i ../fix-build-with-gcc10.patch
-
+        sed -r -i '/^char.*parseopt_program_(doc|args)/d' src/parseopt.c
+        
         ./configure --prefix=/usr    \
 	            --disable-static \
 	            --enable-libgdbm-compat

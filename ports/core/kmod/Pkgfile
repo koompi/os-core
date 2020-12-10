@@ -1,6 +1,7 @@
 # Description: Libraries and utilities for loading kernel modules
-# URL:         https://git.kernel.org/?p=utils/kernel/kmod/kmod.git;a=summary
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=kmod

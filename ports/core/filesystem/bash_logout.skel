@@ -1,7 +1,9 @@
 # Begin ~/.bash_logout
-# Written for Beyond Linux From Scratch
-# by James Robertson <jameswrobertson@earthlink.net>
+# Written for KOOMPI From Scratch
+# by Hangsia Hong <hangsia@koompi.org>
 
 # Personal items to perform on logout.
+
+espeak "Good night, I am off to sleep now. If you want to get rid of my voice, go to .bash_logout and delete line number 4"
 
 # End ~/.bash_logout

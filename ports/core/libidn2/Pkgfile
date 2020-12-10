@@ -1,14 +1,17 @@
-# description	: Free software implementation of IDNA2008, Punycode and TR46
-# depends	: libunistring
+# Description: The libgpg-error package contains a library that defines common error values for all GnuPG components.
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  libunistring
 
 name=libidn2
 version=2.3.0
 release=1
-source="https://ftp.gnu.org/gnu/libidn/libidn2-$version.tar.gz"
+source=(https://ftp.gnu.org/gnu/libidn/libidn2-2.3.0.tar.gz)
 
 build() {
-	cd $name-$version
-	./configure --prefix=/usr --disable-nls --disable-doc
+        cd $name-$version
+	./configure --prefix=/usr --disable-static &&
 	make
-	make DESTDIR=$PKG install
+        make DESTDIR=$PKG install
 }

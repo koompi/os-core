@@ -1,24 +1,28 @@
-# description	: Library used to enforce strong passwords by comparing user selected passwords to words in chosen word lists
-# depends	: zlib
+# Description: Programs for compressing and decompressing files
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  bash
 
 name=cracklib
 version=2.9.7
 release=1
-source="https://github.com/cracklib/cracklib/releases/download/v$version/$name-$version.tar.gz"
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 
 build() {
-	cd $name-$version
+        cd $name-$version
 
-	sed -i '/skipping/d' util/packer.c
+	sed -i '/skipping/d' util/packer.c &&
 
 	./configure --prefix=/usr    \
 	            --disable-static \
-		    --disable-nls    \
-	            --with-default-dict=/lib/cracklib/pw_dict
-	make
-	make DESTDIR=$PKG install
+		    --with-default-dict=/lib/cracklib/pw_dict 
 
-	mkdir -p $PKG/lib
-	mv -v $PKG/usr/lib/libcrack.so.* $PKG/lib
-	ln -sfv ../../lib/$(readlink $PKG/usr/lib/libcrack.so) $PKG/usr/lib/libcrack.so
+	make
+        make DESTDIR=$PKG install
+
+	mv -v /usr/lib/libcrack.so.* /lib 
+	ln -sfv ../../lib/$(readlink /usr/lib/libcrack.so) /usr/lib/libcrack.so
+
+
 }

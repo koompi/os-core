@@ -1,13 +1,17 @@
-# description	: Implementation of the Stringprep, Punycode and IDNA specifications
+# Description: The libgpg-error package contains a library that defines common error values for all GnuPG components.
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  libunistring
 
 name=libidn
 version=1.36
 release=1
-source="https://ftp.gnu.org/gnu/libidn/$name-$version.tar.gz"
+source=(https://ftp.gnu.org/gnu/libidn/libidn-1.36.tar.gz)
 
 build() {
-	cd $name-$version
-	./configure --prefix=/usr --disable-static --disable-nls
+        cd $name-$version
+	./configure --prefix=/usr --disable-static &&
 	make
-	make DESTDIR=$PKG install
+    make DESTDIR=$PKG install
 }

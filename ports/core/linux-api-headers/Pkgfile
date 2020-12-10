@@ -1,10 +1,11 @@
 # Description: Expose the kernel's API for use by Glibc
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
-# Depends on:  
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=linux-api-headers
-version=5.4.74
+version=5.9.3
 release=1
 source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
 

@@ -1,18 +1,22 @@
-# description	: GLib interfaces to the D-Bus API
-# depends	: dbus glib
+# Description: Message bus system, a simple way for applications to talk to one another
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
 
-name=dbus-glib
+name=dbus
 version=0.110
-release=2
-source="http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz"
+release=1
+source=(https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-$version.tar.gz)
 
 build() {
 	cd $name-$version
 
-  	./configure --prefix=/usr \
-		    --libexecdir=/usr/lib/$name \
-	            --sysconfdir=/etc \
-	            --disable-static
-	make
+	./configure --prefix=/usr     \
+            --sysconfdir=/etc \
+            --disable-static 
+            
+    make
 	make DESTDIR=$PKG install
+
 }

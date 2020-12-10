@@ -1,7 +1,8 @@
 # Description: Set of libraries that offers command-line editing and history capabilities
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
-# Depends on:  
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:
 
 name=readline
 version=8.0

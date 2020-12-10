@@ -1,11 +1,12 @@
 # Description: Mouse server for the console and xterm
-# URL:         https://www.nico.schottelius.org/software/gpm/
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=gpm
 version=1.20.7
-bootscriptsversion=20201002
+bootscriptsversion=20191204
 release=1
 source=(https://www.nico.schottelius.org/software/gpm/archives/$name-$version.tar.bz2
 	gpm-1.20.7-consolidated-1.patch

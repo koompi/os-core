@@ -1,6 +1,7 @@
-# Description: utilities for handling the ext2, ext3 and ext4 file system
-# URL:         http://e2fsprogs.sourceforge.net/
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Description: An arbitrary precision numeric processing language
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  bash bc
 
 name=e2fsprogs

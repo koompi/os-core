@@ -1,6 +1,7 @@
 # Description: The GNU compiler collection, which includes the C and C++ compilers
-# URL:         
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=gcc
@@ -13,6 +14,8 @@ build() {
 
 	sed -e '/m64=/s/lib64/lib/' \
 	        -i.orig gcc/config/i386/t-linux64
+
+	
 
 	mkdir -v build
 	cd       build
