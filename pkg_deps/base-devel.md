@@ -1,26 +1,26 @@
 # KOOMPI-Base-devel
 
-1. autoconf
-1. automake
-1. binutils
-1. bison
-1. fakeroot
-1. file
-1. findutils
-1. flex
-1. gawk
-1. gcc
-1. gettext
-1. grep
-1. groff
-1. gzip
-1. libtool
-1. m4
-1. make
-1. patch
-1. pkg
-1. pkgconf
-1. sed
-1. sudo
-1. texinfo
-1. which
+    . autoconf
+    . automake
+    . binutils
+    . bison
+    . fakeroot
+    . file
+    . findutils
+    . flex
+    . gawk
+    . gcc
+    . gettext
+    . grep
+    . groff
+    . gzip
+    . libtool
+    . m4
+    . make
+    . patch
+    . pkg
+    . pkgconf
+    . sed
+    . sudo
+    . texinfo
+    . which

@@ -166,7 +166,7 @@ for pkg in $PKGS; do
 	case $pkg in
 		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
 		*) runinchroot pkgin -i $pkg || die;;
-	esac
+	esac3
 done
 
 exit 0
