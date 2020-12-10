@@ -144,7 +144,7 @@ PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file
 	util-linux e2fsprogs sysklogd eudev kfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 	curl cmake ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn fakeroot sysvinit libgpg-error libassuan libgcrypt libksba npth pinentry
-	gnupg openssh libssh2 sqlite python2 llvm rust libxslt glib gobject-introspection polkit pixman git graphviz vala nspr nss pcre slang newt cairo python3-cairo python3-gobject3
+	gnupg openssh libssh2 sqlite python2 llvm sgml-common unzip docbook-xml docbook-xsl libxslt glib gobject-introspection polkit pixman git graphviz vala nspr nss pcre slang newt cairo python3-cairo python3-gobject3
 	icu js78 networkmanager sudo"
 
 XORG="util-macros xorgproto libxau libxdmcp xcb-proto libxcb xtrans libx11 libxext libfs libice libsm libxscrnsaver libxt libxmu
