@@ -370,3 +370,11 @@
 1. [x] libisoburn-1.5.2
 1. [x] libisofs-1.5.2
 
+libcurl-compat
+krb5
+[x] gssdp
+    libsoup
+libidn
+libidn2
+[x] nghttp2
+libpsl

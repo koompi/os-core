@@ -1,0 +1,18 @@
+# Description: a GObject-based API For Handling resource discovery
+# URL: http://ftp.gnome.org/pub/gnome/sources/gssdp/0.12/gssdp-0.12.1.tar.xz
+# Maintainer: Jiren Edison
+# Organization: KOOMPI
+# Depends on: libsoup
+
+name=gssdp
+version=0.12.1
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/gssdp/0.12/gssdp-0.12.1.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --disable-static
+	make
+	make DESTDIR=$PKG install
+}

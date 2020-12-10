@@ -85,7 +85,7 @@ parted --script /dev/${DISK} \
     mklabel gpt \
     mkpart primary ext2 1Mib 101Mib \
     mkpart primary ext4 101Mib 5G \
-    mkpart primary ext4 5G 30G 
+    mkpart primary ext4 5G 50G 
 
 #--- Format the Partition
 mkfs.ext4 /dev/${DISK}3

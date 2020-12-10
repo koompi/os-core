@@ -1,0 +1,20 @@
+# Description: an implementation of HTTP/2 and its header compression algorithm
+# URL: https://github.com/nghttp2/nghttp2/releases/download/v1.42.0/nghttp2-1.42.0.tar.xz
+# Maintainer: Jiren Edion
+# Organization: KOOMPI
+# Depends on: libxml2
+
+name=nghttp2
+version=1.42.0	
+release=1
+source=(https://github.com/nghttp2/nghttp2/releases/download/v1.42.0/nghttp2-1.42.0.tar.xz)
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--disable-static \
+		--enable-lib-only 
+
+	make
+	make DESTDIR=$PKG install
+}

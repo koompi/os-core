@@ -131,7 +131,7 @@
     * E2fsprogs-1.45.6
     * Sysklogd-1.5.1
     * Sysvinit-2.97 
-    * Linux-5.8.3
+    * Linux-5.9.3
     * KFS-Bootscripts-20200818
     * Gettext-0.21
     * Bison-3.7.1
