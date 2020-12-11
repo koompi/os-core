@@ -1,0 +1,144 @@
+# About Security 
+
+* make-ca-1.7 
+    * p11-kit-0.23.21
+    * NSS-3.59
+* CrackLib-2.9.7
+    * Python-2.7.18
+* cryptsetup-2.3.3
+    * JSON-C-0.15
+    * LVM2-2.03.10
+    * popt-1.18 
+* Cyrus SASL-2.1.27
+    * Berkeley DB-5.3.28
+* GnuPG-2.2.21
+    * Libassuan-2.5.4
+    * libgcrypt-1.8.7
+    * Libksba-1.5.0
+    * npth-1.6 
+* GnuTLS-3.6.14
+    * Nettle-3.6
+    * make-ca-1.7
+    * libunistring-0.9.10
+    * libtasn1-4.16.0
+    * p11-kit-0.23.20 
+* GPGME-1.14.0
+    * Libassuan-2.5.4
+    * Doxygen-1.8.20
+    * Graphviz-2.44.1
+    * GnuPG-2.2.25 
+* Haveged-1.9.13
+* iptables-1.8.5
+    * libpcap-1.9.1
+    * bpf-utils
+    * libnfnetlink
+* libcap-2.42 with PAM
+    * Linux-PAM-1.4.0
+* Linux-PAM-1.4.0
+* liboauth-1.0.3
+    * cURL-7.73.0 
+* libpwquality-1.4.2
+    * CrackLib-2.9.6 
+    * Linux-PAM-1.4.0
+* MIT Kerberos V5-1.18.2
+    * e2fsprogs
+    * openssl
+    * lmdb
+* Nettle-3.6
+    * gmp
+* NSS-3.55
+    * nspr 
+    * sqlite
+* OpenSSH-8.3p1
+* p11-kit-0.23.20
+    * libtasn1-4.16.0*
+    * make-ca-1.7
+* Polkit-0.117
+    * glib
+    * mozjs
+    * linux-pam
+    * gobject-introspection
+    * intltool
+* polkit-gnome-0.105
+    * gtk3
+    * polkit
+* Shadow-4.8.1
+    * Linux-PAM-1.5.1
+    * CrackLib-2.9.7 
+* ssh-askpass-8.3p1
+    * GTK+-2.24.32
+    * Sudo-1.9.2
+    * Xorg Libraries
+        * Fontconfig-2.13.1
+        * libxcb-1.14 
+        * xtrans-1.4.0
+        * libX11-1.7.0
+        * libXext-1.3.4
+        * libFS-1.0.8
+        * libICE-1.0.10
+        * libSM-1.2.3
+        * libXScrnSaver-1.2.3
+        * libXt-1.2.0
+        * libXmu-1.1.3
+        * libXpm-3.5.13
+        * libXaw-1.0.13
+        * libXfixes-5.0.3
+        * libXcomposite-0.4.5
+        * libXrender-0.9.10
+        * libXcursor-1.2.0
+        * libXdamage-1.1.5
+        * libfontenc-1.1.4
+        * libXfont2-2.0.4
+        * libXft-2.3.3
+        * libXi-1.7.10
+        * libXinerama-1.1.4
+        * libXrandr-1.5.2
+        * libXres-1.2.0
+        * libXtst-1.2.3
+        * libXv-1.0.11
+        * libXvMC-1.0.12
+        * libXxf86dga-1.1.5
+        * libXxf86vm-1.1.4
+        * libdmx-1.1.4
+        * libpciaccess-0.16
+        * libxkbfile-1.1.0
+        * libxshmfence-1.3
+    * X Window System
+        * util-macros-1.19.2
+        * xorgproto-2020.1
+        * libXau-1.0.9
+        * libXdmcp-1.1.3
+        * xcb-proto-1.14
+        * libxcb-1.14
+        * Xorg Libraries
+        * xcb-util-0.4.0
+        * xcb-util-image-0.4.0
+        * xcb-util-keysyms-0.4.0
+        * xcb-util-renderutil-0.3.9
+        * xcb-util-wm-0.4.1
+        * xcb-util-cursor-0.1.3
+        * Mesa-20.1.5
+        * xbitmaps-1.1.2
+        * Xorg Applications
+        * xcursor-themes-1.0.6
+        * Xorg Fonts
+        * XKeyboardConfig-2.30
+        * Xorg-Server-1.20.8
+        * Xorg Drivers
+        * twm-1.0.11
+        * xterm-359
+        * xclock-1.0.9
+        * xinit-1.4.1 
+* stunnel-5.56
+* Sudo-1.9.2
+    * zlib
+    * lzo
+    * xz 
+    * lz4
+* Tripwire-2.4.3.7
+* volume_key-0.3.12 
+    * cryptsetup
+    * glib
+    * gpgme
+    * python2
+    * swig

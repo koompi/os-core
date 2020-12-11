@@ -57,7 +57,7 @@
     * texinfo
     * which
 
-* Basic System Software:
+* Basic System Software
     * Man-pages-5.08
     * Tcl-8.6.10
     * Expect-5.45.4
@@ -139,3 +139,510 @@
     * Python-3.8.5
     * Texinfo-6.7
     * Util-linux-2.36 
+    
+* Security 
+    * make-ca-1.7
+    * CrackLib-2.9.7
+    * cryptsetup-2.3.3
+    * Cyrus SASL-2.1.27
+    * GnuPG-2.2.21
+    * GnuTLS-3.6.14
+    * GPGME-1.14.0
+    * Haveged-1.9.13
+    * iptables-1.8.5
+    * Setting Up a Network Firewall
+    * libcap-2.42 with PAM
+    * Linux-PAM-1.4.0
+    * liboauth-1.0.3
+    * libpwquality-1.4.2
+    * MIT Kerberos V5-1.18.2
+    * Nettle-3.6
+    * NSS-3.55
+    * OpenSSH-8.3p1
+    * p11-kit-0.23.20
+    * Polkit-0.117
+    * polkit-gnome-0.105
+    * Shadow-4.8.1
+    * ssh-askpass-8.3p1
+    * stunnel-5.56
+    * Sudo-1.9.2
+    * Tripwire-2.4.3.7
+    * volume_key-0.3.12 
+    
+* File System and Disk Management
+    * btrfs-progs-5.7
+    * dosfstools-4.1
+    * Fuse-3.9.3
+    * jfsutils-1.1.15
+    * LVM2-2.03.10
+    * mdadm-4.1
+    * ntfs-3g-2017.3.23
+    * gptfdisk-1.0.5
+    * parted-3.3
+    * reiserfsprogs-3.6.27
+    * smartmontools-7.1
+    * sshfs-3.7.0
+    * xfsprogs-5.7.0 
+
+* Editors
+    * Vim-8.2.1361
+    * Nano-5.2
+    * Kate
+
+* IDE
+    * Vscode
+
+* Shells
+    * zsh
+    * bash
+
+
+* General Libraries
+    * Apr-1.7.0
+    * Apr-Util-1.6.1
+    * Aspell-0.60.8
+    * Boost-1.74.0
+    * brotli-1.0.7
+    * CLucene-2.3.3.4
+    * dbus-glib-0.110
+    * Double-conversion-3.1.5
+    * enchant-2.2.8
+    * Exempi-2.5.2
+    * fftw-3.3.8
+    * GLib-2.64.4
+    * GLibmm-2.64.2
+    * GMime-2.6.23
+    * gobject-introspection-1.64.1
+    * Grantlee-5.2.0
+    * Gsl-2.6
+    * gspell-1.8.3
+    * ICU-67.1
+    * Jansson-2.13.1
+    * JS-68.11.0
+    * JSON-C-0.15
+    * JSON-GLib-1.4.4
+    * keyutils-1.6.1
+    * libaio-0.3.112
+    * libarchive-3.4.3
+    * libassuan-2.5.3
+    * libatasmart-0.19
+    * libatomic_ops-7.6.10
+    * libblockdev-2.24
+    * libbytesize-2.4
+    * libdaemon-0.14
+    * libgcrypt-1.8.6
+    * libgpg-error-1.38
+    * libgrss-0.7.0
+    * libgsf-1.14.47
+    * libgudev-233
+    * libgusb-0.3.5
+    * libical-3.0.8
+    * libidn-1.36
+    * libidn2-2.3.0
+    * libiodbc-3.52.12
+    * libksba-1.4.0
+    * liblinear-241
+    * libmbim-1.24.2
+    * libnfsidmap-0.26
+    * libpaper-1.1.24+nmu5
+    * libqmi-1.26.2
+    * libseccomp-2.5.0
+    * libsigc++-2.10.3
+    * libsigsegv-2.12
+    * libssh2-1.9.0
+    * libstatgrab-0.92
+    * libtasn1-4.16.0
+    * libuninameslist-20200413
+    * libunique-1.1.6
+    * libunistring-0.9.10
+    * libusb-1.0.23
+    * libuv-1.38.1
+    * libxkbcommon-0.10.0
+    * libxml2-2.9.10
+    * libxslt-1.1.34
+    * libwacom-1.4.1
+    * libyaml-0.2.4
+    * LZO-2.10
+    * mtdev-1.1.6
+    * Node.js-12.18.3
+    * npth-1.6
+    * NSPR-4.27
+    * PCRE-8.44
+    * PCRE2-10.35
+    * Popt-1.18
+    * Pth-2.0.7
+    * Qca-2.3.1
+    * Talloc-2.3.1
+    * telepathy-glib-0.24.1
+    * Uchardet-0.0.7
+    * Umockdev-0.14.2
+    * Wayland-1.18.0
+    * Wayland-Protocols-1.20
+    * wv-1.2.9
+    * Xapian-1.4.16
+
+* Graphics and Font Libraries
+    * AAlib-1.4rc5
+    * babl-0.1.78
+    * Exiv2-0.27.3
+    * FreeType-2.10.2
+    * Fontconfig-2.13.1
+    * FriBidi-1.0.9
+    * gegl-0.4.26
+    * giflib-5.2.1
+    * GLM-0.9.9.8
+    * Graphite2-1.3.14
+    * HarfBuzz-2.7.1
+    * JasPer-2.0.14
+    * Little CMS-1.19
+    * Little CMS-2.11
+    * libexif-0.6.22
+    * Libgxps-0.3.1
+    * libjpeg-turbo-2.0.5
+    * libmng-2.0.3
+    * libmypaint-1.6.1
+    * libpng-1.6.37
+    * libraw-0.20.0
+    * librsvg-2.48.8
+    * Libspiro-20200505
+    * LibTIFF-4.1.0
+    * libwebp-1.1.0
+    * mypaint-brushes-1.3.0
+    * newt-0.52.21
+    * opencv-4.4.0
+    * OpenJPEG-2.3.1
+    * Pixman-0.40.0
+    * Poppler-20.08.0
+    * Potrace-1.16
+    * Qpdf-10.0.1
+    * sassc-3.6.1
+    * woff2-1.0.2
+
+* General Utilities
+    * Asciidoc-9.0.2
+    * Bogofilter-1.2.5
+    * Compface-1.5.2
+    * desktop-file-utils-0.26
+    * Graphviz-2.44.1
+    * GTK-Doc-1.32
+    * Hd2u-1.0.4
+    * Highlight-3.57
+    * ibus-1.5.22
+    * ImageMagick-7.0.10-27
+    * ISO Codes-4.5.0
+    * lsof-4.91
+    * pinentry-1.1.0
+    * Rarian-0.8.1
+    * Rep-gtk-0.90.8.3
+    * Screen-4.8.0
+    * shared-mime-info-2.0
+    * Sharutils-4.15.2
+    * telepathy-logger-0.8.2
+    * telepathy-mission-control-5.16.5
+    * tidy-html5-5.6.0
+    * Time-1.9
+    * tree-1.8.0
+    * unixODBC-2.3.7
+    * Xdg-user-dirs-0.17
+
+* System Utilities
+    * AccountsService-0.6.55
+    * acpid-2.0.32
+    * at-3.2.1
+    * autofs-5.1.6
+    * BlueZ-5.54
+    * Bubblewrap-0.4.1
+    * Colord-1.4.4
+    * cpio-2.13
+    * cups-pk-helper-0.2.6
+    * dbus-1.12.20
+    * elogind-243.7
+    * blocaled-0.3
+    * Fcron-3.2.1
+    * GPM-1.20.7
+    * Hdparm-9.58
+    * LSB-Tools-0.7
+    * lm-sensors-3-6-0
+    * Logrotate-3.17.0
+    * MC-4.8.25
+    * ModemManager-1.14.0
+    * notification-daemon-3.20.0
+    * p7zip-16.02
+    * Pax-20161104
+    * pciutils-3.7.0
+    * pm-utils-1.4.1
+    * Raptor-2.0.15
+    * Rasqal-0.9.33
+    * Redland-1.0.17
+    * sg3_utils-1.45
+    * Sysstat-12.4.0
+    * UDisks-2.9.1
+    * UnRar-5.9.4
+    * UnZip-6.0
+    * UPower-0.99.11
+    * usbutils-012
+    * Which-2.21 and Alternatives
+    * Zip-3.0
+
+* Programming
+    * Autoconf2.13
+    * Cbindgen-0.14.3
+    * Clisp-2.49
+    * CMake-3.18.1
+    * Doxygen-1.8.19
+    * GCC-10.2.0
+    * GC-8.0.4
+    * GDB-9.2
+    * Git-2.28.0
+    * Guile-3.0.4
+    * Librep-0.92.7
+    * LLVM-10.0.1
+    * Lua-5.4.0
+    * Lua-5.2.4
+    * Mercurial-5.5
+    * NASM-2.15.03
+    * Perl Modules
+    * Perl Module Dependencies
+    * PHP-7.4.9
+    * Python-2.7.18
+    * Python-3.8.5
+    * Python Modules
+    * Ruby-2.7.1
+    * Rustc-1.42.0
+    * SCons-4.0.1
+    * slang-2.3.2
+    * Subversion-1.14.0
+    * Running a Subversion Server
+    * SWIG-4.0.2
+    * Tk-8.6.10
+    * Vala-0.48.9
+    * Valgrind-3.16.1
+    * yasm-1.3.0 
+
+* Networking
+    * dhcpcd-9.1.4
+    * DHCP-4.4.2
+
+* Networking Programs
+    * bridge-utils-1.6
+    * cifs-utils-6.10
+    * iw-5.4
+    * NcFTP-3.2.6
+    * Net-tools-CVS_20101030
+    * NFS-Utils-2.5.1
+    * Configuring for Network Filesystems
+    * ntp-4.2.8p15
+    * rpcbind-1.2.5
+    * rsync-3.2.3
+    * Samba-4.12.6
+    * Wget-1.20.3
+    * Wireless Tools-29
+    * wpa_supplicant-2.9
+
+* Networking Utilties
+    * Avahi-0.8
+    * BIND Utilities-9.16.5
+    * NetworkManager-1.26.0
+    * network-manager-applet-1.18.0
+    * Traceroute-2.1.0
+    * Whois-5.4.3
+
+* Networking Libraries
+    * c-ares-1.16.1
+    * cURL-7.71.1
+    * GeoClue-2.5.6
+    * glib-networking-2.64.3
+    * ldns-1.7.1
+    * libevent-2.1.12
+    * libmnl-1.0.4
+    * libnl-3.5.0
+    * libnma-1.8.30
+    * libnsl-1.2.0
+    * libpcap-1.9.1
+    * libpsl-0.21.1
+    * libndp-1.7
+    * libsoup-2.70.0
+    * libtirpc-1.2.6
+    * neon-0.31.2
+    * nghttp2-1.41.0
+    * rpcsvc-proto-1.4.2
+    * Serf-1.3.9
+    * uhttpmock-0.5.3
+
+* Databases
+    * PostgreSQL-12.4
+    * SQLite-3.33.0
+
+* X Window System Environment
+    * util-macros-1.19.2
+    * xorgproto-2020.1
+    * libXau-1.0.9
+    * libXdmcp-1.1.3
+    * xcb-proto-1.14
+    * libxcb-1.14
+    * Xorg Libraries
+    * xcb-util-0.4.0
+    * xcb-util-image-0.4.0
+    * xcb-util-keysyms-0.4.0
+    * xcb-util-renderutil-0.3.9
+    * xcb-util-wm-0.4.1
+    * xcb-util-cursor-0.1.3
+    * Mesa-20.1.5
+    * xbitmaps-1.1.2
+    * Xorg Applications
+    * xcursor-themes-1.0.6
+    * Xorg Fonts
+    * XKeyboardConfig-2.30
+    * Xorg-Server-1.20.8
+    * Xorg Drivers
+    * twm-1.0.11
+    * xterm-359
+    * xclock-1.0.9
+    * xinit-1.4.1
+    * Xorg-7 Testing and Configuration
+
+* X Libraries
+    * Amtk-5.1.1
+    * ATK-2.36.0
+    * Atkmm-2.28.0
+    * at-spi2-core-2.36.0
+    * at-spi2-atk-2.34.2
+    * Cairo-1.17.2+f93fc72c03e
+    * Cairomm-1.12.2
+    * Cogl-1.22.8
+    * Clutter-1.26.4
+    * clutter-gst-3.0.27
+    * clutter-gtk-1.8.4
+    * colord-gtk-0.2.0
+    * FLTK-1.3.5
+    * Freeglut-3.2.1
+    * gdk-pixbuf-2.40.0
+    * GDL-3.34.0
+    * GLEW-2.1.0
+    * GLU-9.0.1
+    * GOffice-0.10.48
+    * Graphene-1.10.2
+    * GTK+-2.24.32
+    * GTK+-3.24.22
+    * GTK Engines-2.20.2
+    * Gtkmm-2.24.5
+    * Gtkmm-3.24.2
+    * gtk-vnc-1.0.0
+    * gtksourceview-3.24.11
+    * gtksourceview4-4.6.1
+    * imlib2-1.7.0
+    * keybinder-0.3.1
+    * keybinder-3.0-0.3.2
+    * libdazzle-3.36.0
+    * Libhandy-0.0.13
+    * libdrm-2.4.102
+    * libepoxy-1.5.4
+    * libglade-2.6.4
+    * libnotify-0.7.9
+    * libxklavier-5.4
+    * Pango-1.46.0
+    * Pangomm-2.42.1
+    * Qt-5.15.0
+    * QtWebEngine-5.15.0
+    * startup-notification-0.12
+    * Tepl-4.4.0
+    * WebKitGTK+-2.28.4
+
+* Display Manager
+    * sddm
+
+* Icons
+    * adwaita-icon-theme-3.36.1
+    * breeze-icons-5.73.0
+    * gnome-icon-theme-3.12.0
+    * gnome-icon-theme-extras-3.12.0
+    * gnome-icon-theme-symbolic-3.12.0
+    * gnome-themes-extra-3.28
+    * hicolor-icon-theme-0.17
+    * icon-naming-utils-0.8.90
+    * lxde-icon-theme-0.5.1
+    * oxygen-icons5-5.73.0
+    
+* Desktop Environment
+    * KDE Plasma
+
+* X Software 
+    * LibreOffice-7.0.0
+    * Gparted-1.1.0
+    * Inkscape-1.0
+    * xdg-utils-1.1.3
+    * XScreenSaver-5.44
+
+* Browser
+    * Firefox
+    * Chromium
+
+* Multimedia Libraries and Drivers
+    * ALSA-1.2.2
+    * alsa-lib-1.2.3.2
+    * alsa-plugins-1.2.2
+    * alsa-utils-1.2.3
+    * alsa-tools-1.2.2
+    * alsa-firmware-1.2.1
+    * alsa-oss-1.1.8
+    * AudioFile-0.3.6
+    * FAAC-1_30
+    * FAAD2-2_9_2
+    * fdk-aac-2.0.1
+    * FLAC-1.3.3
+    * frei0r-plugins-1.7.0
+    * gavl-1.4.0
+    * gstreamer-1.16.2
+    * gst-plugins-base-1.16.2
+    * gst-plugins-good-1.16.2
+    * gst-plugins-bad-1.16.2
+    * gst-plugins-ugly-1.16.2
+    * gst-libav-1.16.2
+    * gstreamer-vaapi-1.16.2
+    * id3lib-3.8.3
+    * Liba52-0.7.4
+    * Libao-1.2.0
+    * libass-0.14.0
+    * libcanberra-0.30
+    * libcddb-1.3.2
+    * libcdio-2.1.0
+    * libdiscid-0.6.2
+    * libdvdcss-1.4.2
+    * Libdvdread-6.1.1
+    * Libdvdnav-6.1.0
+    * Libdv-1.0.0
+    * libmad-0.15.1b
+    * libmpeg2-0.5.1
+    * libmusicbrainz-2.1.5
+    * libmusicbrainz-5.1.0
+    * libogg-1.3.4
+    * libquicktime-1.2.4
+    * libsamplerate-0.1.9
+    * libsndfile-1.0.28
+    * libtheora-1.1.1
+    * libvorbis-1.3.7
+    * libvpx-1.9.0
+    * MLT-6.22.1
+    * Opus-1.3.1
+    * Pipewire-0.3.9
+    * PulseAudio-13.0
+    * SBC-1.4
+    * SDL-1.2.15
+    * SDL2-2.0.12
+    * sound-theme-freedesktop-0.8
+    * SoundTouch-2.1.2
+    * Speex-1.2.0
+    * Taglib-1.11.1
+    * v4l-utils-1.20.0
+    * x264-20200819
+    * x265-3.4
+    * xine-lib-1.2.10
+    * XviD-1.3.7
+
+* Audio Utilities
+    * Audacious-4.0.5
+    * pavucontrol-4.0
+
+* Video Utilities
+    * VLC-3.0.11.1
+    * MPlayer-1.4

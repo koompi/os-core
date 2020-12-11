@@ -1,0 +1,39 @@
+#  System Utilities
+
+* AccountsService-0.6.55
+* acpid-2.0.32
+* at-3.2.1
+* autofs-5.1.6
+* BlueZ-5.54
+* Bubblewrap-0.4.1
+* Colord-1.4.4
+* cpio-2.13
+* cups-pk-helper-0.2.6
+* dbus-1.12.20
+* elogind-243.7
+* blocaled-0.3
+* Fcron-3.2.1
+* GPM-1.20.7
+* Hdparm-9.58
+* LSB-Tools-0.7
+* lm-sensors-3-6-0
+* Logrotate-3.17.0
+* MC-4.8.25
+* ModemManager-1.14.0
+* notification-daemon-3.20.0
+* p7zip-16.02
+* Pax-20161104
+* pciutils-3.7.0
+* pm-utils-1.4.1
+* Raptor-2.0.15
+* Rasqal-0.9.33
+* Redland-1.0.17
+* sg3_utils-1.45
+* Sysstat-12.4.0
+* UDisks-2.9.1
+* UnRar-5.9.4
+* UnZip-6.0
+* UPower-0.99.11
+* usbutils-012
+* Which-2.21 and Alternatives
+* Zip-3.0
