@@ -150,12 +150,11 @@
     * GPGME-1.14.0
     * Haveged-1.9.13
     * iptables-1.8.5
-    * Setting Up a Network Firewall
     * libcap-2.42 with PAM
     * Linux-PAM-1.4.0
     * liboauth-1.0.3
     * libpwquality-1.4.2
-    * MIT Kerberos V5-1.18.2
+    * MIT Kerberos V5-1.18.2 | krb5
     * Nettle-3.6
     * NSS-3.55
     * OpenSSH-8.3p1
@@ -401,8 +400,6 @@
     * Lua-5.2.4
     * Mercurial-5.5
     * NASM-2.15.03
-    * Perl Modules
-    * Perl Module Dependencies
     * PHP-7.4.9
     * Python-2.7.18
     * Python-3.8.5
@@ -412,7 +409,6 @@
     * SCons-4.0.1
     * slang-2.3.2
     * Subversion-1.14.0
-    * Running a Subversion Server
     * SWIG-4.0.2
     * Tk-8.6.10
     * Vala-0.48.9
@@ -430,7 +426,6 @@
     * NcFTP-3.2.6
     * Net-tools-CVS_20101030
     * NFS-Utils-2.5.1
-    * Configuring for Network Filesystems
     * ntp-4.2.8p15
     * rpcbind-1.2.5
     * rsync-3.2.3
@@ -499,7 +494,6 @@
     * xterm-359
     * xclock-1.0.9
     * xinit-1.4.1
-    * Xorg-7 Testing and Configuration
 
 * X Libraries
     * Amtk-5.1.1
