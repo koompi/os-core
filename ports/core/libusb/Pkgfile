@@ -4,8 +4,8 @@
 # Organization:  KOOMPI, koompi.com
 # Depends on:  
 
-name=libunistring
-version=0.9.10
+name=libusb
+version=1.0.23
 release=1
 source=(https://github.com//libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2)
 

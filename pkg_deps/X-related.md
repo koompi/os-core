@@ -1,45 +1,223 @@
 # X Window System Environment
+
 * util-macros-1.19.2
 * xorgproto-2020.1
+	* util-macros-1.19.2 
+	* meson
 * libXau-1.0.9
+	* xorgproto-2020.1 
 * libXdmcp-1.1.3
+	* xorgproto-2020.1 
 * xcb-proto-1.14
 * libxcb-1.14
+	* libXau-1.0.9
+	* xcb-proto-1.14.1 
 * Xorg Libraries
+	* Fontconfig-2.13.1
+	* libxcb-1.14 
+	* xtrans-1.4.0
+	* libX11-1.7.0
+	* libXext-1.3.4
+	* libFS-1.0.8
+	* libICE-1.0.10
+	* libSM-1.2.3
+	* libXScrnSaver-1.2.3
+	* libXt-1.2.0
+	* libXmu-1.1.3
+	* libXpm-3.5.13
+	* libXaw-1.0.13
+	* libXfixes-5.0.3
+	* libXcomposite-0.4.5
+	* libXrender-0.9.10
+	* libXcursor-1.2.0
+	* libXdamage-1.1.5
+	* libfontenc-1.1.4
+	* libXfont2-2.0.4
+	* libXft-2.3.3
+	* libXi-1.7.10
+	* libXinerama-1.1.4
+	* libXrandr-1.5.2
+	* libXres-1.2.0
+	* libXtst-1.2.3
+	* libXv-1.0.11
+	* libXvMC-1.0.12
+	* libXxf86dga-1.1.5
+	* libXxf86vm-1.1.4
+	* libdmx-1.1.4
+	* libpciaccess-0.16
+	* libxkbfile-1.1.0
+	* libxshmfence-1.3
 * xcb-util-0.4.0
+	* libxcb-1.14 
 * xcb-util-image-0.4.0
+	* xcb-util-0.4.0 
 * xcb-util-keysyms-0.4.0
+	* libxcb-1.13.1 
 * xcb-util-renderutil-0.3.9
+	* libxcb-1.14 
 * xcb-util-wm-0.4.1
+	* libxcb-1.14 
 * xcb-util-cursor-0.1.3
+	* xcb-util-0.4.0 
 * Mesa-20.1.5
+	* Xorg Libraries
+	* libdrm-2.4.103
+	* Mako-1.1.3 
 * xbitmaps-1.1.2
+	* util-macros-1.19.2 
 * Xorg Applications
+	* libpng-1.6.37
+	* Mesa-20.2.3
+	* xbitmaps-1.1.2
+	* xcb-util-0.4.0
+	* iceauth-1.0.8
+	* luit-1.1.1
+	* mkfontscale-1.2.1
+	* sessreg-1.1.2
+	* setxkbmap-1.3.2
+	* smproxy-1.0.6
+	* x11perf-1.6.1
+	* xauth-1.1
+	* xbacklight-1.2.3
+	* xcmsdb-1.0.5
+	* xcursorgen-1.0.7
+	* xdpyinfo-1.3.2
+	* xdriinfo-1.0.6
+	* xev-1.2.4
+	* xgamma-1.0.6
+	* xhost-1.0.8
+	* xinput-1.6.3
+	* xkbcomp-1.4.4
+	* xkbevd-1.1.4
+	* xkbutils-1.0.4
+	* xkill-1.0.5
+	* xlsatoms-1.1.3
+	* xlsclients-1.1.4
+	* xmessage-1.0.5
+	* xmodmap-1.0.10
+	* xpr-1.0.5
+	* xprop-1.2.5
+	* xrandr-1.5.1
+	* xrdb-1.2.0
+	* xrefresh-1.0.6
+	* xset-1.2.4
+	* xsetroot-1.1.2
+	* xvinfo-1.1.4
+	* xwd-1.0.7
+	* xwininfo-1.1.5
+	* xwud-1.0.5
 * xcursor-themes-1.0.6
+	* Xorg Applications
 * Xorg Fonts
+	* xcursor-themes-1.0.6 
 * XKeyboardConfig-2.30
+	* Xorg Libraries 
 * Xorg-Server-1.20.8
+	* pixman
+	* libepoxy
+	* xkeyboard-config
+	* openssl
+	* nettle
+	* libxfont2
+	* libinput
+	* libgcrypt
+	* mesa
+	* xorgproto
+	* libtirpc
 * Xorg Drivers
+	* Xorg-Input-Drivers
+    	* libevdev-1.10.0
+    	* Xorg Evdev Driver-2.10.6
+    	* libinput-1.16.4
+    	* Xorg Libinput-0.30.0
+    	* Xorg Synaptics Driver-1.9.1
+	    * Xorg Wacom Driver-0.39.0
+	* Xorg-Video
+		* xf86-video-amdgpu
+		* xf86-video-ati
+		* xf86-video-fbdev
+		* xf86-video-intel
+		* xf86-video-nouveau
+		* xf86-video-vesa
+		* xf86-video-vmware
+	* Hardware-Video-Acceleration
+		* libva-2.9.0
+		* libvdpau-1.4
+		* libvdpau-va-gl-0.4.0
 * twm-1.0.11
+	* Xorg-Server-1.20.8 
 * xterm-359
+	* Xorg Applications 
 * xclock-1.0.9
+	* Xorg Libraries 
+		* libxaw
+		* libxmu
+		* libxt
+		* libx11
+		* libxrender
+		* libxft
+		* libxkbfile 
 * xinit-1.4.1
-* Xorg-7 Testing and Configuration
+	* Xorg Libraries
+		* libx11
+		* xauth
 
 # X Libraries
 
 * Amtk-5.1.1
+	* GTK+-3.24.22 
 * ATK-2.36.0
+	* GLib-2.66.3 
 * Atkmm-2.28.0
+	* ATK-2.36.0 
+	* GLibmm-2.64.5 
 * at-spi2-core-2.36.0
+	* dbus-1.12.20
+	* GLib-2.66.3
+	* Xorg Libraries
+		* libxtst
+		* gobject-introspection
+		* meson
 * at-spi2-atk-2.34.2
+	* at-spi2-core-2.38.0
+	* ATK-2.36.0 
 * Cairo-1.17.2+f93fc72c03e
+	* libpng-1.6.37
+	* Pixman-0.40.0 
+	* fontconfig
+	* glib
+	* Xorg Libraries
+		* freetype2
+		* libxcb
+		* libxrender
+		* libx11
+		* libxext
+		* lzo
+		* zlib
 * Cairomm-1.12.2
+	* Cairo-1.17.2+f93fc72c03e
+	* libsigc++-2.10.3 
 * Cogl-1.22.8
+	* Cairo-1.17.2+f93fc72c03e
+	* gdk-pixbuf-2.42.2
+	* GLU-9.0.1
+	* Mesa-20.2.3
+	* Pango-1.48.0 
+	* Wayland-1.18.0 
 * Clutter-1.26.4
+	* ATK-2.36.0
+	* Cogl-1.22.8
+	* JSON-GLib-1.6.0 
 * clutter-gst-3.0.27
+	* Clutter-1.26.4
+	* gst-plugins-base-1.16.2
+	* libgudev-233 
 * clutter-gtk-1.8.4
+	* Clutter-1.26.4 
+	* GTK+-3.24.24 
 * colord-gtk-0.2.0
+	* colord-1.4.4
+	* GTK+-3.24.22 
 * FLTK-1.3.5
 * Freeglut-3.2.1
 * gdk-pixbuf-2.40.0
