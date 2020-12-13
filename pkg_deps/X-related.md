@@ -219,43 +219,225 @@
 	* colord-1.4.4
 	* GTK+-3.24.22 
 * FLTK-1.3.5
+	* cmake
+	* libjpeg-turbo
+	* zlib
+	* libpng
+	* fontconfig
+	* libglvnd 
+	* glu
+	* shared-mime-info
 * Freeglut-3.2.1
+	* libxi
+	* libxrandr
+	* mesa
 * gdk-pixbuf-2.40.0
+	* glib
+	* libjpeg-turbo
+	* libpng
+	* libtiff
+	* shared-mime-info
+	* libx11
+	* libxcb
+	* libxau
+	* jasper
+	* gobject-introspection
 * GDL-3.34.0
+	* libxml2
+	* gtk3
 * GLEW-2.1.0
+	* libxmu
+	* libxi
+	* glu
 * GLU-9.0.1
+	* mesa
 * GOffice-0.10.48
+	* GTK+-3
+	* libgsf
+	* librsvg
+	* libxslt
+	* Which
 * Graphene-1.10.2
+	* Glib
+	* gobject-introspection
 * GTK+-2.24.32
+	* atk
+	* gdk-pixbuf
+	* pango
+	* hicolor-icon-theme
+	* adwaita-icon-theme
+	* libx11
+	* libxrender
+	* libxinerama
+	* libxrandr
+	* libxcursor
+	* libxext
 * GTK+-3.24.22
+	* adwaita-icon-theme
+	* at-spi2-atk
+	* gdk-pixbuf
+	* libepoxy
+	* pango
+	* wayland
+	* wayland-protocols
+	* libxkbcommon
+	* gobject-introspection
+	* libxcomposite
+	* libxcursor
+	* libxinerama
 * GTK Engines-2.20.2
+	* gtk2
 * Gtkmm-2.24.5
+	* atkmm
+	* gtk2
+	* pangomm
 * Gtkmm-3.24.2
+	* atkmm
+	* pangomm
+	* gtk3
 * gtk-vnc-1.0.0
+	* GnuTLS-3.7.0
+	* GTK+-3.24.24
+	* libgcrypt-1.8.7
 * gtksourceview-3.24.11
+	* vala
+	* valgrind
+	* gtk-doc
+	* itstool
+	* fop
+	* glade
 * gtksourceview4-4.6.1
+	* GTK3
 * imlib2-1.7.0
+	* libxext
+	* libx11
+	* libxcb
+	* libtiff
+	* libjpeg-turbo
+	* libpng
+	* freetype2
 * keybinder-0.3.1
+	* gtk2
+	* gobject-introspection
+	* python2-gtk
 * keybinder-3.0-0.3.2
+	* gtk3
+	* gobject-introspection
 * libdazzle-3.36.0
+	* GTK3
 * Libhandy-0.0.13
+	* GTK3
 * libdrm-2.4.102
+	* cairo
+	* docbook-xml
+	* libxslt
+	* valgrind
+	* cunit
 * libepoxy-1.5.4
+	* mesa
+	* meson
 * libglade-2.6.4
+	* libxml2
+	* GTK2
 * libnotify-0.7.9
+	* gtk3
+	* gobject-introspection
+	* docbook-xsl
+	* libxslt
 * libxklavier-5.4
+	* glib
+	* iso-codes
+	* libxml2
+	* libxi
+	* libxkbfile
+	* gobject-introspection
+	* libxfixes
 * Pango-1.46.0
+	* cairo
+	* harfbuzz
+	* fribidi
+	* fontconfig
+	* glib
+	* gobject-introspection
+	* meson
+	* libxft
 * Pangomm-2.42.1
+	* cairomm
+	* glibmm
+	* pango
 * Qt-5.15.0
-* QtWebEngine-5.15.0
+	* gst-plugins-base
+	* cups
+* QtWebEngine-5.15.0	
+	* qt5
+	* nss
+	* python2
+	* libwebp
+	* libxslt
+	* opus
+	* ninja
+	* ffmpeg
+	* alsa-lib
+	* libxcomposite
+	* libxtst
 * startup-notification-0.12
+	* libx11
+	* xcb-util
 * Tepl-4.4.0
+	* amtk
+	* gtksourceview4
+	* libxml2
+	* uchardet	
 * WebKitGTK+-2.28.4
+	* libwebp
+	* mesa
+	* ruby
+	* sqlite
+	* which
+	* enchant
+	* libxslt
+	* openjpeg2
+	* libwpe
+	* bubblewrap
+	* xdg-dbus-proxy
+	* wpebackend-fdo
+	* libxcomposite
+	* libnotify
+	* libxt
 
 # X Software 
 
 * LibreOffice-7.0.0
+	* Archive-Zip
+	* UnZip
+	* Wget
+	* Which
+	* Zip
 * Gparted-1.1.0
+	* gtkmm3
+	* parted
 * Inkscape-1.0
+	* gsl
+	* boost
+	* imagemagick6
+	* gc
+	* lcms2
+	* poppler-glib
+	* popt
+	* libxslt
+	* gtkmm3
+	* double-conversion
+	* potrace
+	* gdl
+	* libsoup
 * xdg-utils-1.1.3
+	* xset
+	* xmlto
+	* lynx
+	* docbook-xml
+	* docbook-xsl
 * XScreenSaver-5.44
+	* libglade-2.6.4
+	* Xorg Applications
+	* GLU-9.0.0 
+
