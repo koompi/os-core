@@ -1,25 +1,67 @@
 # General Utilities
 
 * Asciidoc-9.0.2
+    * docbook-xml
+    * python2
 * Bogofilter-1.2.5
+    * Berkeley DB-5.3.28
+    * Gsl-2.6 
+    * libxml2-2.9.10
 * Compface-1.5.2
 * desktop-file-utils-0.26
+    * GLib-2.66.3
 * Graphviz-2.44.1
 * GTK-Doc-1.32
+    * docbook-xml
+    * docbook-xsl
+    * itstool
+    * libxslt
+    * python2
+    * python3-pygments
 * Hd2u-1.0.4
+    * popt-1.18
 * Highlight-3.57
+    * Boost-1.74.0
+    * Lua-5.4.2
 * ibus-1.5.22
+    * DConf-0.38.0
+    * ISO Codes-4.5.0
+    * Vala-0.50.2
 * ImageMagick-7.0.10-27
+    * fontconfig
+    * lcms2
+    * libtool
+    * libxext
+    * libxt
+    * perl
+    * libxml2
+    * librsvg
 * ISO Codes-4.5.0
+    * python3
 * lsof-4.91
+    * libtirpc-1.3.1
 * pinentry-1.1.0
+    * libassuan
+    * libgpg-error
 * Rarian-0.8.1
-* Rep-gtk-0.90.8.3
+    * libxslt-1.1.34
+* Rep-gtk-0.90.8.3 
+    * GTK+-2.24.32 
+    * librep-0.92.7
 * Screen-4.8.0
 * shared-mime-info-2.0
+    * GLib-2.66.3
+    * itstool-2.0.6
+    * libxml2-2.9.10
+    * xmlto-0.0.28
 * Sharutils-4.15.2
 * telepathy-logger-0.8.2
+    * Python-2.7.18
+    * SQLite-3.34.0
+    * telepathy-glib-0.24.1
 * telepathy-mission-control-5.16.5
+    * telepathy-glib-0.24.1
+    * NetworkManager-1.26.0
 * tidy-html5-5.6.0
 * Time-1.9
 * tree-1.8.0
