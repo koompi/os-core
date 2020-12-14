@@ -2,16 +2,36 @@
 
 * Autoconf2.13
 * Cbindgen-0.14.3
+    * rust
 * Clisp-2.49
+    * libsigsegv-2.12
+    * libffcall
 * CMake-3.18.1
+    * curl
+    * libarchive
+    * libuv
 * Doxygen-1.8.19
+    * CMake
+    * git
 * GCC-10.2.0
 * GC-8.0.4
+    * libatomic_ops
 * GDB-9.2
+    * six-1.15.0 
 * Git-2.28.0
+    * curl
+    * openssl
+    * python2
 * Guile-3.0.4
+    * gc
+    * libunistring
 * Librep-0.92.7
 * LLVM-10.0.1
+    * cmake
+    * libffi
+    * python2
+    * ninja
+    * libxml2
 * Lua-5.4.0
 * Lua-5.2.4
 * Mercurial-5.5
@@ -21,15 +41,33 @@
 * PHP-7.4.9
 * Python-2.7.18
 * Python-3.8.5
+    * libffi
 * Python Modules
 * Ruby-2.7.1
+    * gdbm
+    * readline
+    * ncurses
+    * openssl
+    * libffi
+    * zlib
+    * yaml
+    * gmp
 * Rustc-1.42.0
+    * cURL
+    * CMake
+    * libssh2
 * SCons-4.0.1
 * slang-2.3.2
 * Subversion-1.14.0
-* Running a Subversion Server
+    * Apr-Util-1.6.1
+    * SQLite-3.33.0
+    * Serf-1.3.9
 * SWIG-4.0.2
+    * PCRE
 * Tk-8.6.10
+    * Xorg Lib
 * Vala-0.48.9
+    * GLib
+    * Graphviz
 * Valgrind-3.16.1
 * yasm-1.3.0 

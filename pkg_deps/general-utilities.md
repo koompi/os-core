@@ -62,8 +62,11 @@
 * telepathy-mission-control-5.16.5
     * telepathy-glib-0.24.1
     * NetworkManager-1.26.0
-* tidy-html5-5.6.0
+* tidy-html5-5.6.0  
+    * CMake-3.19.1
+    * libxslt-1.1.34
 * Time-1.9
 * tree-1.8.0
 * unixODBC-2.3.7
 * Xdg-user-dirs-0.17
+    * docbook-xsl
