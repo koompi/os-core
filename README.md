@@ -26,7 +26,7 @@ We recommand using our current [OS](https://www.koompi.org/) as the host.
 - You can change whatever you want inside the `kmp-config`
 
 # Usage:
-After configuration finished, run the script.
+After finished configuration, run the script.
 
 	$ sudo ./kfs-build
 
