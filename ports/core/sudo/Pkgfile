@@ -21,6 +21,7 @@ build() {
                 --with-env-editor          \
                 --docdir=/usr/share/doc/sudo-1.9.4 \
                 --with-passprompt="[sudo] Enter password for %p: " 
+mkdir -pv /usr/lib/sudo
 
     make
     make DESTDIR=$PKG install
