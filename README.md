@@ -18,7 +18,7 @@ We recommand using our current [OS](https://www.koompi.org/) as the host.
 - You need to setup 2 hard drive, one for host and another for target.
 
 # Clone the repo:
-		$ git clone https://github.com/koompi/os-kfs
+	$ git clone https://github.com/koompi/os-kfs
 
 # Configuration:
 - Add in your disk name into `kmp-config`.
@@ -26,9 +26,9 @@ We recommand using our current [OS](https://www.koompi.org/) as the host.
 - You can change whatever you want inside the `kmp-config`
 
 # Usage:
-- After configuration finished, run the script.
-	
-		$ sudo ./kfs-build
+After configuration finished, run the script.
+
+	$ sudo ./kfs-build
 
 Guidance | Support
 =========================================
