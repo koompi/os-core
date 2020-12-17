@@ -8,18 +8,31 @@ KOOMPI From Scratch
 
 <b>KFS</b>|KOOMPI From Scratch. This script is used to compile Linux Minimal iso, inspire by [LFS Project](http://www.linuxfromscratch.org/lfs/).
 
-## Contributing
+# Contributing
 Thanks for your interest in contributing! There are many ways to contribute to this project. [Get started here](CONTRIBUTING.md)
 
-### Prerequisite
-You should do this project using Virtual machine, For example [virtualbox](https://www.virtualbox.org/) and [QEMU](https://computingforgeeks.com/complete-installation-of-kvmqemu-and-virt-manager-on-arch-linux-and-manjaro/)
+# Prerequisite:
+- The whole process of this project should be carry out on Virtual Machine, For example [virtualbox](https://www.virtualbox.org/) and [QEMU](https://computingforgeeks.com/complete-installation-of-kvmqemu-and-virt-manager-on-arch-linux-and-manjaro/)
 We recommand using our current [OS](https://www.koompi.org/) as the host. 
 
-### Prerequisite
-- You should use virtual machine for this project. You can use QEMU or Virtualbox.
-- Create external hard disk for building the ISO.
-- Change drive variable name in the config file(kmp-config).
-- Clone the project and run kfs-build.
+- You need to setup 2 hard drive, one for host and another for target.
 
-## Usage
-You should change the config to the way you like in the kmp-config file.
+# Clone the repo:
+	$ git clone https://github.com/koompi/os-kfs
+
+# Configuration:
+- Add in your disk name into `kmp-config`.
+- Ex: sda, vdb, sdb
+- You can change whatever you want inside the `kmp-config`
+
+# Usage:
+After configuration finished, run the script.
+
+	$ sudo ./kfs-build
+
+Guidance | Support
+=========================================
+
+- Use this link if you need help with installing KOOMPI OS on [Virtual Box]().
+- Use this link if you need help with installing KOOMPI OS on [QEMU]().
+
