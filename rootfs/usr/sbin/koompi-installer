@@ -727,12 +727,12 @@ Set necessary options before start the installation \n"
 	fi
 }
 
-if [ -f "/run/initramfs/ram/filesystem.sfs" ]; then
-	ROOTSFS="/run/initramfs/ram/filesystem.sfs"
+if [ -f "/run/initramfs/ram/root.sfs" ]; then
+	ROOTSFS="/run/initramfs/ram/root.sfs"
 	LISTPKG="/run/initramfs/ram/pkglist"
 	CUSTOMDIR="/run/initramfs/ram/customize"
 else
-	ROOTSFS="/run/initramfs/medium/rootfs/filesystem.sfs"
+	ROOTSFS="/run/initramfs/medium/kfs/root.sfs"
 	LISTPKG="/run/initramfs/medium/rootfs/pkglist"
 	CUSTOMIZEDIR="/run/initramfs/medium/customize"
 fi
