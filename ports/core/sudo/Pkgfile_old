@@ -1,0 +1,60 @@
+# Description:  The Sudo package allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while logging the commands and arguments. 
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  zlib lzo xz lz4
+
+name=sudo
+version=1.9.4
+release=1
+source=(http://www.sudo.ws/dist/sudo-1.9.4.tar.gz
+        http://www.linuxfromscratch.org/patches/blfs/svn/sudo-1.9.4-upstream_fix-1.patch)
+
+build() {
+	cd $name-$version
+    patch -Np1 -i ../sudo-1.9.4-upstream_fix-1.patch
+
+    ./configure --prefix=/usr              \
+                --libexecdir=/usr/lib      \
+                --with-secure-path         \
+                --with-all-insults         \
+                --with-env-editor          \
+                --docdir=/usr/share/doc/sudo-1.9.4 \
+                --with-passprompt="[sudo] Enter password for %p: " 
+mkdir -pv /usr/lib/sudo
+
+    make
+    make DESTDIR=$PKG install
+    ln -sfv libsudo_util.so.0.0.0 /usr/lib/sudo/libsudo_util.so.0
+
+mkdir -pv /etc/sudoers.d
+mkdir -pv /etc/pam.d
+
+cat > /etc/sudoers.d/sudo << "EOF"
+Defaults    env_reset,pwfeedback
+Defaults    secure_path="/usr/bin:/bin:/usr/sbin:/sbin"
+%wheel ALL=(ALL) ALL
+EOF
+
+
+cat > /etc/pam.d/sudo << "EOF"
+# Begin /etc/pam.d/sudo
+
+# include the default auth settings
+auth      include     system-auth
+
+# include the default account settings
+account   include     system-account
+
+# Set default environment variables for the service user
+session   required    pam_env.so
+
+# include system session defaults
+session   include     system-session
+
+# End /etc/pam.d/sudo
+EOF
+chmod 644 /etc/pam.d/sudo
+
+
+}
