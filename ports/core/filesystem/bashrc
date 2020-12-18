@@ -102,6 +102,7 @@ alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
+alias vp='vim -w Pkgfile'
 alias more=less
 
 xhost +local:root > /dev/null 2>&1
@@ -152,6 +153,34 @@ function h() {
     history | grep $1 ;
 }
 
+pathremove () {
+        local IFS=':'
+        local NEWPATH
+        local DIR
+        local PATHVARIABLE=${2:-PATH}
+        for DIR in ${!PATHVARIABLE} ; do
+                if [ "$DIR" != "$1" ] ; then
+                  NEWPATH=${NEWPATH:+$NEWPATH:}$DIR
+                fi
+        done
+        export $PATHVARIABLE="$NEWPATH"
+}
+
+pathprepend () {
+        pathremove $1 $2
+        local PATHVARIABLE=${2:-PATH}
+        export $PATHVARIABLE="$1${!PATHVARIABLE:+:${!PATHVARIABLE}}"
+}
+
+pathappend () {
+        pathremove $1 $2
+        local PATHVARIABLE=${2:-PATH}
+        export $PATHVARIABLE="${!PATHVARIABLE:+${!PATHVARIABLE}:}$1"
+}
+
+export -f pathremove pathprepend pathappend
+
 
 PS1="\[\033[38;5;166m\][\[$(tput sgr0)\]\[\033[38;5;130m\]\@\[$(tput sgr0)\]\[\033[38;5;166m\]]\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;28m\]\h\[$(tput sgr0)\]\[\033[38;5;130m\]::\[$(tput sgr0)\]\[\033[38;5;166m\]\W\[$(tput sgr0)\] | "
+
 # End /etc/bashrc
