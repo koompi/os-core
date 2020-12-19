@@ -177,4 +177,10 @@ for pkg in $PKGS; do
 	esac
 done
 
+for pkg in $QT; do
+	case $pkg in
+		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
+		*) runinchroot pkgin -i $pkg || die;;
+	esac
+done
 exit 0
