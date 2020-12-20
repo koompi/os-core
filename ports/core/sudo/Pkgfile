@@ -1,59 +1,34 @@
-# Description:  The Sudo package allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while logging the commands and arguments. 
-# URL: https://koompi.org        
-# Maintainer:  HangsiaHONG, hangsia@koompi.org
-# Organization:  KOOMPI, koompi.com
-# Depends on:  zlib lzo xz lz4
+# description	: allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while logging the commands and arguments
+# depends	: linux-pam
 
 name=sudo
-version=1.9.4
+version=1.9.3p1
 release=1
-source=(http://www.sudo.ws/dist/sudo-1.9.4.tar.gz
-        http://www.linuxfromscratch.org/patches/blfs/svn/sudo-1.9.4-upstream_fix-1.patch)
+backup="etc/sudoers"
+source="https://www.sudo.ws/dist/$name-$version.tar.gz
+	sudo"
 
 build() {
 	cd $name-$version
-    patch -Np1 -i ../sudo-1.9.4-upstream_fix-1.patch
 
-    ./configure --prefix=/usr              \
-                --libexecdir=/usr/lib      \
-                --with-secure-path         \
-                --with-all-insults         \
-                --with-env-editor          \
-                --docdir=/usr/share/doc/sudo-1.9.4 \
-                --with-passprompt="[sudo] Enter password for %p: " 
+	./configure \
+	    --prefix=/usr \
+            --libexecdir=/usr/lib \
+            --with-secure-path \
+            --with-all-insults \
+            --with-env-editor \
+	    --disable-nls \
+            --with-passprompt="[sudo] Enter password for %p: "
+	make
+	make DESTDIR=$PKG install
 
-    make
-    make DESTDIR=$PKG install
-    ln -sfv libsudo_util.so.0.0.0 /usr/lib/sudo/libsudo_util.so.0
+	ln -sfv libsudo_util.so.0.0.0 $PKG/usr/lib/sudo/libsudo_util.so.0
 
-mkdir -pv /etc/sudoers.d
-mkdir -pv /etc/pam.d
+	mkdir -m 755 $PKG/etc/pam.d
+	install -D -m 644 -o root -g root $SRC/sudo $PKG/etc/pam.d/sudo
 
-cat > /etc/sudoers.d/sudo << "EOF"
-Defaults    env_reset,pwfeedback
-Defaults    secure_path="/usr/bin:/bin:/usr/sbin:/sbin"
-%wheel ALL=(ALL) ALL
-EOF
+	sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' $PKG/etc/sudoers
 
-
-cat > /etc/pam.d/sudo << "EOF"
-# Begin /etc/pam.d/sudo
-
-# include the default auth settings
-auth      include     system-auth
-
-# include the default account settings
-account   include     system-account
-
-# Set default environment variables for the service user
-session   required    pam_env.so
-
-# include system session defaults
-session   include     system-session
-
-# End /etc/pam.d/sudo
-EOF
-chmod 644 /etc/pam.d/sudo
-
-
+	rm -fr $PKG/var/run
+	rm -fr $PKG/run/sudo
 }

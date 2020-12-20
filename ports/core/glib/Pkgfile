@@ -19,6 +19,7 @@ build() {
     cd    build &&
 
     meson --prefix=/usr      \
+	  --disable-docs \
           -Dman=true         \
           -Dselinux=disabled \
           ..                 &&
