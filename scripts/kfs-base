@@ -152,7 +152,14 @@ QT="glib graphite2 harfbuzz yasm libjpeg-turbo jasper libtiff lcms2 libmng libpn
 	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib gstreamer libogg libvorbis libtheora iso-codes gst-plugins-base gnutls libusb linux-pam
 	dbus colord xdg-utils cups qt5"
 
-LIBS="apr apr-util boost dbus-glib double-conversion enchant fftw glib glibmm"
+LIBS="apr apr-util boost dbus-glib double-conversion enchant fftw glib glibmm gobject-introspection grantlee gsl icu jansson js60 json-glib libaio libarchive libassuan libatasmart
+	libatomic_ops libbytesize lvm2 nettle json-c popt cryptsetup glib gpgme python2 swig volume_key nss cryptsetup parted gobject-introspection python3 yaml libblockdev
+	libdaemon libgpg-error libgudev libusb libical libidn libidn2 libksba libmbim libqmi libseccomp libsigc libssh2 libstatgrab libtasn1 libuninameslist 
+	atk gdk-pixbuf pango hicolor-icon-theme adwaita-icon-theme libx11 libxrender libxinerama libxrandr libxcursor libxext gtk2 libunique
+	libunistring libusb libuv libxkbcommon libxml2 libxslt lzo mtdev c-ares icu python2 libuv zlib nodejs npth nspr npth qca libffi libxml2 wayland
+	wayland-protocols xapian-core"
+
+
 
 
 XORG="util-macros xorgproto libxau libxdmcp xcb-proto libxcb xtrans libx11 libxext libfs libice libsm libxscrnsaver libxt libxmu

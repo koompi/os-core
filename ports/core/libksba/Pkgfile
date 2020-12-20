@@ -1,4 +1,4 @@
-Description: The Libksba package contains a library used to make X.509 certificates as well as making the CMS
+# Description: The Libksba package contains a library used to make X.509 certificates as well as making the CMS
 # URL: https://koompi.org        
 # Maintainer:  HangsiaHONG, hangsia@koompi.org
 # Organization:  KOOMPI, koompi.com
