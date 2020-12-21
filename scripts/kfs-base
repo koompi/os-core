@@ -157,8 +157,9 @@ LIBS="apr apr-util boost dbus-glib double-conversion enchant fftw glib glibmm go
 	libdaemon libgpg-error libgudev libusb libical libidn libidn2 libksba libmbim libqmi libseccomp libsigc libssh2 libstatgrab libtasn1 libuninameslist 
 	atk gdk-pixbuf pango hicolor-icon-theme adwaita-icon-theme libx11 libxrender libxinerama libxrandr libxcursor libxext gtk2 libunique
 	libunistring libusb libuv libxkbcommon libxml2 libxslt lzo mtdev c-ares icu python2 libuv zlib nodejs npth nspr npth qca libffi libxml2 wayland
-	wayland-protocols xapian-core"
-
+	wayland-protocols xapian-core babl exiv2 fontconfig fribidi poppler-glib json-glib gegl giflib libexif libjpeg-turbo libmng libmypaint libpng libraw
+	libcroco pango adwaita-icon-theme libxi libxtst at-spi2-core at-spi2-atk gdk-pixbuf libepoxy pango wayland wayland-protocols libxkbcommon gobject-introspection libx11 libxfixes libxcomposite libxrender libxcursor libxinerama 
+	gtk3 librsvg libtiff libwebp mypaint-brushes newt openjpeg2 poppler-data poppler potrace libsass sassc"
 
 
 
