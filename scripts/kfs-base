@@ -171,7 +171,8 @@ NETWORK="libnl iw net-tools ntp zstd rsync fuse3 jansson libtirpc rpcsv-proto pe
 XORG="util-macros xorgproto libxau libxdmcp xcb-proto libxcb xtrans libx11 libxext libfs libice libsm libxscrnsaver libxt libxmu
 	libxpm libxaw libxfixes libxcomposite libxrender libxcursor libxdamage libfontenc libxfont2 libxft libxi libxinerama
 	libxrandr libxres libxtst libxv libxvmc libxxf86dga libxxf86vm libdmx libpciaccess libxkbfile libxshmfence
-	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm"
+	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm xcb-util-curosor valagrind libdrm llvm expat zlib zstd elfutils libxcb libxshmfence libx11 wayland libxvmc libxv libxext libxfixes libxdamage libxxf86vm python3-mako libglvnd xrandr wayland-protocols mesa
+	xbitmaps setxkbmap iceauth luit mkfontscale sessreg smproxy x11perf xbacklight xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma"
 
 
 
