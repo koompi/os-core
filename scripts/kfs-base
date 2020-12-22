@@ -159,7 +159,8 @@ LIBS="apr apr-util boost dbus-glib double-conversion enchant fftw glib glibmm go
 	libunistring libusb libuv libxkbcommon libxml2 libxslt lzo mtdev c-ares icu python2 libuv zlib nodejs npth nspr npth qca libffi libxml2 wayland
 	wayland-protocols xapian-core babl exiv2 fontconfig fribidi poppler-glib json-glib gegl giflib libexif libjpeg-turbo libmng libmypaint libpng libraw
 	libcroco pango adwaita-icon-theme libxi libxtst at-spi2-core at-spi2-atk gdk-pixbuf libepoxy pango wayland wayland-protocols libxkbcommon gobject-introspection libx11 libxfixes libxcomposite libxrender libxcursor libxinerama 
-	gtk3 librsvg libtiff libwebp mypaint-brushes newt openjpeg2 poppler-data poppler potrace libsass sassc"
+	gtk3 librsvg libtiff libwebp mypaint-brushes newt openjpeg2 poppler-data poppler potrace libsass sassc asciidoc docbook-xml docbook-xsl itstool libxslt python2 python3-pygments gtk-doc pinentry screen shared-mime-info
+	tree xdg-user-dirs"
 
 
 
