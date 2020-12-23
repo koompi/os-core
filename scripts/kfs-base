@@ -137,50 +137,7 @@ else
 fi
 
 ##------PKGS------#
-PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file readline m4 bc binutils gmp mpfr mpc attr acl shadow gcc
-	pkg-config ncurses libtool dialog libcap sed psmisc iana-etc bison flex grep bash gdbm gperf expat inetutils linux-pam
-	perl perl-xml-parser intltool autoconf autoconf2.13 automake libuv xz kmod gettext elfutils libffi openssl python3 python3-setuptools ninja meson coreutils
-	diffutils gawk findutils groff fuse2 grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng
-	util-linux e2fsprogs sysklogd eudev kfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
-	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
-	curl cmake ports httpup gpm libevent links mtools syslinux libburn libisofs libisoburn fakeroot sysvinit libgpg-error libassuan libgcrypt libksba npth pinentry
-	gnupg openssh libssh2 sqlite python2 llvm sgml-common unzip docbook-xsl libxslt git nspr icu mozjs gobject-introspection polkit pixman graphviz vala nss pcre slang newt cairo python3-cairo python3-gobject3
-	networkmanager sudo"
-
-QT="glib graphite2 harfbuzz yasm libjpeg-turbo jasper libtiff lcms2 libmng libpng libevdev mtdev libinput xtrans xorgproto libxau libxdmcp xcb-proto libxcb libx11 libxrender
-	libice libsm libxext libxfixes libxi libtiff libxkbfile xkbcomp xkeyboard-config libxml2 libffi wayland wayland-protocols libxkbcommon mtdev openssl pcre2 
-	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib gstreamer libogg ls libtheora iso-codes gst-plugins-base gnutls libusb linux-pam
-	dbus colord xmlto lynx xdg-utils cups qt5"
-
-LIBS="apr apr-util boost dbus-glib double-conversion enchant fftw glib glibmm gobject-introspection grantlee gsl icu jansson js60 json-glib libaio libarchive libassuan libatasmart
-	libatomic_ops libbytesize lvm2 nettle json-c popt cryptsetup glib gpgme python2 swig volume_key nss cryptsetup parted gobject-introspection python3 yaml libblockdev
-	libdaemon libgpg-error libgudev libusb libical libidn libidn2 libksba libmbim libqmi libseccomp libsigc libssh2 libstatgrab libtasn1 libuninameslist 
-	atk gdk-pixbuf pango hicolor-icon-theme adwaita-icon-theme libx11 libxrender libxinerama libxrandr libxcursor libxext gtk2 libunique
-	libunistring libusb libuv libxkbcommon libxml2 libxslt lzo mtdev c-ares icu python2 libuv zlib nodejs npth nspr npth qca libffi libxml2 wayland
-	wayland-protocols xapian-core babl exiv2 fontconfig fribidi poppler-glib json-glib gegl giflib libexif libjpeg-turbo libmng libmypaint libpng libraw
-	libcroco pango adwaita-icon-theme libxi libxtst at-spi2-core at-spi2-atk gdk-pixbuf libepoxy pango wayland wayland-protocols libxkbcommon gobject-introspection libx11 libxfixes libxcomposite libxrender libxcursor libxinerama 
-	gtk3 librsvg libtiff libwebp mypaint-brushes newt openjpeg2 poppler-data poppler potrace libsass sassc asciidoc docbook-xml docbook-xsl itstool libxslt python2 python3-pygments gtk-doc pinentry screen shared-mime-info
-	tree xdg-user-dirs"
-
-SYSTEM_UTILS="acpid bluez bubblewrap colord cpio cups hdparm lsb-release lm_sensors mc gtk3 libcanerra notification-daemon p7zip pciutils pm-utils udisks2 unrar upower usbutils zip"
-
-NETWORK="libnl iw net-tools ntp zstd rsync fuse3 jansson libtirpc rpcsv-proto perl-parse-yapp samba wireless_tools gtk3 iso-codes libsecret libnotify networkmanager modemmanager gobject-introspection meson python2-six libnma
-	libappindicator network-manager-applet c-ares glib gnutls gsettings-desktop-schemas ca-certificates p11-kit meson glib-networking libmnl libpcap libpsl libsoup libtirpc neon nghttp2"
-
-
-XORG="util-macros xorgproto libxau libxdmcp xcb-proto libxcb xtrans libx11 libxext libfs libice libsm libxscrnsaver libxt libxmu
-	libxpm libxaw libxfixes libxcomposite libxrender libxcursor libxdamage libfontenc libxfont2 libxft libxi libxinerama
-	libxrandr libxres libxtst libxv libxvmc libxxf86dga libxxf86vm libdmx libpciaccess libxkbfile libxshmfence
-	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm xcb-util-curosor valagrind libdrm llvm expat zlib zstd elfutils libxcb libxshmfence libx11 wayland libxvmc libxv libxext libxfixes libxdamage libxxf86vm python3-mako libglvnd xrandr wayland-protocols mesa
-	xbitmaps setxkbmap iceauth luit mkfontscale sessreg smproxy x11perf xbacklight xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma xhost xinput xkbcomp xkbevd xkbutils xkill xlsatoms xlsclients xmessage xmodmap xpr xprop xrandr xrdb xrefresh xset xsetroot xvinfo xwd xwininfo xwud
-	xcursor-themes font-util encodings font-alias font-adobe-utopia-type1 font-bh-ttf font-bh-type1 font-ibm-type1 font-misc-ethiopic font-xfree86-type1 font-adobe-100dpi font-adobe-75dpi font-daewoo-misc font-isas-misc font-jis-misc
-	xkeyboard-config pixman libepoxy xkeyboard-config openssl nettle libxfont2 libinput libgcrypt mesa xorgproto libtirpc xorg-server libevdev xf86-input-evdev libinput xf86-input-libinput xf86-video-intel libva libvdpau libvdpau-va-gl
-	libass fdk-aac freetype2 lame gnutls libtheora libvorbis libvpx opus nasm x264 x265 alsa-lib libva libvdpau sdl2 yasm ffmpeg
-	twm xterm xclock xauth xinit amtk atk atkmm cairomm glu cogl clutter clutter-gst clutter-gtk fltk freeglut gdl libgsf librsvg goffice graphene gtk-engines gtkmm2 gtkmm3
-	libglade gtksourceview3 gtksourceview4 imlib2 python2-object2 python2-cairo python2-gtk keybinder2 keybinder3 libdazzle libhandy libxklavier pangomm qtwebengine startup-notification uchardet tepl
-	libwebp mesa ruby sqlite which enchant libxslt openjpeg2 libwpe bubblewrap xdg-dbus-proxy wpebackend-fdo libxcomposite libnotify libxt webkitgtk"
-
-
+PKG=""
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
 	kfs_dirs
