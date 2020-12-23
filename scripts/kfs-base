@@ -149,8 +149,8 @@ PKGS="filesystem linux-api-headers man-pages glibc libndp tzdata zlib bzip2 file
 
 QT="glib graphite2 harfbuzz yasm libjpeg-turbo jasper libtiff lcms2 libmng libpng libevdev mtdev libinput xtrans xorgproto libxau libxdmcp xcb-proto libxcb libx11 libxrender
 	libice libsm libxext libxfixes libxi libtiff libxkbfile xkbcomp xkeyboard-config libxml2 libffi wayland wayland-protocols libxkbcommon mtdev openssl pcre2 
-	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib gstreamer libogg libvorbis libtheora iso-codes gst-plugins-base gnutls libusb linux-pam
-	dbus colord xdg-utils cups qt5"
+	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib gstreamer libogg ls libtheora iso-codes gst-plugins-base gnutls libusb linux-pam
+	dbus colord xmlto lynx xdg-utils cups qt5"
 
 LIBS="apr apr-util boost dbus-glib double-conversion enchant fftw glib glibmm gobject-introspection grantlee gsl icu jansson js60 json-glib libaio libarchive libassuan libatasmart
 	libatomic_ops libbytesize lvm2 nettle json-c popt cryptsetup glib gpgme python2 swig volume_key nss cryptsetup parted gobject-introspection python3 yaml libblockdev
@@ -172,7 +172,13 @@ XORG="util-macros xorgproto libxau libxdmcp xcb-proto libxcb xtrans libx11 libxe
 	libxpm libxaw libxfixes libxcomposite libxrender libxcursor libxdamage libfontenc libxfont2 libxft libxi libxinerama
 	libxrandr libxres libxtst libxv libxvmc libxxf86dga libxxf86vm libdmx libpciaccess libxkbfile libxshmfence
 	xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm xcb-util-curosor valagrind libdrm llvm expat zlib zstd elfutils libxcb libxshmfence libx11 wayland libxvmc libxv libxext libxfixes libxdamage libxxf86vm python3-mako libglvnd xrandr wayland-protocols mesa
-	xbitmaps setxkbmap iceauth luit mkfontscale sessreg smproxy x11perf xbacklight xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma"
+	xbitmaps setxkbmap iceauth luit mkfontscale sessreg smproxy x11perf xbacklight xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma xhost xinput xkbcomp xkbevd xkbutils xkill xlsatoms xlsclients xmessage xmodmap xpr xprop xrandr xrdb xrefresh xset xsetroot xvinfo xwd xwininfo xwud
+	xcursor-themes font-util encodings font-alias font-adobe-utopia-type1 font-bh-ttf font-bh-type1 font-ibm-type1 font-misc-ethiopic font-xfree86-type1 font-adobe-100dpi font-adobe-75dpi font-daewoo-misc font-isas-misc font-jis-misc
+	xkeyboard-config pixman libepoxy xkeyboard-config openssl nettle libxfont2 libinput libgcrypt mesa xorgproto libtirpc xorg-server libevdev xf86-input-evdev libinput xf86-input-libinput xf86-video-intel libva libvdpau libvdpau-va-gl
+	libass fdk-aac freetype2 lame gnutls libtheora libvorbis libvpx opus nasm x264 x265 alsa-lib libva libvdpau sdl2 yasm ffmpeg
+	twm xterm xclock xauth xinit amtk atk atkmm cairomm glu cogl clutter clutter-gst clutter-gtk fltk freeglut gdl libgsf librsvg goffice graphene gtk-engines gtkmm2 gtkmm3
+	libglade gtksourceview3 gtksourceview4 imlib2 python2-object2 python2-cairo python2-gtk keybinder2 keybinder3 libdazzle libhandy libxklavier pangomm qtwebengine startup-notification uchardet tepl
+	libwebp mesa ruby sqlite which enchant libxslt openjpeg2 libwpe bubblewrap xdg-dbus-proxy wpebackend-fdo libxcomposite libnotify libxt webkitgtk"
 
 
 
