@@ -137,7 +137,7 @@ else
 fi
 
 ##------PKGS------#
-PKG="filesystem linux-api-headers man-pages tcl expect dejagnu iana-etc glibc zlib bzip2 xz zstd bzip2
+PKG="filesystem linux-api-headers man-pages iana-etc glibc zlib bzip2 xz zstd bzip2
 xz zstd file readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses
 sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser intltool
 autoconf automake kmod elfutils libffi openssl Python3 ninja meson coreutils check diffutils gawk
