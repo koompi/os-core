@@ -116,7 +116,7 @@
     * GRUB-2.04
     * Less-551
     * Gzip-1.10
-    * IPRoute2-5.8.0 
+    * IPRoute2-5.8.0
     * Kbd-2.3.0
     * Libpipeline-1.5.3
     * Make-4.3
@@ -130,7 +130,7 @@
     * Util-linux-2.36
     * E2fsprogs-1.45.6
     * Sysklogd-1.5.1
-    * Sysvinit-2.97 
+    * Sysvinit-2.97
     * Linux-5.9.3
     * KFS-Bootscripts-20200818
     * Gettext-0.21
@@ -138,9 +138,9 @@
     * Perl-5.32.0
     * Python-3.8.5
     * Texinfo-6.7
-    * Util-linux-2.36 
-    
-* [Security](security.md) 
+    * Util-linux-2.36
+
+* [Security](security.md)
     * make-ca-1.7
     * CrackLib-2.9.7
     * cryptsetup-2.3.3
@@ -166,8 +166,8 @@
     * stunnel-5.56
     * Sudo-1.9.2
     * Tripwire-2.4.3.7
-    * volume_key-0.3.12 
-    
+    * volume_key-0.3.12
+
 * [File System and Disk Management](file-disk.md)
     * btrfs-progs-5.7
     * dosfstools-4.1
@@ -181,7 +181,7 @@
     * reiserfsprogs-3.6.27
     * smartmontools-7.1
     * sshfs-3.7.0
-    * xfsprogs-5.7.0 
+    * xfsprogs-5.7.0
 
 * [Editors](editors.md)
     * Vim-8.2.1361
@@ -268,7 +268,7 @@
     * PCRE-8.44
     * PCRE2-10.35
     * Popt-1.18
-    * Pth-2.0.7
+    * Npth-2.0.7
     * Qca-2.3.1
     * Talloc-2.3.1
     * telepathy-glib-0.24.1
@@ -291,7 +291,7 @@
     * GLM-0.9.9.8
     * Graphite2-1.3.14
     * HarfBuzz-2.7.1
-    * JasPer-2.0.14
+    * JasPer-2.0.15
     * Little CMS-1.19
     * Little CMS-2.11
     * libexif-0.6.22
@@ -412,7 +412,7 @@
     * Tk-8.6.10
     * Vala-0.48.9
     * Valgrind-3.16.1
-    * yasm-1.3.0 
+    * yasm-1.3.0
 
 * [Networking](networking.md)
     * dhcpcd-9.1.4
@@ -555,7 +555,7 @@
     * icon-naming-utils-0.8.90
     * lxde-icon-theme-0.5.1
     * oxygen-icons5-5.73.0
-    
+
 * [Desktop Environment](desktop-environment.md)
     * KDE Plasma
 
