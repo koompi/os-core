@@ -137,7 +137,12 @@ else
 fi
 
 ##------PKGS------#
-PKG=""
+PKG="filesystem linux-api-headers man-pages tcl expect dejagnu iana-etc glibc zlib bzip2 xz zstd bzip2
+xz zstd file readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses
+sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser intltool
+autoconf automake kmod elfutils libffi openssl Python3 ninja meson coreutils check diffutils gawk
+findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim systemd
+d-bus procps-ng util-linux e2fsprogs"
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
 	kfs_dirs
@@ -156,10 +161,4 @@ for pkg in $PKGS; do
 	esac
 done
 
-for pkg in $QT; do
-	case $pkg in
-		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
-		*) runinchroot pkgin -i $pkg || die;;
-	esac
-done
 exit 0
