@@ -1,0 +1,21 @@
+# Description: Programs for manipulating text files
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=gawk
+version=5.1.0
+release=1
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+        cd $name-$version
+
+        # ensure some unneeded files are not installed
+        sed -i 's/extras//' Makefile.in
+
+        ./configure --prefix=/usr
+        make
+        make DESTDIR=$PKG install
+}

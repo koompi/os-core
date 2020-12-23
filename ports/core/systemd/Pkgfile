@@ -1,0 +1,54 @@
+# description	: The systemd package contains programs for controlling the startup, running, and shutdown of the system.
+
+name=systemd
+version=246
+release=1
+source="https://github.com/systemd/systemd/archive/v246/systemd-246.tar.gz "
+
+build() {
+	cd $name-$version
+	ln -sf /bin/true /usr/bin/xsltproc
+	sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
+mkdir -p build
+cd       build
+
+LANG=en_US.UTF-8                    \
+meson --prefix=/usr                 \
+      --sysconfdir=/etc             \
+      --localstatedir=/var          \
+      -Dblkid=true                  \
+      -Dbuildtype=release           \
+      -Ddefault-dnssec=no           \
+      -Dfirstboot=false             \
+      -Dinstall-tests=false         \
+      -Dkmod-path=/bin/kmod         \
+      -Dldconfig=false              \
+      -Dmount-path=/bin/mount       \
+      -Drootprefix=                 \
+      -Drootlibdir=/lib             \
+      -Dsplit-usr=true              \
+      -Dsulogin-path=/sbin/sulogin  \
+      -Dsysusers=false              \
+      -Dumount-path=/bin/umount     \
+      -Db_lto=false                 \
+      -Drpmmacrosdir=no             \
+      -Dhomed=false                 \
+      -Duserdb=false                \
+      -Dman=true                    \
+      ..
+
+
+LANG=en_US.UTF-8 ninja
+LANG=en_US.UTF-8 DESTDIR=$PKG ninja install
+
+rm -f /usr/bin/xsltproc
+
+systemd-machine-id-setup
+
+systemctl preset-all
+
+systemctl disable systemd-time-wait-sync.service
+
+rm -f /usr/lib/sysctl.d/50-pid-max.conf
+
+}
