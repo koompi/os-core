@@ -1,0 +1,17 @@
+# Description: Provides data for network services and protocols
+# URL:         
+# Maintainer: 
+# Depends on:  
+
+name=iana-etc
+version=20200821
+release=1
+source=(https://github.com/Mic92/iana-etc/releases/download/20200821/iana-etc-20200821.tar.gz)
+
+build() {
+        cd $name-$version
+	
+	cp services protocols /etc
+        
+       
+}
