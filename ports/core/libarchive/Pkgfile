@@ -1,0 +1,20 @@
+# Description: Reading/writing various compression formats
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=libarchive
+version=3.4.3
+release=1
+source=(https://github.com/libarchive/libarchive/releases/download/v$version/libarchive-$version.tar.gz)
+
+build() {
+        cd $name-$version
+
+        ./configure \
+                --prefix=/usr \
+                --disable-static
+        make
+        make DESTDIR=$PKG install
+}
