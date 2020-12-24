@@ -1,17 +1,17 @@
 # Description: Provides data for network services and protocols
-# URL:         
-# Maintainer: 
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
 # Depends on:  
 
 name=iana-etc
-version=20200821
+version=2.30
 release=1
-source=(https://github.com/Mic92/iana-etc/releases/download/20200821/iana-etc-20200821.tar.gz)
+source=(http://anduin.linuxfromscratch.org/LFS/$name-$version.tar.bz2)
+
 
 build() {
         cd $name-$version
-	
-	cp services protocols /etc
-        
-       
+        make
+        make DESTDIR=$PKG install
 }
