@@ -13,6 +13,7 @@ build() {
 	cd $name-$version
 
 	./configure --prefix=/usr              \
+		    --with-ssl		       \
                     --disable-static           \
                     --enable-threaded-resolver \
                     --with-ca-path=/etc/ssl/certs
