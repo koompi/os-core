@@ -29,7 +29,7 @@ chown    -v dhcpcd:dhcpcd /var/lib/dhcpcd
 	make
 	make DESTDIR=$PKG install
 
-	make install-dhcpcd
+	make DESTDIR=$PKG install-dhcpcd
 	systemctl start dhcpcd@eth0
 	systemctl enable dhcpcd@eth0
 }

@@ -1,0 +1,18 @@
+# Description: Text and graphics mode WWW browser
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  openssl libevent
+
+name=links
+version=2.21
+release=1
+source=(http://links.twibright.com/download/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --mandir=/usr/share/man
+	make
+	make DESTDIR=$PKG install
+}
