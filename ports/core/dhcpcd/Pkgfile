@@ -1,0 +1,35 @@
+# Description: Implementation of the DHCP client specified in RFC2131
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  
+
+name=dhcpcd
+version=9.3.4
+bootscriptsversion=20191204
+release=1
+source=(https://roy.marples.name/downloads/dhcpcd/dhcpcd-9.3.4.tar.xz)
+
+build() {
+	cd $name-$version
+
+	install  -v -m700 -d /var/lib/dhcpcd &&
+
+groupadd -g 52 dhcpcd        &&
+useradd  -c 'dhcpcd PrivSep' \
+         -d /var/lib/dhcpcd  \
+         -g dhcpcd           \
+         -s /bin/false     \
+         -u 52 dhcpcd &&
+chown    -v dhcpcd:dhcpcd /var/lib/dhcpcd 
+
+
+	./configure --libexecdir=/lib/dhcpcd \
+                    --dbdir=/var/lib/dhcpcd
+	make
+	make DESTDIR=$PKG install
+
+	make install-dhcpcd
+	systemctl start dhcpcd@eth0
+	systemctl enable dhcpcd@eth0
+}
