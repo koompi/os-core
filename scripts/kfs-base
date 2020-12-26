@@ -149,6 +149,15 @@ PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd wpa_supplicant lzo lz4 squash
 curl ports httpup gpm libevent links mtools syslinux"
 
 
+## Required:
+## Linux-PAM Polkit btrfs-progs cURL cryptsetup git GnuTLS iptables libgcrypt libidn
+## libpwquality libseccomp libxkbcommon make-ca pcre2 qemu Valgrind zsh (for the zsh completions)
+## gnu-efi kexec-tools libmicrohttpd lz4 qrencode quota-tools and Sphinx 
+
+systemd="btrfs-progs libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
+lvm2 cryptsetup "
+
+
 if [ ! -f $KFS/var/lib/pkg/db ]; then
 	kfs_dirs
 fi

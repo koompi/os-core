@@ -1,0 +1,18 @@
+# Description: Utility for generating programs that recognize patterns in text
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on: 
+
+name=libaio
+version=0.3.112
+release=1
+source=(http://ftp.de.debian.org/debian/pool/main/liba/libaio/libaio_0.3.112.orig.tar.xz)
+
+build() {
+        cd $name-$version
+	sed -i '/install.*libaio.a/s/^/#/' src/Makefile
+	make
+
+        make DESTDIR=$PKG install
+}
