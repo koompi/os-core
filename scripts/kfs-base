@@ -155,7 +155,7 @@ curl ports httpup gpm libevent links mtools syslinux"
 ## gnu-efi kexec-tools libmicrohttpd lz4 qrencode quota-tools and Sphinx 
 
 systemd="btrfs-progs libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
-lvm2 cryptsetup python2 git gnutls iptables libunistring libidn libpwquality "
+lvm2 cryptsetup python2 git gnutls iptables libunistring libidn libpwquality libseccomp libx11 xorgproto xkeyboard-config libxkbcommon "
 
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
