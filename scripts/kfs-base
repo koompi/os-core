@@ -136,7 +136,7 @@ else
 	ENVKFS=/tools/bin/env
 fi
 
-##------PKGS------#
+##------Packages will be installed on the target------#
 PKGS="filesystem linux-api-headers iana-etc glibc zlib bzip2 xz zstd bzip2
 xz zstd file readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses
 sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser intltool
@@ -154,8 +154,17 @@ curl ports httpup gpm libevent links mtools syslinux"
 ## libpwquality libseccomp libxkbcommon make-ca pcre2 qemu Valgrind zsh (for the zsh completions)
 ## gnu-efi kexec-tools libmicrohttpd lz4 qrencode quota-tools and Sphinx 
 
-systemd="btrfs-progs libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
-lvm2 cryptsetup python2 git gnutls iptables libunistring libidn libpwquality libseccomp libx11 xorgproto xkeyboard-config libxkbcommon "
+systemd_lib="btrfs-progs libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
+lvm2 cryptsetup python2 git gnutls iptables libunistring libidn libpwquality libseccomp libx11 xorgproto
+xkeyboard-config libxkbcommon make-ca pcre2 valgrind zsh gnu-efi kexec-tools qrencode quota-tools sphinx"
+
+
+# make-ca isn't completed yet.
+# valgrind isn't completed yet.
+# kexec-tools isn't completed yet.
+# libmicrohttpd isn't completed yet.
+# quota-tools isn't completed yet.
+# sphinx isn't completed yet.
 
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
@@ -177,6 +186,13 @@ done
 
 
 for pkg in $PKGS2; do
+	case $pkg in
+		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
+		*) runinchroot pkgin -i $pkg || die;;
+	esac
+done
+
+for pkg in $systemd_lib; do*
 	case $pkg in
 		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
 		*) runinchroot pkgin -i $pkg || die;;
