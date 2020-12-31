@@ -1,0 +1,26 @@
+# Description: Public Key Infrasture(PKI) is a method to validate the authenticity of an otherwise unknown entity across untrusted network.
+# URL: https://github.com/djlucas/make-ca/releases/download/v1.7/make-ca-1.7.tar.xz
+# Maintainer: Jiren Edision
+# Organization: KOOMPI
+# Depends on: p11-kit, nss
+
+name=make-ca
+version=1.7
+release=1
+source=(https://github.com/djlucas/make-ca/releases/download/v1.7/make-ca-1.7.tar.xz)
+
+build() {
+	cd $name-$version
+
+	make DESTDIR=$PKG install
+	install -vdm755 /etc/ssl/local
+
+	/usr/sbin/make-ca -g
+
+cat > /etc/cron.weekly/update-pki.sh << "EOF" &&
+#!/bin/bash
+#/usr/sbin/make-ca -g
+#EOF
+chmod 754 /etc/cron.weekly/update-pki.sh
+
+}
