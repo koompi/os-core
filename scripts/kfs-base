@@ -142,7 +142,7 @@ xz zstd file readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gc
 sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser intltool
 autoconf automake kmod elfutils libffi libarchive libuv cmake curl openssl ca-certificates curl openssl python3 python3-setuptools ninja meson coreutils diffutils gawk
 findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo util-linux 
-systemd dbus procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux"
+systemd dbus procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux icu"
 
 
 PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
@@ -156,10 +156,9 @@ curl ports httpup gpm libevent links mtools syslinux"
 
 systemd_lib="btrfs-progs libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
 lvm2 cryptsetup python2 git gnutls iptables libunistring libidn libpwquality libseccomp libx11 xorgproto
-xkeyboard-config libxkbcommon make-ca pcre2 valgrind zsh gnu-efi kexec-tools qrencode quota-tools sphinx"
+xkeyboard-config libxkbcommon make-ca pcre2 boost llvm valgrind zsh gnu-efi kexec-tools qrencode quota-tools sphinx"
 
 
-# make-ca isn't completed yet.
 # valgrind isn't completed yet.
 # kexec-tools isn't completed yet.
 # libmicrohttpd isn't completed yet.
