@@ -11,7 +11,6 @@ source=(bash_logout.skel
 	bash_profile.skel
 	bashrc
 	bashrc.skel
-	vimrc
 	vimrc.skel
 	dircolors.sh
 	extrapaths.sh
@@ -76,7 +75,7 @@ build() {
 
 	# /etc
 	install -d $PKG/etc
-	for p in profile bashrc vimrc tmux.conf resolv.conf vconsole.conf inputrc fstab hostname hosts passwd group issue; do
+	for p in profile bashrc tmux.conf resolv.conf vconsole.conf inputrc fstab hostname hosts passwd group issue; do
 		install -m0644 $p $PKG/etc
 	done
 
