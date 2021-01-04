@@ -156,14 +156,8 @@ curl ports httpup gpm libevent links mtools syslinux"
 
 systemd_lib="btrfs-progs libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
 lvm2 cryptsetup python2 git gnutls iptables libunistring libidn libpwquality libseccomp libx11 xorgproto
-xkeyboard-config libxkbcommon make-ca pcre2 boost llvm valgrind zsh gnu-efi kexec-tools qrencode quota-tools sphinx"
+xkeyboard-config libxkbcommon make-ca pcre2 boost llvm libxslt gdb valgrind pcre linux-pam shadow systemd libcap2 zsh gnu-efi"
 
-
-# valgrind isn't completed yet.
-# kexec-tools isn't completed yet.
-# libmicrohttpd isn't completed yet.
-# quota-tools isn't completed yet.
-# sphinx isn't completed yet.
 
 
 if [ ! -f $KFS/var/lib/pkg/db ]; then
