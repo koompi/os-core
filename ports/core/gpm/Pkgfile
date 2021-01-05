@@ -25,7 +25,6 @@ build() {
 	ln -sfv libgpm.so.2.1.0 $PKG/usr/lib/libgpm.so
         install -v -m644 conf/gpm-root.conf $PKG/etc
 
-	make DESTDIR=$PKG install-gpm
 
 
 install -v -dm755 /etc/systemd/system/gpm.service.d &&
