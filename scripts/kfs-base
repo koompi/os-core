@@ -155,7 +155,7 @@ curl ports httpup gpm libevent links mtools syslinux"
 ## gnu-efi kexec-tools libmicrohttpd lz4 qrencode quota-tools and Sphinx 
 
 systemd_lib="sqlite python2 asciidoc libxslt xmlto libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio
-python2 git libunistring p11-kit gnutls iptables libunistring libidn cracklib libpwquality libseccomp libx11 xorgproto
+python2 git libunistring p11-kit gnutls iptables libunistring libidn libseccomp xorgproto libx11 xorgproto
 xkeyboard-config libxkbcommon make-ca pcre2 boost llvm libxslt gdb valgrind pcre linux-pam shadow systemd libcap2 zsh gnu-efi"
 
 
