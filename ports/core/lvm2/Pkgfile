@@ -24,9 +24,9 @@ PATH=$SAVEPATH                  &&
 unset SAVEPATH
 
 
-make -C tools install_tools_dynamic &&
-make -C udev  install                 &&
-make -C libdm install
+#make -C tools install_tools_dynamic &&
+#make -C udev  install                 &&
+#make -C libdm install
 
         make DESTDIR=$PKG install
 
