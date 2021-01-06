@@ -11,6 +11,10 @@ build() {
 
 	patch -Np1 -i ../systemd-247-upstream_fixes-1.patch
 
+	ln -sf /bin/true /usr/bin/xsltproc
+
+	sed '181,$ d' -i src/resolve/meson.build
+
 	sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in
 
 	mkdir build &&
