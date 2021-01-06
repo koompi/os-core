@@ -28,7 +28,8 @@ make -C tools install_tools_dynamic &&
 make -C udev  install                 &&
 make -C libdm install
 
-        make DESTDIR=$PKG install
+        #make DESTDIR=$PKG install
+        make install
 	make install_systemd_units
 
 

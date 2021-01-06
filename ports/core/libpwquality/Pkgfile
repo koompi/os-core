@@ -5,9 +5,9 @@
 # Depends on:  
 
 name=libpwquality
-version=1.4.4
+version=1.4.2
 release=1
-source=(https://github.com//libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2)
+source=(https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.2/libpwquality-1.4.2.tar.bz2)
 
 build() {
         cd $name-$version
