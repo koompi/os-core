@@ -142,7 +142,7 @@ xz zstd file readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gc
 sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser intltool
 autoconf automake kmod elfutils libffi libarchive libuv openssl curl curl openssl ca-certificates cmake curl openssl python3 python3-setuptools ninja meson coreutils diffutils gawk
 findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo util-linux 
-procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux icu"
+procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux systemd icu"
 
 
 PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd  lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
