@@ -1,0 +1,26 @@
+# Description: The libcap was installed on KFS, but if Linux-PAM support is desired, The PAM module must be built.
+# URL: https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.42.tar.xz
+# Maintainer: Jiren
+# Organization: KOOMPI
+# Depends on: Linux-PAM
+
+name=libcap
+version=2.42
+release=1
+source=(https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.42.tar.xz)
+
+build() {
+	cd $name-$version
+	make -C pam_cap
+
+install -v -m755 pam_cap/pam_cap.so /lib/security &&
+install -v -m644 pam_cap/capability.conf /etc/security
+
+mv -v /etc/pam.d/system-auth{,.bak} &&
+cat > /etc/pam.d/system-auth << "EOF" &&
+# Begin /etc/pam.d/system-auth
+
+auth      optional    pam_cap.so
+EOF
+tail -n +3 /etc/pam.d/system-auth.bak >> /etc/pam.d/system-auth
+}

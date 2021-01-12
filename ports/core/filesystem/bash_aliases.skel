@@ -1,0 +1,72 @@
+#!/bin/bash
+# navigation 
+alias ls='ls -lGh --color=auto'
+alias la='ls -alGh --color=auto'
+alias ..='cd .. ; ls -laGh --color=auto'
+alias h='cd ~ ; pwd'
+alias r='cd / ; ls -laGh --color=auto'
+alias reboot="systemctl reboot -i"
+alias c='clear'
+alias cl='c & ls'
+
+# git stuff
+alias ga='git add .'
+alias gc='git clone'
+alias gs='git status'
+alias gcm='git commit'
+alias gcmm='git commit -m'
+# git push master
+alias gprm='git push origin master'
+# git push brance
+function gprb() { git push origin "$1"; }
+
+# rust
+alias cgi='cargo init'
+alias cgn='cargo new --bin'
+alias cgnl='cargo new --lib'
+alias cgr='cargo run'
+alias cgre='cargo run --example'
+alias cgc='cargo clean'
+alias cgb='cargo build'
+alias cgbr='cargo build --release'
+
+# Running workspace member
+alias cgrb='cargo run --bin'
+alias cgrrb='cargo run --release --bin'
+# Builing workspace member
+alias cgbb='cargo build --bin'
+alias cgbrb='cargo build --release --bin'
+
+# Create new Cargo workspace with pre-defined members
+function cgwn() {
+        if [[ -f $(pwd)/Cargo.toml ]]; then
+                echo -e "Cargo.toml existed.\nPlease make sure you running this in a clean director.\nAborting..."
+        else
+                echo -e "Please list your members using the format below.\n"
+                echo -e "Format: [member_name]:[project_type]\n"
+                echo -e "hello:bin libhello:lib\n"
+
+                read mems;
+                members=($mems)
+
+                echo -e '[workspace]' >> Cargo.toml
+                echo -e 'members = [' >> Cargo.toml
+
+                for((i=0;i<${#members[@]};i++)){
+                        info=(${members[$i]//:/ })
+                        if [[ i -eq $((${#members[@]} - 1)) ]]; then
+                                echo -e "\t\"${info[0]}\"" >> Cargo.toml
+                        else 
+                                echo -e "\t\"${info[0]}\", " >> Cargo.toml
+                        fi
+                }
+
+                echo -e ']' >> Cargo.toml
+
+		for((i=0;i<${#members[@]};i++)){
+                        info=(${members[$i]//:/ })
+                        cargo new "--${info[1]}" "${info[0]}"
+                }
+
+        fi
+}

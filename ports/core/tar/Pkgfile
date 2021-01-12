@@ -1,0 +1,20 @@
+# Description: An archiving program
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:  acl attr
+
+name=tar
+version=1.32
+release=1
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+        cd $name-$version
+
+        FORCE_UNSAFE_CONFIGURE=1  \
+        ./configure --prefix=/usr \
+                    --bindir=/bin
+        make
+        make DESTDIR=$PKG install
+}

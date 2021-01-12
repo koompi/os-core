@@ -1,0 +1,15 @@
+# Description: Firmware files for Linux
+# URL: https://koompi.org        
+# Maintainer:  HangsiaHONG, hangsia@koompi.org
+# Organization:  KOOMPI, koompi.com
+# Depends on:
+
+name=linux-firmware
+version=20201022
+release=1
+source=(https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$version.tar.gz)
+
+build() {
+        cd $name-$version
+        make DESTDIR=$PKG install
+}

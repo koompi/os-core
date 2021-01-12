@@ -1,0 +1,28 @@
+# description	: Message bus system, a simple way for applications to talk to one another
+# depends	: expat libx11 libsm libice
+
+name=dbus
+version=1.12.20
+release=1
+source=(https://dbus.freedesktop.org/releases/dbus/dbus-1.12.20.tar.gz)
+
+build() {
+	cd $name-$version
+
+./configure --prefix=/usr                       \
+            --sysconfdir=/etc                   \
+            --localstatedir=/var                \
+            --disable-static                    \
+            --disable-doxygen-docs              \
+            --disable-xml-docs                  \
+            --with-console-auth-dir=/run/console
+
+	make
+	make DESTDIR=$PKG install
+
+	#mv -v /usr/lib/libdbus* /lib
+	ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so
+	ln -sfv /etc/machine-id /var/lib/dbus
+	sed -i 's:/var/run:/run:' /lib/systemd/system/dbus.socket
+
+}
