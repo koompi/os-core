@@ -145,7 +145,7 @@ findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar te
 procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux systemd icu"
 
 
-PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd  lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
+PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 curl ports httpup gpm libevent links mtools syslinux"
 
 
