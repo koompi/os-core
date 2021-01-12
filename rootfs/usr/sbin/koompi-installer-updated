@@ -7,6 +7,6 @@
 
 cd /tmp
 
-curl -# -o venom-installer https://raw.githubusercontent.com/os-kfs/ports/master/rootfs/usr/sbin/koomopi-installer && \
+curl -# -o koompi-installer https://raw.githubusercontent.com/os-kfs/ports/master/rootfs/usr/sbin/koomopi-installer && \
 chmod +x koompi-installer && \
 ./koompi-installer "$@"

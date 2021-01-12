@@ -11,7 +11,7 @@ post_install() {
 		kernver=$(file /boot/vmlinuz-kfs  | cut -d ' ' -f9)
 	fi
 	if [ $(command -v mkinitramfs) ]; then
-		mkinitramfs -q -k $kernver -o /boot/initrd-venom.img
+		mkinitramfs -q -k $kernver -o /boot/initrd-kfs.img
 	fi
 	depmod $kernver
 }
@@ -21,7 +21,7 @@ post_upgrade() {
 }
 
 post_remove() {
-	rm -f /boot/initrd-venom.img
+	rm -f /boot/initrd-kfs.img
 }
 
 case $action in
