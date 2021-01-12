@@ -1,5 +1,5 @@
 # Begin /etc/shells
 
 /bin/sh
-/bin/zsh
+/bin/bash
 # End /etc/shells
