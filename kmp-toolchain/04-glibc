@@ -25,7 +25,8 @@ patch -Np1 -i ../glibc-2.32-fhs-1.patch
 		  --host=$KFS_TGT                    \
 		  --build=$(../scripts/config.guess) \
 		  --enable-kernel=3.2             \
-		  --with-headers=/tools/include
+		  --with-headers=/tools/include \ 
+		  libc_cv_slibdir=/lib
 	make
 	make install
 
