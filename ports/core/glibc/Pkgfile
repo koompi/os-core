@@ -29,7 +29,7 @@ build() {
 	             --enable-kernel=3.2                    \
 	             --enable-stack-protector=strong        \
 	             --with-headers=/usr/include            \
-	             ##--enable-multi-arch                    \
+	             --enable-multi-arch                    \
 	             libc_cv_slibdir=/lib
 	make
 	mkdir -p $PKG/etc
