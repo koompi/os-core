@@ -48,25 +48,24 @@ esac
 		--with-glibc-version=2.11                      \
 		--with-sysroot=$KFS                            \
 		--with-newlib                                  \
-		--without-headers 
+		--without-headers \
 		--enable-initfini-array                        \
 		--disable-nls                                  \
-		--disable-shared 
+		--disable-shared \ 
 		--disable-multilib                             \
 		--disable-decimal-float                        \
 		--disable-threads                              \
 		--disable-libatomic                            \
 		--disable-libgomp                              \
-		--disable-libmpx                               \
 		--disable-libquadmath                          \
 		--disable-libssp                               \
 		--disable-libvtv                               \
 		--disable-libstdcxx                            \
-		--enable-languages=c,c++                       \
+		--enable-languages=c,c++                       
 	make
 	make install
 
 	cd ..
 	cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  		`dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
+  		`dirname $($KFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 }

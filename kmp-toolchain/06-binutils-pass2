@@ -13,13 +13,13 @@ build() {
 	RANLIB=$KFS_TGT-ranlib         \
 	../configure                   \
 		--prefix=/tools            \
+		--hosts=$KFS_TGT \
 		--disable-nls              \
+		--enable-shared \
 		--disable-werror           \
 		--with-lib-path=/tools/lib \
-		--with-sysroot
+		--enable-64-bit-bfd
 	make
 	make install
-	make -C ld clean
-	make -C ld LIB_PATH=/usr/lib:/lib:/usr/lib32
 	cp -v ld/ld-new /tools/bin
 }
