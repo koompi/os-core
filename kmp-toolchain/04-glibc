@@ -1,6 +1,8 @@
 name=glibc
 version=2.32
-source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz)
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/lfs/development/glibc-2.32-fhs-1.patch)
+
 
 build() {
 	cd $name-$version
