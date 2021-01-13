@@ -1,21 +1,27 @@
 name=glibc
 version=2.32
-source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/lfs/development/glibc-2.32-fhs-1.patch)
-
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-#case $(uname -m) in
-#    i?86)   ln -sfv ld-linux.so.2 $KFS/lib/ld-lsb.so.3
-#    ;;
-#    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $KFS/lib64
-#            ln -sfv ../lib/ld-linux-x86-64.so.2 $KFS/lib64/ld-lsb-x86-64.so.3
-#    ;;
-#esac
-
-patch -Np1 -i ../glibc-2.32-fhs-1.patch
+	mkdir -v build32
+	cd       build32
+		
+	echo slibdir=/tools/lib32 > configparms
+	../configure                             \
+		  --prefix=/tools                    \
+		  --host=$KFS_TGT32                  \
+		  --build=$(../scripts/config.guess) \
+		  --libdir=/tools/lib32              \
+		  --enable-kernel=3.2                \
+		  --with-headers=/tools/include      \
+		  CC="$KFS_TGT-gcc -m32"             \
+		  CXX="$KFS_TGT-g++ -m32"			 \
+		  libc_cv_slibdir=/lib
+	make
+	make install
+	cd -
 
 	mkdir -v build
 	cd       build
@@ -25,11 +31,7 @@ patch -Np1 -i ../glibc-2.32-fhs-1.patch
 		  --host=$KFS_TGT                    \
 		  --build=$(../scripts/config.guess) \
 		  --enable-kernel=3.2             \
-		  --with-headers=/tools/include \ 
-		  libc_cv_slibdir=/lib
+		  --with-headers=/tools/include
 	make
 	make install
-
-	$KFS/tools/libexec/gcc/$KFS_TGT/10.2.0/install-tools/mkheaders
-
 }
