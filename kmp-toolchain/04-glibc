@@ -5,13 +5,13 @@ source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz)
 build() {
 	cd $name-$version
 
-case $(uname -m) in
-    i?86)   ln -sfv ld-linux.so.2 $KFS/lib/ld-lsb.so.3
-    ;;
-    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $KFS/lib64
-            ln -sfv ../lib/ld-linux-x86-64.so.2 $KFS/lib64/ld-lsb-x86-64.so.3
-    ;;
-esac
+#case $(uname -m) in
+#    i?86)   ln -sfv ld-linux.so.2 $KFS/lib/ld-lsb.so.3
+#    ;;
+#    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $KFS/lib64
+#            ln -sfv ../lib/ld-linux-x86-64.so.2 $KFS/lib64/ld-lsb-x86-64.so.3
+#    ;;
+#esac
 
 patch -Np1 -i ../glibc-2.32-fhs-1.patch
 
