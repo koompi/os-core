@@ -4,7 +4,7 @@ source=(https://sources.voidlinux.org/file-5.39/file-5.39.tar.gz)
 
 build() {
 	cd $name-$version
-	./configure --prefix=/tools --hosts=$KFS_TGT
+	./configure --prefix=/tools 
 	make
 	make install
 }
