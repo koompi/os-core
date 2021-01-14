@@ -4,7 +4,7 @@ source=(ftp://ftp.astron.com/pub/file/file-$version.tar.gz)
 
 build() {
 	cd $name-$version
-	./configure --prefix=/tools
+	./configure --prefix=/tools --hosts=$KFS_TGT
 	make
 	make install
 }
