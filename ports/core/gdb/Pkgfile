@@ -5,14 +5,19 @@
 # Depends on:
 
 name=gdb
-version=7.12.1
+version=9.2
 release=1
-source=(https://ftp.gnu.org/gnu/gdb/gdb-7.12.1.tar.xz)
+source=(https://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz)
 
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr --with-system-readline 
+	mkdir build &&
+	cd    build &&
+
+../configure --prefix=/usr          \
+             --with-system-readline \
+             --with-python=/usr/bin/python3 &&
 
 	make
 	make -c gdb DESTDIR=$PKG install
