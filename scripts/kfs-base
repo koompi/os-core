@@ -156,7 +156,7 @@ fi
 ##------Packages will be installed on the target------#
 PKGS="filesystem linux-api-headers man-pages iana-etc glibc tzdata zlib bzip2 file  
 readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses
-sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser intltool
+sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser vim intltool
 autoconf automake xz kmod elfutils libffi libarchive libuv openssl curl curl openssl ca-certificates cmake curl openssl python3 python3-setuptools ninja meson coreutils diffutils gawk
 findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo util-linux 
 procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux systemd icu"

@@ -46,7 +46,6 @@ meson --prefix=/usr                 \
       -Duserdb=false                \
       -Dman=true                    \
       -Dmode=release                \
-      -Ddocdir=/usr/share/doc/systemd-247 \
       ..
 
 
