@@ -168,7 +168,7 @@ curl ports httpup gpm libevent links mtools syslinux"
 
 systemd_lib="libxcrypt sqlite python2 asciidoc libxslt xmlto libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio pcre glib lvm2 cryptsetup
 python2 git libunistring p11-kit gnutls iptables libunistring libidn libidn2 libseccomp xorgproto libxau libxdmcp xcb-proto libxcb xtran libx11 xtrans libice libsm dbus xorgproto
-xkeyboard-config libxkbcommon make-ca pcre2 boost llvm docbook-xsl libxslt gdb valgrind pcre glib lvm2 linux-pam mozjs gobject-introspection cracklib libpwquality systemd shadow libgpg-error libgcrypt libcap2 zsh gnu-efi"
+xkeyboard-config libxkbcommon make-ca pcre2 boost llvm docbook-xsl libxslt gdb valgrind pcre glib lvm2 linux-pam cracklib libpwquality systemd shadow libgpg-error libgcrypt libcap2 zsh gnu-efi"
 
 
 
