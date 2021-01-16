@@ -1,0 +1,27 @@
+# Description: Hash
+# URL: 
+# Maintainer: Jiren
+# Organization: KOOMPI
+# Depends on: 
+
+name=libxcrypt
+version=4.4.17
+release=1
+source=(https://github.com/besser82/libxcrypt/archive/v4.4.17.tar.gz)
+
+build() {
+	cd $name-$version
+
+	autoreconf -fi
+
+
+./configure \
+    --prefix=/usr \
+    --disable-static \
+    --enable-hashes=strong,glibc \
+    --enable-obsolete-api=no \
+    --disable-failure-tokens
+
+	make
+	make DESTDIR=$PKG install
+}
