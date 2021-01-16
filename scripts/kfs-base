@@ -159,21 +159,16 @@ readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config 
 sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser vim intltool
 autoconf automake xz kmod elfutils libffi libarchive libuv openssl curl curl openssl ca-certificates cmake curl openssl python3 python3-setuptools ninja meson coreutils diffutils gawk
 findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo util-linux 
-procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux systemd icu"
+procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux icu"
 
 
 PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd lzo lz4 zstd squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 curl ports httpup gpm libevent links mtools syslinux"
 
 
-## Required:
-## Linux-PAM Polkit btrfs-progs cURL cryptsetup git GnuTLS iptables libgcrypt libidn
-## libpwquality libseccomp libxkbcommon make-ca pcre2 qemu Valgrind zsh (for the zsh completions)
-## gnu-efi kexec-tools libmicrohttpd lz4 qrencode quota-tools and Sphinx 
-
-systemd_lib="sqlite python2 asciidoc libxslt xmlto libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio pcre glib lvm2
-python2 git libunistring p11-kit gnutls iptables libunistring libidn libseccomp xorgproto libxau libxdmcp xcb-proto libxcb xtran libx11 xorgproto
-xkeyboard-config libxkbcommon make-ca pcre2 boost llvm sgml-common unzip docbook-xml docbook-xsl libxslt gdb valgrind pcre glib lvm2 linux-pam systemd2 shadow libgpg-error libgcrypt libcap2 zsh gnu-efi"
+systemd_lib="sqlite python2 asciidoc libxslt xmlto libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio pcre glib lvm2 cryptsetup
+python2 git libunistring p11-kit gnutls iptables libunistring libidn libseccomp xorgproto libxau libxdmcp xcb-proto libxcb xtran libx11 xtrans libice libsm dbus xorgproto
+xkeyboard-config libxkbcommon make-ca pcre2 boost llvm sgml-common unzip docbook-xml docbook-xsl libxslt gdb valgrind pcre glib lvm2 linux-pam cracklib libpwquality systemd shadow libgpg-error libgcrypt libcap2 zsh gnu-efi"
 
 
 
