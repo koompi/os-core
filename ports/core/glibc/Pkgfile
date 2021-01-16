@@ -10,10 +10,11 @@ release=1
 source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
 	http://www.linuxfromscratch.org/patches/downloads/$name/$name-$version-fhs-1.patch)
 
+
 build() {
 	cd $name-$version
 
-	patch -Np1 -i ../$name-$version-fhs-1.patch
+	patch -Np1 -i ../glibc-2.32-fhs-1.patch
 
 	mkdir -p $PKG/lib64
 	ln -sfv ../lib/ld-linux-x86-64.so.2 $PKG/lib64
@@ -29,7 +30,7 @@ build() {
 	             --enable-kernel=3.2                    \
 	             --enable-stack-protector=strong        \
 	             --with-headers=/usr/include            \
-	             ##--enable-multi-arch                    \
+	             --enable-multi-arch                    \
 	             libc_cv_slibdir=/lib
 	make
 	mkdir -p $PKG/etc
@@ -41,7 +42,6 @@ build() {
 
 	install -v -Dm644 ../nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
 	install -v -Dm644 ../nscd/nscd.service /lib/systemd/system/nscd.service
-
 
 	mkdir -pv $PKG/usr/lib/locale
 	make install_root=$PKG localedata/install-locales

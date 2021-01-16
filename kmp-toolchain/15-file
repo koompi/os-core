@@ -1,10 +1,10 @@
 name=file
 version=5.39
-source=(ftp://ftp.astron.com/pub/file/file-$version.tar.gz)
+source=(https://sources.voidlinux.org/file-5.39/file-5.39.tar.gz)
 
 build() {
 	cd $name-$version
-	./configure --prefix=/tools
+	./configure --prefix=/tools 
 	make
 	make install
 }

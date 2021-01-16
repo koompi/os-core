@@ -14,7 +14,6 @@ build() {
 
 	ln -sf /bin/true /usr/bin/xsltproc
 
-	tar -xf ../systemd-man-pages-247.tar.xz
 
 	sed '181,$ d' -i src/resolve/meson.build
 
@@ -47,7 +46,6 @@ meson --prefix=/usr                 \
       -Duserdb=false                \
       -Dman=true                    \
       -Dmode=release                \
-      -Ddocdir=/usr/share/doc/systemd-247 \
       ..
 
 

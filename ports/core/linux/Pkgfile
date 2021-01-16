@@ -32,7 +32,7 @@ build() {
 	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-kfs
 	echo $kernver > $PKG/lib/modules/KERNELVERSION
 	# just added
-	cp System.map $PKG/boot/Sytem.map-5.9.3
+	cp System.map $PKG/boot/System.map-5.9.3
 
 	make clean
 	make prepare
