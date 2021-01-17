@@ -5,7 +5,7 @@
 # Depends on:  elfutils mkinitramfs openssl linux-firmware
 
 name=linux
-version=5.9.3
+version=5.10.7
 release=1
 source=(https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
         config)
@@ -32,7 +32,7 @@ build() {
 	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-kfs
 	echo $kernver > $PKG/lib/modules/KERNELVERSION
 	# just added
-	cp System.map $PKG/boot/System.map-5.9.3
+	cp System.map $PKG/boot/System.map-5.10.7
 
 	make clean
 	make prepare
