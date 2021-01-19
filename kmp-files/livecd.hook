@@ -1,13 +1,13 @@
 #!/bin/bash
 
 build_hook() {
-	add_module cdrom
+	#add_module cdrom
 	add_module loop
 	add_module overlay
 	
 	add_file /lib/udev/rules.d/60-cdrom_id.rules
 	         
-	add_binary /lib/udev/cdrom_id
+	#add_binary /lib/udev/cdrom_id
 	add_binary blockdev
 	add_binary losetup
 }
@@ -32,21 +32,21 @@ mount_livecd() {
 	WRITEDIR=/run/initramfs/overlayfs/write
 	WORKDIR=/run/initramfs/overlayfs/work
 	sfsimg=/run/initramfs/medium/kfs/root.sfs
-	wait=${wait:-5}
+	wait=${wait:-10}
 	count=0
 	
-	if [ ! -e $MEDIA ]; then
-		msg "wait for media device..."
-		while [ ! -e $MEDIA ]; do
-			sleep 1
-			count=$((count+1))
-			if [ "$count" -ge "$wait" ]; then
-				msg "media is not appeared even after wait for $wait seconds..."
-				msg "try increase wait time by append 'wait=<seconds>' to boot cmdline"
-				sleep 9999
-			fi
-		done
-	fi
+	#if [ ! -e $MEDIA ]; then
+	#	msg "wait for media device..."
+	#	while [ ! -e $MEDIA ]; do
+	#		sleep 1
+	#		count=$((count+1))
+	#		if [ "$count" -ge "$wait" ]; then
+	#			msg "media is not appeared even after wait for $wait seconds..."
+	#			msg "try increase wait time by append 'wait=<seconds>' to boot cmdline"
+	#			sleep 9999
+	#		fi
+	#	done
+	#fi
 	
 	mkdir -p $MEDIUM $SYSTEM $WRITEDIR $WORKDIR
 	

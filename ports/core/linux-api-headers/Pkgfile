@@ -5,7 +5,7 @@
 # Depends on:
 
 name=linux-api-headers
-version=5.9.3
+version=5.10.7
 release=1
 source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
 

@@ -5,8 +5,8 @@ diff -Naur pkgutils-5.40.7-ori/pkgmk.in pkgutils-5.40.7/pkgmk.in
  	info "Installing '$TARGET'."
  
  	if [ "$PKGMK_INSTALL" = "install" ]; then
--		COMMAND="pkgadd $TARGET"
-+		COMMAND="pkgadd $PKGMK_IGNORE_CONFLICT $TARGET"
+-		COMMAND="pkgadd -f $TARGET"
++		COMMAND="pkgadd -f $PKGMK_IGNORE_CONFLICT $TARGET"
  	else
 -		COMMAND="pkgadd -u $TARGET"
 +		COMMAND="pkgadd -u $PKGMK_IGNORE_CONFLICT $TARGET"

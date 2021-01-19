@@ -1,6 +1,5 @@
 #!/bin/bash
-
-# Description: Script to build KOOMPI-Toolchain
+# Description: Script to build KOOMPI iso
 # URL: 
 # Maintainer: HangsiaHong, hangsia@koompi.org
 # Organization: KOOMPI, koompi.com

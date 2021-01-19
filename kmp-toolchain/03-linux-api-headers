@@ -1,5 +1,5 @@
 name=linux
-version=5.9.3
+version=5.10.7
 source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
 
 build() {
