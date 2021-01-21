@@ -6,7 +6,7 @@
 KOOMPI From Scratch
 =========================================
 
-<b>KFS</b>|KOOMPI From Scratch. This script is used to compile Linux Minimal iso, inspire by [LFS Project](http://www.linuxfromscratch.org/lfs/).
+KOOMPI From Scratch is an independence Linux Distro built from scratch focus on performance and stablity.
 
 # Contributing
 Thanks for your interest in contributing! There are many ways to contribute to this project. [Get started here](CONTRIBUTING.md)
