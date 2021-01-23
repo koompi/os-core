@@ -134,23 +134,30 @@ else
 fi
 
 ##------Packages will be installed on the target------#
-PKGS="filesystem linux-api-headers man-pages iana-etc glibc tzdata zlib bzip2 file  
-readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses
-sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser vim intltool
-autoconf automake xz kmod elfutils libffi libarchive libuv openssl curl curl openssl ca-certificates cmake curl openssl python3 python3-setuptools ninja meson coreutils diffutils gawk
-findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo util-linux 
-procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux icu"
+PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib bzip2 file readline m4 bc binutils gmp mpfr mpc attr acl shadow gcc
+	pkg-config ncurses libcap sed psmisc iana-etc bison flex grep bash libtool gdbm gperf expat inetutils
+	perl perl-xml-parser intltool autoconf automake xz kmod gettext elfutils libffi openssl python3 coreutils
+	diffutils gawk findutils groff fuse2 grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng
+	util-linux e2fsprogs sysklogd sysvinit eudev lfs-bootscripts linux-firmware libarchive mkinitramfs linux libtasn1 p11-kit ca-certificates 
+	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
+	curl ports httpup gpm libevent links mtools syslinux"
 
-PKG_MUSL=""
+# PKGS="filesystem linux-api-headers man-pages iana-etc glibc tzdata zlib bzip2 file  
+# readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses
+# sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl perl-xml-parser vim intltool
+# autoconf automake xz kmod elfutils libffi libarchive libuv openssl curl curl openssl ca-certificates cmake curl openssl python3 python3-setuptools ninja meson coreutils diffutils gawk
+# findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo util-linux 
+# procps-ng util-linux e2fsprogs mkinitramfs linux-firmware linux icu"
 
 
-PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd lzo lz4 zstd squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
-curl ports httpup gpm libevent links mtools syslinux"
+
+# PKGS2="libtasn1 wget pkgutils libnl libxml2 dhcpcd lzo lz4 zstd squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
+# curl ports httpup gpm libevent links mtools syslinux"
 
 
-systemd_lib="libxcrypt sqlite python2 asciidoc libxslt xmlto libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio pcre glib libgudev vala umockdev lvm2 cryptsetup
-python2 git libunistring p11-kit gnutls iptables libunistring libidn libidn2 libseccomp xorgproto libxau libxdmcp xcb-proto libxcb xtran libx11 xtrans libice libsm dbus xorgproto
-xkeyboard-config libxkbcommon make-ca pcre2 boost llvm docbook-xsl libxslt gdb valgrind pcre glib lvm2 linux-pam cracklib libpwquality systemd shadow libgpg-error libgcrypt libcap2 zsh gnu-efi"
+# systemd_lib="libxcrypt sqlite python2 asciidoc libxslt xmlto libgpg-error libgcrypt gmp nettle nspr sqlite nss openssl popt json-c libaio pcre glib libgudev vala umockdev lvm2 cryptsetup
+# python2 git libunistring p11-kit gnutls iptables libunistring libidn libidn2 libseccomp xorgproto libxau libxdmcp xcb-proto libxcb xtran libx11 xtrans libice libsm dbus xorgproto
+# xkeyboard-config libxkbcommon make-ca pcre2 boost llvm docbook-xsl libxslt gdb valgrind pcre glib lvm2 linux-pam cracklib libpwquality systemd shadow libgpg-error libgcrypt libcap2 zsh gnu-efi"
 
 
 
