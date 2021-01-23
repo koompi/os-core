@@ -9,7 +9,7 @@ build() {
 	cd       build32
 		
 	../libstdc++-v3/configure           \
-		--host=i686-kfs-linux-gnu       \
+		--host=i686-kfs-linux-musl       \
 		--prefix=/tools                 \
 		--libdir=/tools/lib32           \
 		--disable-multilib              \
