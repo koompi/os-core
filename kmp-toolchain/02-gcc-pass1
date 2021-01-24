@@ -6,7 +6,7 @@ mpfr_version=4.1.0
 source=(http://ftp.gnu.org/gnu/gcc/gcc-$version/gcc-$version.tar.xz
 	http://ftp.gnu.org/gnu/gmp/gmp-$gmp_version.tar.xz
 	https://ftp.gnu.org/gnu/mpc/mpc-$mpc_version.tar.gz
-	http://www.mpfr.org/mpfr-$mpfr_version/mpfr-$mpfr_version.tar.xz)
+	https://ftp.gnu.org/gnu/mpfr/mpfr-4.1.0.tar.xz)
 
 build() {
 	cd $name-$version
