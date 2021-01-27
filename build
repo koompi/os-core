@@ -192,7 +192,7 @@ make_efiboot() {
 		
 	modprobe loop
 	dd if=/dev/zero of="$LIVEWDIR"/boot/efiboot.img count=4096
-	mkdosfs -n KAELLIVECD-UEFI "$LIVEWDIR"/boot/efiboot.img
+	mkdosfs -n KOOMPILIVE-UEFI "$LIVEWDIR"/boot/efiboot.img
 	mkdir -p "$EFIBOOTDIR"
 	mount -o loop "$LIVEWDIR"/boot/efiboot.img "$EFIBOOTDIR"
 	mkdir -p "$EFIBOOTDIR"/EFI/boot
