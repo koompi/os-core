@@ -1,0 +1,13 @@
+name=scratchpkg
+version=20200729
+source="https://github.com/venomlinux/scratchpkg/archive/20200729.tar.gz"
+
+build() {
+	cd $name-$version
+	#for p in $SRCDIR/*.patch; do
+	#	patch -Np1 -i $p || exit 1
+	#done
+	install -d $TCDIR/bin
+	install -m755 pkgadd pkgdel pkgbuild xchroot $TCDIR/bin
+}
+
