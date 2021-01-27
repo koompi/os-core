@@ -1,3 +1,0 @@
-# Desktop Enviroment
-
-* KDE Plasma
