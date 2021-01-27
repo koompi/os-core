@@ -222,7 +222,7 @@ make_iso() {
 
 make_squashfs() {
 	msg "Squashing filesystem..."
-	mksquashfs $ROOTFS "$LIVEWDIR"/kael/root.sfs \
+	mksquashfs $ROOTFS "$LIVEWDIR"/koompi/root.sfs \
 		-b 1048576 -comp zstd \
 		-e $ROOTFS/var/cache/scratchpkg/sources/* \
 		-e $ROOTFS/var/cache/scratchpkg/packages/* \
