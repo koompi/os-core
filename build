@@ -1,15 +1,4 @@
 #!/bin/bash
-msg() {
-	echo "=> $*"
-}
-
-msg2() {
-	echo "-> $*"
-}
-
-msgerr() {
-	echo "!> $*"
-}
 
 bindmount() {
 	mount --bind $1 $2
@@ -106,6 +95,18 @@ cross_compiler() {
 
 settermtitle() {
 	echo -en "\033]0;$*\a"
+}
+
+msg() {
+	echo "=> $*"
+}
+
+msg2() {
+	echo "-> $*"
+}
+
+msgerr() {
+	echo "!> $*"
 }
 
 setup_pkgbuildconf() {
