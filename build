@@ -382,7 +382,7 @@ JOBS="${JOBS:-$(nproc)}"
 
 # live iso
 ISOLABEL="KOOMPILIVE"
-OUTPUT="koompi.iso"
+OUTPUT="koompilinux-$(date +"%Y%m%d").iso"
 LIVEWDIR="$BUILDDIR/live"
 FILESDIR="$BUILDROOT/files"
 EFIBOOTDIR="$BUILDDIR/efiboot"
