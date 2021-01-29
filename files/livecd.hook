@@ -31,7 +31,7 @@ mount_livecd() {
 	SYSTEM=/run/initramfs/system
 	WRITEDIR=/run/initramfs/overlayfs/write
 	WORKDIR=/run/initramfs/overlayfs/work
-	sfsimg=/run/initramfs/medium/kael/root.sfs
+	sfsimg=/run/initramfs/medium/koompi/root.sfs
 	wait=${wait:-5}
 	count=0
 	
