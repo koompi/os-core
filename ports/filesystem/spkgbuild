@@ -1,4 +1,4 @@
-# description	: Base Venom Linux files
+# description	: Base KOOMPI Linux files
 
 name=filesystem
 version=1
