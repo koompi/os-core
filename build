@@ -11,7 +11,8 @@ unmount() {
 	done
 }
 
-fetch() {
+# Download packages from the source link
+fetch_source() {
 	filename=$(basename $1)
 	url=$1
 	wgetcmd="wget --passive-ftp --tries=3 --waitretry=3 --output-document=$SRCDIR/$filename.part"
@@ -23,7 +24,7 @@ fetch() {
 	fi
 }
 
-unpack() {
+extract() {
 	rm -fr "$BUILDDIR/$name"
 	mkdir -p "$BUILDDIR/$name"
 	for src in $source; do
@@ -57,6 +58,7 @@ ports() {
 	cd - >/dev/null
 }
 
+# build cross_compiler from source
 cross_compiler() {
 	[ "$1" ] || return 1
 	[ -f "$TCDIR/$1" ] && return 0
@@ -64,12 +66,12 @@ cross_compiler() {
 	source $TCSCRIPTDIR/$1
 	if [ "$source" ]; then
 		for src in $source; do
-			fetch $src
+			fetch_source $src
 		done
 	fi
 
-	unpack || {
-		msgerr "Failed to unpack '$(basename $source)'."
+	extract || {
+		msgerr "Failed to extract '$(basename $source)'."
 		return 1
 	}
 	
@@ -143,6 +145,7 @@ WORK_DIR="$BUILDDIR"
 EOF
 }
 
+# will create livecd and iso
 build_livecd() {
 	msg "Building liveiso..."
 	set -e
@@ -155,6 +158,7 @@ build_livecd() {
 	set +e
 }
 
+# building base package from scratch using scratchpkg
 build_base() {
 	for b in $base_pkg; do
 		case $b in
@@ -169,6 +173,7 @@ chroot_run() {
 	return $?
 }
 
+# create efiboot
 make_efiboot() {
 	msg "Setup efiboot..."
 	
@@ -288,6 +293,7 @@ umount_any_mounted() {
 	done
 }
 
+# mount all ports 
 mount_all() {
 	umount_any_mounted
 	mkdir -p $ROOTFS/usr/ports/core
@@ -296,6 +302,7 @@ mount_all() {
 	bindmount $PKGDIR $ROOTFS/var/cache/scratchpkg/packages	
 }
 
+# unmount it after finish
 unmount_all() {
 	unmount $ROOTFS/var/cache/scratchpkg/packages
 	unmount $ROOTFS/var/cache/scratchpkg/sources
@@ -327,6 +334,7 @@ sysup_rootfs() {
 	return $exitstatus
 }
 
+# argument
 parse_opts() {
 	while [ "$1" ]; do
 		case $1 in
