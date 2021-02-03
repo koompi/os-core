@@ -335,7 +335,7 @@ sysup_rootfs() {
 }
 
 # argument
-parse_opts() {
+parser() {
 	while [ "$1" ]; do
 		case $1 in
 			-jobs=*) JOBS=${1#*=};;
@@ -376,7 +376,7 @@ main() {
 	[ "$LIVE" = 1 ] && build_livecd
 }
 
-parse_opts "$@"
+parser "$@"
 
 BUILDROOT=$(pwd)
 TCDIR="$BUILDROOT/toolchain"
