@@ -145,8 +145,8 @@
 +typedef intptr_t uintptr_t;
 +#endif
 +
-+#define ALIGNBYTES (sizeof(uintptr_t) - 1)
-+#define ALIGN(p) (((uintptr_t)(p) + ALIGNBYTES) &~ ALIGNBYTES)
++#define ALIGNBYTES (sizeof(intptr_t) - 1)
++#define ALIGN(p) (((intptr_t)(p) + ALIGNBYTES) &~ ALIGNBYTES)
 +
 +#ifndef ftsent_namelen_truncate
 +#define ftsent_namelen_truncate(a)	\
