@@ -3,9 +3,9 @@
 # depends	: readline ncurses
 
 name=gdbm
-version=1.18.1
+version=1.19
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz"
+source="https://ftpmirror.gnu.org/$name/$name-$version.tar.gz"
 
 build() {
 	if [ "$BOOTSTRAP" ]; then
@@ -16,9 +16,10 @@ build() {
 
 	./configure $flags \
 		    --prefix=/usr \
-	            --disable-static \
+			--disable-static \
 		    --disable-nls \
-	            --enable-libgdbm-compat
+			--disable-rpath	\
+			--enable-libgdbm-compat
 	make
 	make DESTDIR=$PKG install
 }
