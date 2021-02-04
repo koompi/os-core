@@ -6,4 +6,5 @@ sources
 toolchain
 pkgbuild.conf
 a.out
-
+.checksums
+.pkgfiles
