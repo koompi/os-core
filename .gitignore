@@ -1,3 +1,10 @@
 *.iso
 *.tar.xz
 *.img
+rootfs
+sources
+toolchain
+pkgbuild.conf
+a.out
+.checksums
+.pkgfiles
