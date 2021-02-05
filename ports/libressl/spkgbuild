@@ -1,0 +1,27 @@
+# description	: FREE version of the SSL/TLS protocol forked from OpenSSL
+# homepage	: http://www.libressl.org/
+
+name=libressl
+version=3.0.2
+release=1
+source="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/$name-$version.tar.gz
+	cert-update"
+
+build() {
+	if [ "$BOOTSTRAP" ]; then
+		flags="--host=$TARGET --build=$HOST"
+		CFLAGS="-L$ROOTFS/usr/lib $CFLAGS"
+	fi
+
+	cd $name-$version
+
+	autoreconf -fi
+	./configure $flags \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--with-openssldir=/etc/ssl
+	make
+	make DESTDIR=$PKG install
+
+	install -m755 $SRC/cert-update $PKG/usr/bin/cert-update
+}

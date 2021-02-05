@@ -2,15 +2,9 @@
 *.tar.xz
 *.img
 rootfs
-<<<<<<< HEAD
-toolchain*
-source*
-pkgbuild*
-=======
 sources
 toolchain
 pkgbuild.conf
 a.out
 .checksums
 .pkgfiles
->>>>>>> 51ec7ee72fc4820af4b06eab271a2aedc2b5870c

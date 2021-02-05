@@ -1,0 +1,23 @@
+# description	: Functions for multiple precision math
+# homepage	: https://www.mpfr.org/
+# depends	: gmp
+
+name=mpfr
+version=4.1.0
+release=1
+source="https://www.mpfr.org/$name-$version/$name-$version.tar.xz"
+
+build() {
+	if [ "$BOOTSTRAP" ]; then
+		flags="--host=$TARGET --build=$HOST"
+	fi
+
+	cd $name-$version
+
+	./configure $flags \
+		    --prefix=/usr        \
+	            --disable-static     \
+	            --enable-thread-safe
+	make
+	make DESTDIR=$PKG install
+}
