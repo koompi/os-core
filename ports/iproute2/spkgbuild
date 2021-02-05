@@ -16,9 +16,8 @@ build() {
 
 	cd $name-$version
 
-	patch -Np1 -i $SRC/0001-remove-sbin
-	patch -Np1 -i $SRC/0001-remove-arpd-and-two-modules
-
+	#patch -Np1 -i $SRC/0001-remove-sbin.patch
+	#patch -Np1 -i $SRC/0001-remove-arpd-and-two-modules.patch
 
 	./configure $flags \
 		--prefix=/usr

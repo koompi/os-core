@@ -409,7 +409,7 @@ export CXXFLAGS="${CFLAGS}"
 base_pkg="cross-scratchpkg linux-api-headers cross-binutils cross-gcc-pass1 cross-musl cross-gcc-pass2
 	filesystem man-pages musl tzdata zlib bzip2 xz file ncurses readline m4 bc binutils gmp mpfr libmpc attr acl shadow
 	gcc pkgconf libcap sed psmisc iana-etc bison flex grep bash libtool gdbm gperf expat inetutils perl
-	autoconf automake kmod gettext libuargp musl-fts elfutils libressl coreutils diffutils gawk findutils groff
+	autoconf automake kmod gettext libuargp musl-fts elfutils libressl coreutils diffutils gawk findutils 
 	less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng pcre2 util-linux e2fsprogs
 	sysklogd eudev dhcpcd libarchive curl httpup scratchpkg runit runit-bootscripts ca-certificates base"
 

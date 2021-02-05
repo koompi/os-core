@@ -5,6 +5,7 @@ name=elfutils
 version=0.178
 release=1
 source="https://sourceware.org/ftp/elfutils/$version/elfutils-$version.tar.bz2
+	error.h
 	0006-Fix-build-on-aarch64-musl.patch
 	fts.patch
 	musl-libs.patch
@@ -19,8 +20,8 @@ build() {
 
 	cd $name-$version
 
-	cp $SRC/error.h lib
-	cp $SRC/error.h src
+	#cp $SRC/error.h lib
+	#cp $SRC/error.h src
 
 	for i in $SRC/*.patch; do
 		patch -Np1 -i $i
