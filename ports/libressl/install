@@ -1,3 +1,0 @@
-case $1 in
-	post-install|post-upgrade) cert-update;;
-esac
