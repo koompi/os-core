@@ -1,0 +1,186 @@
+# description	: Expose the kernel's API for use by Glibc
+
+name=linux10
+version=5.10.1
+release=1
+source="https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
+	0104-pci-pme-wakeups.patch
+	0105-ksm-wakeups.patch
+	0106-intel_idle-tweak-cpuidle-cstates.patch
+	0108-smpboot-reuse-timer-calibration.patch
+	0110-Initialize-ata-before-graphics.patch
+	0111-give-rdrand-some-credit.patch
+	0112-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
+	0113-kernel-time-reduce-ntp-wakeups.patch
+	0121-use-lfence-instead-of-rep-and-nop.patch
+	0122-do-accept-in-LIFO-order-for-cache-efficiency.patch
+	0123-locking-rwsem-spin-faster.patch
+	0124-ata-libahci-ignore-staggered-spin-up.patch
+	0129-nvme-workaround.patch
+	uksm-5.7.patch
+	0001-make-yacc-usage-POSIX-compliant.patch
+	0001-libarchive-bsdtar-compatibility.patch
+	enable_additional_cpu_optimizations_for_gcc_v10.1+_kernel_v5.7+.patch
+	0001-aufs-20200518.patch
+	0001-futex-Implement-mechanism-to-wait-on-any-of-several-.patch
+	0001-lib-prepare-zstd-for-preboot-environment.patch
+	0001-mm-pagealloc.c-call-touch_nmi_watchdog-on-max-order-.patch
+	0001-net-sched-allow-configuring-cake-qdisc-as-default.patch
+	0002-ZEN-intel-pstate-Implement-enable-parameter.patch
+	0002-block-Fix-depends-for-BLK_DEV_ZONED.patch
+	0002-infiniband-Fix-__read_overflow2-error-with-O3-inlini.patch
+	0002-init-Kconfig-enable-O3-for-all-arches.patch
+	0002-lib-prepare-xxhash-for-preboot-environment.patch
+	0002-mm-initialize-deferred-pages-with-interrupts-enabled.patch
+	0003-block-set-rq_affinity-2-for-full-multithreading-I-O-.patch
+	0003-lib-add-zstd-support-to-decompress.patch
+	0003-mm-call-cond_resched-from-deferred_init_memmap.patch
+	0003-sched-core-nr_migrate-256-increases-number-of-tasks-.patch
+	0004-init-add-support-for-zstd-compressed-kernel.patch
+	0004-mm-set-2048-for-address_space-level-file-read-ahead-.patch
+	0004-padata-remove-exit-routine.patch
+	0005-padata-initialize-earlier.patch
+	0005-usr-add-support-for-zstd-compressed-initramfs.patch
+	0006-padata-allocate-work-structures-for-parallel-jobs-fr.patch
+	0006-x86-bump-ZO_z_extra_bytes-margin-for-zstd.patch
+	0007-padata-add-basic-support-for-multithreaded-jobs.patch
+	0007-x86-Add-support-for-ZSTD-compressed-kernel.patch
+	0008-.gitignore-add-ZSTD-compressed-files.patch
+	0008-mm-move-zone-iterator-outside-of-deferred_init_maxor.patch
+	0009-init-add-support-for-zstd-compressed-modules.patch
+	0009-mm-parallelize-deferred_init_memmap.patch
+	0010-padata-document-multithreaded-jobs.patch
+	0011-kbuild-Disable-stack-conservation-for-GCC.patch"
+
+
+
+
+
+
+
+
+build() {
+
+if [ "$BOOTSTRAP" ]; then cross="ARCH=$CARCH CROSS_COMPILE=${TARGET}-"
+	fi
+
+	cd linux-$version
+
+#patch -Np1 -i $SRC/0104-pci-pme-wakeups.patch
+#patch -Np1 -i $SRC/0105-ksm-wakeups.patch
+#patch -Np1 -i $SRC/0106-intel_idle-tweak-cpuidle-cstates.patch
+#patch -Np1 -i $SRC/0108-smpboot-reuse-timer-calibration.patch
+#patch -Np1 -i $SRC/0110-Initialize-ata-before-graphics.patch
+#patch -Np1 -i $SRC/0111-give-rdrand-some-credit.patch
+#patch -Np1 -i $SRC/0112-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
+#patch -Np1 -i $SRC/0113-kernel-time-reduce-ntp-wakeups.patch
+#patch -Np1 -i $SRC/0121-use-lfence-instead-of-rep-and-nop.patch
+#patch -Np1 -i $SRC/0122-do-accept-in-LIFO-order-for-cache-efficiency.patch
+#patch -Np1 -i $SRC/0123-locking-rwsem-spin-faster.patch
+#patch -Np1 -i $SRC/0124-ata-libahci-ignore-staggered-spin-up.patch
+#patch -Np1 -i $SRC/0129-nvme-workaround.patch
+#
+#
+#
+##patch -Np1 -i $SRC/uksm-5.7.patch
+#
+#patch -Np1 -i $SRC/0001-make-yacc-usage-POSIX-compliant.patch
+#
+##patch -Np1 -i $SRC/0001-libarchive-bsdtar-compatibility.patch
+#
+##patch -Np1 -i $SRC/enable_additional_cpu_optimizations_for_gcc_v10.1+_kernel_v5.7+.patch
+#
+##patch -Np1 -i $SRC/0001-aufs-20200518.patch
+##patch -Np1 -i $SRC/0001-futex-Implement-mechanism-to-wait-on-any-of-several-.patch
+#patch -Np1 -i $SRC/0001-lib-prepare-zstd-for-preboot-environment.patch
+#patch -Np1 -i $SRC/0001-mm-pagealloc.c-call-touch_nmi_watchdog-on-max-order-.patch
+#patch -Np1 -i $SRC/0001-net-sched-allow-configuring-cake-qdisc-as-default.patch
+#patch -Np1 -i $SRC/0002-ZEN-intel-pstate-Implement-enable-parameter.patch
+#patch -Np1 -i $SRC/0002-block-Fix-depends-for-BLK_DEV_ZONED.patch
+#patch -Np1 -i $SRC/0002-infiniband-Fix-__read_overflow2-error-with-O3-inlini.patch
+#patch -Np1 -i $SRC/0002-init-Kconfig-enable-O3-for-all-arches.patch
+#patch -Np1 -i $SRC/0002-lib-prepare-xxhash-for-preboot-environment.patch
+#patch -Np1 -i $SRC/0002-mm-initialize-deferred-pages-with-interrupts-enabled.patch
+#patch -Np1 -i $SRC/0003-block-set-rq_affinity-2-for-full-multithreading-I-O-.patch
+#patch -Np1 -i $SRC/0003-lib-add-zstd-support-to-decompress.patch
+#patch -Np1 -i $SRC/0003-mm-call-cond_resched-from-deferred_init_memmap.patch
+#patch -Np1 -i $SRC/0003-sched-core-nr_migrate-256-increases-number-of-tasks-.patch
+#patch -Np1 -i $SRC/0004-init-add-support-for-zstd-compressed-kernel.patch
+#patch -Np1 -i $SRC/0004-mm-set-2048-for-address_space-level-file-read-ahead-.patch
+#patch -Np1 -i $SRC/0004-padata-remove-exit-routine.patch
+#patch -Np1 -i $SRC/0005-padata-initialize-earlier.patch
+#patch -Np1 -i $SRC/0005-usr-add-support-for-zstd-compressed-initramfs.patch
+#patch -Np1 -i $SRC/0006-padata-allocate-work-structures-for-parallel-jobs-fr.patch
+#patch -Np1 -i $SRC/0006-x86-bump-ZO_z_extra_bytes-margin-for-zstd.patch
+#patch -Np1 -i $SRC/0007-padata-add-basic-support-for-multithreaded-jobs.patch
+#patch -Np1 -i $SRC/0007-x86-Add-support-for-ZSTD-compressed-kernel.patch
+#patch -Np1 -i $SRC/0008-.gitignore-add-ZSTD-compressed-files.patch
+#patch -Np1 -i $SRC/0008-mm-move-zone-iterator-outside-of-deferred_init_maxor.patch
+#patch -Np1 -i $SRC/0009-init-add-support-for-zstd-compressed-modules.patch
+#patch -Np1 -i $SRC/0009-mm-parallelize-deferred_init_memmap.patch
+#patch -Np1 -i $SRC/0010-padata-document-multithreaded-jobs.patch
+#patch -Np1 -i $SRC/0011-kbuild-Disable-stack-conservation-for-GCC.patch
+
+
+	make $cross mrproper
+
+	#cp $SRC/config ./.config
+	#make olddefconfig
+	make $cross defconfig
+
+	#sed '/^CONFIG_LOCALVERSION=/d' -i .config
+	#echo 'CONFIG_LOCALVERSION="-KOOMPI"' >> .config
+
+	#kernver=${version}$(grep CONFIG_LOCALVERSION= .config | cut -d '"' -f2)
+
+	make $cross bzImage modules
+	make $cross INSTALL_MOD_PATH=$PKG modules_install
+
+	mkdir -p $PKG/boot
+
+	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-koompi
+	echo $kernver > $PKG/lib/modules/KERNELVERSION
+
+	make $cross clean
+	make $cross prepare
+
+	rm -rf $PKG/lib/firmware
+
+	for file in $(ls arch); do
+		case $file in
+			x86|Kconfig) continue ;;
+			*) rm -fr arch/$file ;;
+		esac
+	done
+
+	# strip down sources
+	# don't package the kernel in the sources directory
+	find . -name "*Image" -exec rm "{}" \;
+	find . -name "*.cmd" -exec rm -f "{}" \; 
+	rm -f .*.d
+
+	rm -fr firmware ipc .config.old .version .cocciconfig \
+		.get_maintainer.ignore .gitattributes .gitignore .mailmap \
+		COPYING CREDITS MAINTAINERS README Documentation
+	find . -name ".gitignore" -exec rm "{}" \;
+	for dir in block certs crypto drivers fs init kernel lib mm net samples security sound usr virt; do
+		find $dir -type f \( -name "*.c" -o -name "*.h" \) -exec rm "{}" \;
+	done
+	for i in $(ls tools); do
+		[ "$i" = "objtool" ] || rm -fr tools/$i
+	done
+	for i in $(ls tools/objtool); do
+		[ "$i" = "objtool" ] || rm -fr tools/objtool/$i
+	done
+
+	rm $PKG/lib/modules/$kernver/build \
+	   $PKG/lib/modules/$kernver/source
+	mv $SRC/linux-$version $PKG/lib/modules/$kernver/build
+	ln -sv build $PKG/lib/modules/$kernver/source
+
+	# remove now broken symlinks
+	find -L $PKG/lib/modules/$kernver/build -type l -exec rm -f "{}" \;
+
+
+
+}
