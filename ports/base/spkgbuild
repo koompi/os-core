@@ -1,0 +1,16 @@
+# description	: Meta port for base system KOOMPI Linux
+# homepage	: https://github.com/koompi/os-core
+# depends	: filesystem linux-api-headers man-pages musl tzdata zlib bzip2 xz file ncurses readline m4 bc binutils gmp mpfr libmpc attr acl shadow
+# depends	: gcc pkgconf libcap sed psmisc iana-etc bison flex grep bash libtool gdbm gperf expat inetutils perl
+# depends	: autoconf automake kmod gettext libuargp musl-fts elfutils libressl coreutils diffutils gawk findutils groff
+# depends	: less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng pcre2 util-linux e2fsprogs
+# depends	: sysklogd eudev dhcpcd libarchive curl httpup scratchpkg runit runit-bootscripts ca-certificates
+
+name=base
+version=20210205
+release=1
+
+build() {
+	mkdir -p $PKG/etc
+	echo "KOOMPI Linux" > $PKG/etc/koompi-linux
+}

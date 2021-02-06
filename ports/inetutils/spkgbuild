@@ -1,0 +1,39 @@
+# description	: Programs for basic networking
+# homepage	: https://www.gnu.org/software/inetutils/
+# depends	: ncurses
+
+name=inetutils
+version=1.9.4
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
+	fix-build.patch"
+
+build() {
+	if [ "$BOOTSTRAP" ]; then
+		flags="--host=$TARGET --build=$HOST"
+	fi
+
+	cd $name-$version
+
+	patch -Np1 -i ../fix-build.patch
+
+	./configure $flags \
+		--prefix=/usr \
+		--libexecdir=/usr/sbin \
+		--localstatedir=/var \
+		--disable-logger \
+		--disable-whois \
+		--disable-rcp \
+		--disable-rexec \
+		--disable-rlogin \
+		--disable-rsh \
+		--disable-servers
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -pv $PKG/bin $PKG/sbin
+	for i in hostname ping ping6 traceroute; do
+		mv -v $PKG/usr/bin/$i $PKG/bin
+	done
+	mv -v $PKG/usr/bin/ifconfig $PKG/sbin
+}
