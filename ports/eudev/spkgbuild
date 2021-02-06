@@ -12,6 +12,7 @@ build() {
 		flags="--host=$TARGET --build=$HOST"
 	fi
 
+echo $PKG
 	cd $name-$version
 
 	./configure $flags \
