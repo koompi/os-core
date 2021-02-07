@@ -24,6 +24,7 @@ build() {
 	            --with-rootprefix=      \
 	            --with-rootlibdir=/lib  \
 	            --enable-manpages       \
+	            --disable-gperf       \
 	            --disable-static
 	make
 

@@ -2,13 +2,15 @@
 # depends	: yaml elfutils
 
 name=linux
-version=5.4.23
+version=5.10.1
 release=1
 options="!strip"
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	config"
 
-build() { if [ "$BOOTSTRAP" ]; then cross="ARCH=$CARCH CROSS_COMPILE=${TARGET}-"
+build() {
+	if [ "$BOOTSTRAP" ]; then
+		cross="ARCH=$CARCH CROSS_COMPILE=${TARGET}-"
 	fi
 
 	cd linux-$version
@@ -19,7 +21,7 @@ build() { if [ "$BOOTSTRAP" ]; then cross="ARCH=$CARCH CROSS_COMPILE=${TARGET}-"
 	make olddefconfig
 
 	sed '/^CONFIG_LOCALVERSION=/d' -i .config
-	echo 'CONFIG_LOCALVERSION="-KOOMPI"' >> .config
+	echo 'CONFIG_LOCALVERSION="-koompi"' >> .config
 
 	kernver=${version}$(grep CONFIG_LOCALVERSION= .config | cut -d '"' -f2)
 
@@ -48,7 +50,7 @@ build() { if [ "$BOOTSTRAP" ]; then cross="ARCH=$CARCH CROSS_COMPILE=${TARGET}-"
 	# strip down sources
 	# don't package the kernel in the sources directory
 	find . -name "*Image" -exec rm "{}" \;
-	find . -name "*.cmd" -exec rm -f "{}" \; 
+	find . -name "*.cmd" -exec rm -f "{}" \;
 	rm -f .*.d
 
 	rm -fr firmware ipc .config.old .version .cocciconfig \

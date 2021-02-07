@@ -6,12 +6,15 @@ release=1
 source="https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz"
 
 build() {
+	if [ "$BOOTSTRAP" ]; then
+		cross="ARCH=$CARCH"
+	fi
+
 	cd linux-$version
 
-	make mrproper
-	make headers
-	find usr/include -name '.*' -delete
-	rm usr/include/Makefile
+	make $cross mrproper
+	make $cross INSTALL_HDR_PATH=dest headers_install
+	find dest/include \( -name .install -o -name ..install.cmd \) -delete
 	mkdir -p $PKG/usr/include
-	cp -rv usr/include/* $PKG/usr/include
+	cp -rv dest/include/* $PKG/usr/include
 }

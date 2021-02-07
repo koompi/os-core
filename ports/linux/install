@@ -8,10 +8,10 @@ post_install() {
 	if [ -f /lib/modules/KERNELVERSION ]; then
 		kernver=$(cat /lib/modules/KERNELVERSION)
 	else
-		kernver=$(file /boot/vmlinuz-kael  | cut -d ' ' -f9)
+		kernver=$(file /boot/vmlinuz-koompi  | cut -d ' ' -f9)
 	fi
 	if [ $(type -p mkinitramfs) ]; then
-		mkinitramfs -q -k $kernver -o /boot/initrd-kael.img
+		mkinitramfs -q -k $kernver -o /boot/initrd-koompi.img
 	fi
 	depmod $kernver
 }
@@ -21,7 +21,7 @@ post_upgrade() {
 }
 
 post_remove() {
-	rm -f /boot/initrd-kael.img
+	rm -f /boot/initrd-koompi.img
 }
 
 case $action in
