@@ -16,7 +16,7 @@ fetch_source() {
 	filename=$(basename $1)
 	url=$1
 	wgetcmd="wget --passive-ftp --tries=3 --waitretry=3 --output-document=$SRCDIR/$filename.part"
-	
+
 	if [ ! -f $SRCDIR/$filename ]; then
 		[[ -f $SRCDIR/$filename.part ]] && resume="-c"
 		$wgetcmd $resume $url && \
@@ -43,7 +43,7 @@ extract() {
 ports() {
 	[ "$1" ] || return 1
 	[ -f "$ROOTFS/var/lib/scratchpkg/index/$1/.pkginfo" ] && return 0
-	
+
 	mkdir -p $ROOTFS/var/lib/scratchpkg/index
 	[ -f "$PORTSDIR/$1/spkgbuild" ] || {
 		msgerr "Ports '$1' not exist."
@@ -62,7 +62,7 @@ ports() {
 cross_compiler() {
 	[ "$1" ] || return 1
 	[ -f "$TCDIR/$1" ] && return 0
-	
+
 	source $TCSCRIPTDIR/$1
 	if [ "$source" ]; then
 		for src in $source; do
@@ -74,7 +74,7 @@ cross_compiler() {
 		msgerr "Failed to extract '$(basename $source)'."
 		return 1
 	}
-	
+
 	cd "$BUILDDIR/$name"
 
 	if [ "$(type -t build)" = "function" ]; then
@@ -91,7 +91,7 @@ cross_compiler() {
 			rm -fr "$BUILDDIR/$name"
 		fi
 	fi
-	
+
 	cd - >/dev/null
 }
 
@@ -176,16 +176,16 @@ chroot_run() {
 # create efiboot
 make_efiboot() {
 	msg "Setup efiboot..."
-	
+
 	mkdir -p "$LIVEWDIR"/boot/{grub/{fonts,x86_64-efi},EFI}
-	
+
 	if [ -f /usr/share/grub/unicode.pf2 ];then
 		cp /usr/share/grub/unicode.pf2 "$LIVEWDIR"/boot/grub/fonts
 	fi
 	if [ -f "$FILESDIR"/isolinux/splash.png ]; then
 		cp "$FILESDIR"/isolinux/splash.png "$LIVEWDIR"/boot/grub/
 	fi
-	
+
 	echo "set prefix=/boot/grub" > "$LIVEWDIR"/boot/grub-early.cfg
 	cp -a /usr/lib/grub/x86_64-efi/*.{mod,lst} "$LIVEWDIR"/boot/grub/x86_64-efi
 	cp "$FILESDIR"/grub.cfg "$LIVEWDIR"/boot/grub/
@@ -195,7 +195,7 @@ make_efiboot() {
 		-o "$LIVEWDIR"/boot/EFI/bootx64.efi \
 		-O x86_64-efi \
 		-p "" iso9660 normal search search_fs_file
-		
+
 	modprobe loop
 	dd if=/dev/zero of="$LIVEWDIR"/boot/efiboot.img count=4096
 	mkdosfs -n KOOMPILIVE-UEFI "$LIVEWDIR"/boot/efiboot.img
@@ -203,12 +203,12 @@ make_efiboot() {
 	mount -o loop "$LIVEWDIR"/boot/efiboot.img "$EFIBOOTDIR"
 	mkdir -p "$EFIBOOTDIR"/EFI/boot
 	cp "$LIVEWDIR"/boot/EFI/bootx64.efi "$EFIBOOTDIR"/EFI/boot
-	
+
 	unmount "$EFIBOOTDIR"
 	rm -fr "$EFIBOOTDIR"
 }
 
-make_iso() {	
+make_iso() {
 	msg "Making iso..."
 	rm -f $OUTPUT
 	xorriso -as mkisofs \
@@ -267,7 +267,7 @@ build_rootfs() {
 	rm -f "$BUILDROOT"/koompilinux-rootfs.tar.xz
 	pushd "$ROOTFS" >/dev/null
 		msg "Building rootfs image..."
-		tar -cvJpf "$BUILDROOT"/koompilinux-rootfs.tar.xz * 
+		tar -cvJpf "$BUILDROOT"/koompilinux-rootfs.tar.xz *
 	popd >/dev/null
 }
 
@@ -293,13 +293,13 @@ umount_any_mounted() {
 	done
 }
 
-# mount all ports 
+# mount all ports
 mount_all() {
 	umount_any_mounted
 	mkdir -p $ROOTFS/usr/ports/core
 	bindmount $PORTSDIR $ROOTFS/usr/ports/core
 	bindmount $SRCDIR $ROOTFS/var/cache/scratchpkg/sources
-	bindmount $PKGDIR $ROOTFS/var/cache/scratchpkg/packages	
+	bindmount $PKGDIR $ROOTFS/var/cache/scratchpkg/packages
 }
 
 # unmount it after finish
@@ -358,13 +358,13 @@ parser() {
 
 main() {
 	checkroot
-	
+
 	mkdir -p "$ROOTFS" "$BUILDDIR" "$SRCDIR" "$PKGDIR" "$TCDIR"
-	
+
 	#umount_any_mounted
 	setup_pkgbuildconf
 	build_base
-	
+
 	[ "$UMOUNT" = 1 ] && umount_any_mounted
 	[ "$CHROOT" = 1 ] && enter_chroot
 	[ "$SYSUP" = 1 ] && sysup_rootfs
@@ -406,10 +406,10 @@ export MAKEFLAGS="-j$JOBS"
 export CFLAGS="-O2 -march=x86-64 -pipe"
 export CXXFLAGS="${CFLAGS}"
 
-base_pkg="cross-scratchpkg linux-api-headers cross-binutils cross-gcc-pass1 cross-musl cross-gcc-pass2
+base_pkg="cross-scratchpkg linux-headers cross-binutils cross-gcc-pass1 cross-musl cross-gcc-pass2
 	filesystem man-pages musl tzdata zlib bzip2 xz file ncurses readline m4 bc binutils gmp mpfr libmpc attr acl shadow
 	gcc pkgconf libcap sed psmisc iana-etc bison flex grep bash libtool gdbm gperf expat inetutils perl
-	autoconf automake kmod gettext libuargp musl-fts elfutils libressl coreutils diffutils gawk findutils 
+	autoconf automake kmod gettext libuargp musl-fts elfutils libressl coreutils diffutils gawk findutils
 	less gzip libmnl iproute2 kbd libpipeline make patch man-db tar texinfo vim procps-ng pcre2 util-linux e2fsprogs
 	sysklogd eudev dhcpcd libarchive curl httpup scratchpkg runit runit-bootscripts ca-certificates base"
 
