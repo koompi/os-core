@@ -406,7 +406,7 @@ export MAKEFLAGS="-j$JOBS"
 export CFLAGS="-O2 -march=x86-64 -pipe"
 export CXXFLAGS="${CFLAGS}"
 
-base_pkg="cross-scratchpkg linux-headers cross-binutils cross-gcc-pass1 cross-musl cross-gcc-pass2
+base_pkg="cross-scratchpkg linux-api-headers cross-binutils cross-gcc-pass1 cross-musl cross-gcc-pass2
 	filesystem man-pages musl tzdata zlib bzip2 xz file ncurses readline m4 bc binutils gmp mpfr libmpc attr acl shadow
 	gcc pkgconf libcap sed psmisc iana-etc bison flex grep bash libtool gdbm gperf expat inetutils perl
 	autoconf automake kmod gettext libuargp musl-fts elfutils libressl coreutils diffutils gawk findutils

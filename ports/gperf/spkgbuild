@@ -8,7 +8,7 @@ source="https://ftp.gnu.org/gnu/gperf/$name-$version.tar.gz"
 
 build() {
 	if [ "$BOOTSTRAP" ]; then
-		flags="--host=$TARGET --build=$HOST"
+		flags="--host=x86_64-linux-musl-gperf --build=$HOST"
 	fi
 
 	cd $name-$version

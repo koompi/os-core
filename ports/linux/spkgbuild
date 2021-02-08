@@ -2,7 +2,8 @@
 # depends	: yaml elfutils
 
 name=linux
-version=5.10.1
+#version=5.10.1
+version=5.4.23
 release=1
 options="!strip"
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
