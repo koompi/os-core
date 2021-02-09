@@ -228,7 +228,7 @@ make_iso() {
 
 make_squashfs() {
 	msg "Squashing filesystem..."
-	mksquashfs $ROOTFS "$LIVEWDIR"/koompi/root.sfs \
+	mksquashfs $ROOTFS "$LIVEWDIR"/koompi/rootfs.sfs \
 		-b 1048576 -comp zstd \
 		-e $ROOTFS/var/cache/scratchpkg/sources/* \
 		-e $ROOTFS/var/cache/scratchpkg/packages/* \
@@ -414,7 +414,7 @@ base_pkg="cross-scratchpkg linux-headers cross-binutils cross-gcc-pass1 cross-mu
 	sysklogd eudev dhcpcd libarchive curl httpup scratchpkg runit runit-bootscripts ca-certificates base"
 
 [ "$LIVE" = 1 ] && {
-	base_pkg="$base_pkg linux-firmware fuse2 grub mkinitramfs linux efivar popt efibootmgr grub-efi gpm links nnn lzo lz4 zstd squashfs-tools"
+	base_pkg="$base_pkg linux-firmware fuse2 grub mkinitramfs linux efivar popt efibootmgr grub-efi links nnn lzo lz4 zstd squashfs-tools"
 }
 
 main
