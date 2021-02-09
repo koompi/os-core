@@ -11,7 +11,7 @@ post_upgrade() {
 		kernver=$(uname -r)
 	fi
 	if [ $(type -p mkinitramfs) ]; then
-		mkinitramfs -q -k $kernver -o /boot/initrd-kael.img
+		mkinitramfs -q -k $kernver -o /boot/initrd-koompi.img
 	fi
 	depmod $kernver
 }

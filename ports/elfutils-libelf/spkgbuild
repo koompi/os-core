@@ -1,0 +1,22 @@
+# description	: utilities and libraries for handling ELF files
+# depends	: zlib libuargp xz bzip2
+
+name=elfutils-libelf
+version=0.182
+source="https://sourceware.org/elfutils/ftp/$version/elfutils-$version.tar.bz2"
+
+
+build() {
+if [ "$BOOTSTRAP" ]; then
+		flags="--host=$TARGET --build=$HOST"
+	fi
+
+	cd $name-$version
+
+	cp $SRC/error.h lib
+	cp $SRC/error.h src
+
+    autoreconf -if
+    todo()
+
+}

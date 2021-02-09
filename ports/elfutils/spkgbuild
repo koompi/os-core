@@ -20,8 +20,8 @@ build() {
 
 	cd $name-$version
 
-	#cp $SRC/error.h lib
-	#cp $SRC/error.h src
+	 # cp $SRC/error.h lib
+	 # cp $SRC/error.h src
 
 	for i in $SRC/*.patch; do
 		patch -Np1 -i $i
