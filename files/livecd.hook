@@ -31,7 +31,7 @@ mount_livecd() {
 	SYSTEM=/run/initramfs/system
 	WRITEDIR=/run/initramfs/overlayfs/write
 	WORKDIR=/run/initramfs/overlayfs/work
-	sfsimg=/run/initramfs/medium/koompi/root.sfs
+	sfsimg=/run/initramfs/medium/koompi/rootfs.sfs
 	wait=${wait:-5}
 	count=0
 	
@@ -59,7 +59,7 @@ mount_livecd() {
 		mount -t tmpfs -o "size=75%",mode=0755 ram /run/initramfs/ram || problem
 		msg "copying squashfs img to /run/initramfs/ram..."
 		cp $sfsimg /run/initramfs/ram/ || problem
-		sfsimg=/run/initramfs/ram/root.sfs
+		sfsimg=/run/initramfs/ram/rootfs.sfs
 	fi
 	sfs_dev=$(losetup --find --show --read-only $sfsimg)
 	msg "mounting squashfs img to $SYSTEM..."
