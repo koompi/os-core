@@ -1,0 +1,16 @@
+# description	: Fast and lightweight image viewer for the Xfce desktop
+# homepage	: http://docs.xfce.org/apps/ristretto/start
+# depends	: gtk3 pango harfbuzz atk cairo gdk-pixbuf glib libexif xfconf libxfce4util libxfce4ui libsm libice libx11 file
+
+name=ristretto
+version=0.10.0
+release=1
+source="http://archive.xfce.org/src/apps/ristretto/${version%.*}/$name-$version.tar.bz2"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --disable-nls
+	make
+	make DESTDIR=$PKG install
+}
