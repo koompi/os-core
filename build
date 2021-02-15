@@ -414,7 +414,7 @@ base_pkg="cross-scratchpkg linux-headers cross-binutils cross-gcc-pass1 cross-mu
 	sysklogd eudev dhcpcd libarchive curl httpup scratchpkg runit runit-bootscripts ca-certificates base"
 
 [ "$LIVE" = 1 ] && {
-	base_pkg="$base_pkg linux-firmware fuse2 grub mkinitramfs linux efivar popt efibootmgr grub-efi links nnn lzo lz4 zstd squashfs-tools"
+	base_pkg="$base_pkg linux-firmware fuse2 grub mkinitramfs python3 linux efivar popt efibootmgr grub-efi links nnn lzo lz4 zstd squashfs-tools"
 }
 
 main
