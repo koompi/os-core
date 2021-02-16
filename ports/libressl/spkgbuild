@@ -17,7 +17,6 @@ build() {
 	fi
 
 	cd $name-$version
-	patch $SRC/libssl.patch
 
 	autoreconf -fi
 	./configure $flags \
