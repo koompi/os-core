@@ -2,7 +2,7 @@
 # depends	: yaml elfutils
 
 name=linux
-version=5.10.1
+version=5.10.17
 # version=5.4.23
 release=1
 options="!strip"
