@@ -1,0 +1,20 @@
+
+# description	: startup-notification libraries
+# homepage	: https://www.freedesktop.org/
+
+name=strace
+version=5.10
+release=1
+source="https://github.com/strace/strace/releases/download/v5.10/strace-5.10.tar.xz"
+
+build() {
+	if [ "$BOOTSTRAP" ]; then
+		flags="--host=$TARGET --build=$HOST"
+	fi
+    cd $name-$version
+
+
+	./configure $flags 
+	make
+	make DESTDIR=$PKG install
+}
