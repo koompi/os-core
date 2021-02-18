@@ -3,7 +3,7 @@
 # depends	: readline ncurses
 
 name=nnn
-version=3.0
+version=3.5
 release=1
 source="https://github.com/jarun/$name/archive/v$version/$name-$version.tar.gz"
 

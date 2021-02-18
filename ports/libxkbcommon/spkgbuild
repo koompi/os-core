@@ -3,7 +3,7 @@
 # depends	: libxcb wayland-protocols meson
 
 name=libxkbcommon
-version=0.10.0
+version=1.0.3
 release=1
 source="https://xkbcommon.org/download/$name-$version.tar.xz"
 

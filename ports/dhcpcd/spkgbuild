@@ -3,7 +3,7 @@
 # depends	: eudev
 
 name=dhcpcd
-version=8.1.6
+version=9.4.0
 release=1
 backup="etc/sv/$name/conf"
 source="http://roy.marples.name/downloads/$name/$name-$version.tar.xz

@@ -2,7 +2,7 @@
 # homepage	: http://www.icu-project.org/
 
 name=icu
-version=65.1
+version=68.2
 _version=$(echo $version | tr '.' '-')
 __version=$(echo $version | tr '.' '_')
 release=1

@@ -2,7 +2,7 @@
 # homepage	: https://www.iana.org/protocols
 
 name=iana-etc
-version=2.30
+version=20200429
 release=1
 source="http://anduin.linuxfromscratch.org/LFS/$name-$version.tar.bz2"
 

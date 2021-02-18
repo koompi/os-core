@@ -2,7 +2,7 @@
 # depends	: ncurses zlib readline pcre2
 
 name=util-linux
-version=2.35
+version=2.36
 release=1
 source="https://www.kernel.org/pub/linux/utils/$name/v${version}/$name-$version.tar.xz
 	fix-musl.patch"

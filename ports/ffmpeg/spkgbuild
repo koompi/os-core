@@ -3,7 +3,7 @@
 # depends	: libva libvdpau libx11 bzip2 zlib gnutls libvpx xz fdk-aac lame opus libtheora libvorbis x264 x265 libxcb alsa-lib sdl2 libxv libxext libass freetype2
 
 name=ffmpeg
-version=4.2.2
+version=4.3.1
 release=1
 source="https://ffmpeg.org/releases/$name-$version.tar.xz"
 

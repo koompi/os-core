@@ -3,7 +3,7 @@
 # depends	: libtiff libjpeg-turbo zlib
 
 name=lcms2
-version=2.9
+version=2.12
 release=1
 source="https://downloads.sourceforge.net/lcms/$name-$version.tar.gz"
 

@@ -1,9 +1,9 @@
 # description	: Expose the kernel's API for use by Glibc
 
 name=linux-headers
-version=5.10.17
+version=5.11
 release=1
-source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.17.tar.xz"
+source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.11.tar.xz"
 
 build() {
 	if [ "$BOOTSTRAP" ]; then

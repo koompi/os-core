@@ -3,7 +3,7 @@
 # depends	: libffi expat libxml2
 
 name=wayland
-version=1.18.0
+version=1.19.0
 release=1
 source="http://wayland.freedesktop.org/releases/$name-$version.tar.xz"
 

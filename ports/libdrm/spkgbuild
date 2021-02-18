@@ -2,7 +2,7 @@
 # depends	: libpciaccess meson
 
 name=libdrm
-version=2.4.100
+version=2.4.104
 release=1
 source="https://dri.freedesktop.org/$name/$name-$version.tar.bz2
 	dont-build-noveau-tests.patch"

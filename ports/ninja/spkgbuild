@@ -2,7 +2,7 @@
 # homepage	: https://ninja-build.org/
 
 name=ninja
-version=1.10.0
+version=1.10.2
 release=1
 source="https://github.com/ninja-build/ninja/archive/v$version/ninja-$version.tar.gz"
 

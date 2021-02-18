@@ -3,7 +3,7 @@
 # depends	: libgcrypt libgpg-error libksba libassuan npth libusb readline zlib bzip2 gnutls sqlite
 
 name=gnupg
-version=2.2.20
+version=2.2.27
 release=1
 source="https://gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2"
 

@@ -1,7 +1,7 @@
 # description	: A simple package manager for Linux Distribution
 
 name=scratchpkg
-version=0.6
+version=20200729
 release=4
 backup="etc/scratchpkg.conf
 	etc/scratchpkg.repo

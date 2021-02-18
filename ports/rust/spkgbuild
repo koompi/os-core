@@ -3,7 +3,7 @@
 # depends	: zlib ncurses llvm libressl
 
 name=rust
-version=1.41.0
+version=1.50.0
 release=1
 _date=2019-12-19
 _rust=1.40.0

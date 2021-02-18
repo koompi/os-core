@@ -2,7 +2,7 @@
 # depends	: expat libsm libice libx11
 
 name=dbus
-version=1.12.16
+version=1.12.20
 release=2
 source="https://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz
 	run"

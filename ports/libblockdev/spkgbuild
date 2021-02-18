@@ -3,7 +3,7 @@
 # depends	: gobject-introspection glib eudev kmod parted lvm2 util-linux libbytesize cryptsetup nss nspr volume_key yaml
 
 name=libblockdev
-version=2.23
+version=2.25
 release=1
 source="https://github.com/storaged-project/libblockdev/releases/download/$version-1/$name-$version.tar.gz"
 

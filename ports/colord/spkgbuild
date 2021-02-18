@@ -2,7 +2,7 @@
 # depends	: gobject-introspection vala glib libgusb libgudev lcms2 eudev polkit sqlite
 
 name=colord
-version=1.4.4
+version=1.4.5
 release=3
 source="https://www.freedesktop.org/software/colord/releases/$name-$version.tar.xz"
 

@@ -3,7 +3,7 @@
 # depends	: gobject-introspection glib expat js60 linux-pam intltool
 
 name=polkit
-version=0.116
+version=0.118
 release=1
 source="https://www.freedesktop.org/software/polkit/releases/$name-$version.tar.gz
 	make-innetgr-optional.patch"
