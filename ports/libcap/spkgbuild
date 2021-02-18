@@ -4,7 +4,7 @@
 name=libcap
 version=2.48
 release=1
-source="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/$name-$version.tar.xz"
+source="http://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/$name-$version.tar.xz"
 
 build() {
 	cd $name-$version
