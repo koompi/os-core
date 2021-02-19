@@ -6,7 +6,10 @@ name=shadow
 version=4.8.1
 release=1
 source="https://github.com/shadow-maint/shadow/releases/download/$version/$name-$version.tar.xz
-	pwck"
+	login.defs
+	useradd
+	shadow-strncpy-usage.patch
+	xstrdup.patch"
 
 build() {
 	if [ "$BOOTSTRAP" ]; then
@@ -15,24 +18,74 @@ build() {
 
 	cd $name-$version
 
-	sed -i 's/groups$(EXEEXT) //' src/Makefile.in
-	find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;
-	find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;
-	find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;
 
-	sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
-	       -e 's@/var/spool/mail@/var/mail@' etc/login.defs
 
-	sed -i 's/1000/999/' etc/useradd
+	patch -p0 -i $SRC/shadow-strncpy-usage.patch
+	patch -p0 -i $SRC/xstrdup.pxstrdup.pxstrdup.pxstrdup.patch
+
+	sed -i '/^SUBDIRS/s/pam\.d//' etc/Makefile.in 
+
+	install -Dm644 $SRC/login.defs etc/login.defs
+	install -Dm644 $SRC/useradd etc/useradd	
+
 
 	./configure $flags \
+		--prefix=/usr \
+		--bindir=/usr/bin \
+		--sbindir=/usr/bin \
+		--libdir=/usr/lib \
+		--mandir=/usr/share/man \
 		--sysconfdir=/etc \
-		--without-libpam \
-		--disable-nls \
-		--with-group-name-max-length=32
+		--with-audit \
+		--with-libpam \
+		--without-nscd \
+		--without-selinux \
+		--with-group-name-max-length=32 \
+		--disable-account-tools-setuid \
+		--disable-nls
+
+
+
 	make
 	make DESTDIR=$PKG install
 
-	mkdir -p $PKG/bin $PKG/etc/cron/daily
-	install -m 755 $SRC/pwck $PKG/etc/cron/daily
+
+
+	mv "$PKG"/usr/sbin/* "$PKG"/usr/bin
+	rmdir "$PKG"/usr/sbin
+
+	mv "$PKG"/usr/bin/{newgrp,sg}
+
+	for pam in passwd chgpasswd chpasswd newusers; do
+		install -Dm644 "$STUFF"/pam.d/$pam "$PKG"/usr/lib/pam.d/$pam
+	done
+
+	for pam in chage groupadd groupdel groupmod shadow useradd usermod userdel; do
+		install -Dm644 "$STUFF"/pam.d/shadow "$PKG"/usr/lib/pam.d/$pam
+	done
+
+	install -Dm644 etc/pam.d/groupmems "$PKG"/usr/lib/pam.d/groupmems
+
+	# conflicts with util-linux
+	for i in login su chsh chfn sg nologin vipw vigr; do
+		rm -rf "$PKG"/usr/bin/$i
+	done
+
+	find "$PKG"/usr/share/man \
+	'(' -name 'chsh.1'    -o \
+		-name 'chfn.1'    -o \
+		-name 'su.1'      -o \
+		-name 'logoutd.8' -o \
+		-name 'login.1'   -o \
+		-name 'nologin.8' -o \
+		-name 'vipw.8'    -o \
+		-name 'vigr.8'    -o \
+		-name 'newgrp.1' ')' \
+		-exec rm -rf {} +
+	rm -rf \
+		"$PKG"/usr/share/man/{fi,id,zh_TW}/man1 \
+		"$PKG"/usr/share/man/{fi,ko/man8} \
+		"$PKG"/usr/share/man/man1/groups.1 \
+		"$PKG"/usr/bin/groups
+
 }
